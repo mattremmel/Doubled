@@ -85,7 +85,7 @@
                 }
             }
             
-            if (!gameCenterEnabled)
+            if (gameCenterEnabled)
             {
                 if (error != nil)
                 {
