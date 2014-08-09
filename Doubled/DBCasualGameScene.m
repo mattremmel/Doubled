@@ -7,7 +7,7 @@
 //
 
 #import "DBCasualGameScene.h"
-#import "DBGameInterface.h"
+#import "DBGameInterfaceConfig.h"
 #import "DBCasualGameData.h"
 
 @interface DBCasualGameScene()
