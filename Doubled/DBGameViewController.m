@@ -15,6 +15,7 @@
 #import "GADRequest.h"
 #import "DBRemoveAdsBanner.h"
 #import "DoubledIAPHelper.h"
+#import "DBGameGlobals.h"
 
 @interface DBGameViewController () <GADBannerViewDelegate>
 
@@ -117,7 +118,6 @@
 
 - (void)configureCasualGameScene
 {
-    // TODO: Crashing on this line of code. Not key value coding-compliant for the key buttonMenu. XIB file and reference to the button no longer exists
     self.casualGameScene = [[DBCasualGameScene alloc] initWithSize:self.view.frame.size];
     self.casualGameScene.gameController = self;
 }
@@ -184,7 +184,6 @@
         GADRequest *request = [GADRequest request];
         request.testDevices = @[ @"6c58f45e4871b58e5f70e8be96d2b96e", @"Simulator" ];
         [self.GADBannerView loadRequest: request];
-        [self adView: nil didFailToReceiveAdWithError: nil];
     }
 }
 
