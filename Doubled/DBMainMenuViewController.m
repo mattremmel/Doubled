@@ -11,8 +11,9 @@
 #import "DBGameGlobals.h"
 #import "DBGameViewController.h"
 #import "DBGameOptionViewController.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface DBMainMenuViewController ()
+@interface DBMainMenuViewController () <MFMailComposeViewControllerDelegate>
 
 @property DBGameOptionViewController *gameOptionController;
 @property DBGameViewController *gameViewController;
@@ -108,6 +109,43 @@
 
 - (IBAction)buttonSendFeedback:(id)sender
 {
+    [self presentMailViewController];
+}
+
+
+#pragma mark - Send Feedback Delegate
+
+- (void)presentMailViewController {
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+        mailController.mailComposeDelegate = self;
+        [mailController setToRecipients:@[@"matt.remmel@gmail.com"]];
+        [mailController setSubject:@"Doubled - Feedback / Bug Report"];
+        [mailController setMessageBody:[NSString stringWithFormat:@"General Feedback:<br/><br/><br/><br/>Bug Report / How to Reproduce:<br/><br/><br/><br/><hr/>%@<hr/>", [self getDeviceSpecs]] isHTML:true];
+        [self presentViewController:mailController animated:YES completion:nil];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"No Mail Account Configured" message:@"You must configure a mail account before you can send email" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+    }
+}
+
+- (NSString *)getDeviceSpecs
+{
+    UIDevice *currentDevice = [UIDevice currentDevice];
+    NSString *model = [currentDevice model];
+    NSString *systemVersion = [currentDevice systemVersion];
+    NSArray *languageArray = [NSLocale preferredLanguages];
+    NSString *language = [languageArray objectAtIndex:0];
+    NSLocale *locale = [NSLocale currentLocale];
+    NSString *country = [locale localeIdentifier];
+    NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    NSString *deviceSpecs = [NSString stringWithFormat:@"Device Information:<br/><br/>Device Model: %@<br/>System Version: %@<br/>Language: %@<br/>Country: %@<br/>App Version: v%@", model, systemVersion, language, country, appVersion];
+    
+    return deviceSpecs;
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+    // Handle any errors here & check for controller's result as well
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
