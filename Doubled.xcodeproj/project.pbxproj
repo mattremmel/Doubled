@@ -26,7 +26,6 @@
 		345574AF1996A4AF00C58C70 /* DBGameOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574901996A4AF00C58C70 /* DBGameOptionViewController.m */; };
 		345574B01996A4AF00C58C70 /* DBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574911996A4AF00C58C70 /* DBSettingsViewController.m */; };
 		345574B11996A4AF00C58C70 /* DBAdvertisingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574921996A4AF00C58C70 /* DBAdvertisingViewController.m */; };
-		345574B21996A4AF00C58C70 /* MRGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574931996A4AF00C58C70 /* MRGameViewController.m */; };
 		345574B31996A4AF00C58C70 /* DBGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574941996A4AF00C58C70 /* DBGameViewController.m */; };
 		345574B41996A4AF00C58C70 /* DBGameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574951996A4AF00C58C70 /* DBGameOverViewController.m */; };
 		345574B51996A4AF00C58C70 /* DBGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574961996A4AF00C58C70 /* DBGameScene.m */; };
@@ -98,7 +97,6 @@
 		345574701996A44E00C58C70 /* DBGameOptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBGameOptionViewController.h; sourceTree = "<group>"; };
 		345574711996A44E00C58C70 /* DBSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBSettingsViewController.h; sourceTree = "<group>"; };
 		345574721996A44E00C58C70 /* DBAdvertisingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBAdvertisingViewController.h; sourceTree = "<group>"; };
-		345574731996A44E00C58C70 /* MRGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRGameViewController.h; sourceTree = "<group>"; };
 		345574741996A44E00C58C70 /* DBGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBGameViewController.h; sourceTree = "<group>"; };
 		345574751996A44E00C58C70 /* DBGameOverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBGameOverViewController.h; sourceTree = "<group>"; };
 		345574761996A44E00C58C70 /* DBGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBGameScene.h; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 		345574901996A4AF00C58C70 /* DBGameOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBGameOptionViewController.m; sourceTree = "<group>"; };
 		345574911996A4AF00C58C70 /* DBSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSettingsViewController.m; sourceTree = "<group>"; };
 		345574921996A4AF00C58C70 /* DBAdvertisingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAdvertisingViewController.m; sourceTree = "<group>"; };
-		345574931996A4AF00C58C70 /* MRGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRGameViewController.m; sourceTree = "<group>"; };
 		345574941996A4AF00C58C70 /* DBGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBGameViewController.m; sourceTree = "<group>"; };
 		345574951996A4AF00C58C70 /* DBGameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBGameOverViewController.m; sourceTree = "<group>"; };
 		345574961996A4AF00C58C70 /* DBGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBGameScene.m; sourceTree = "<group>"; };
@@ -229,6 +226,7 @@
 		345574381996A3F500C58C70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				345574D51996A53C00C58C70 /* AdMobFramework */,
 				345574F21996A59400C58C70 /* AudioToolbox.framework */,
 				345574F01996A58B00C58C70 /* SpriteKit.framework */,
 				345574EE1996A58000C58C70 /* AdSupport.framework */,
@@ -236,7 +234,6 @@
 				345574EA1996A56600C58C70 /* CoreTelephony.framework */,
 				345574E81996A55A00C58C70 /* MessageUI.framework */,
 				345574E61996A55000C58C70 /* SystemConfiguration.framework */,
-				345574D51996A53C00C58C70 /* AdMobFramework */,
 				345574D31996A50B00C58C70 /* GameKit.framework */,
 				345574D11996A50A00C58C70 /* StoreKit.framework */,
 				345574391996A3F500C58C70 /* Foundation.framework */,
@@ -327,7 +324,6 @@
 				345574701996A44E00C58C70 /* DBGameOptionViewController.h */,
 				345574711996A44E00C58C70 /* DBSettingsViewController.h */,
 				345574721996A44E00C58C70 /* DBAdvertisingViewController.h */,
-				345574731996A44E00C58C70 /* MRGameViewController.h */,
 				345574741996A44E00C58C70 /* DBGameViewController.h */,
 				345574751996A44E00C58C70 /* DBGameOverViewController.h */,
 			);
@@ -386,7 +382,6 @@
 				345574901996A4AF00C58C70 /* DBGameOptionViewController.m */,
 				345574911996A4AF00C58C70 /* DBSettingsViewController.m */,
 				345574921996A4AF00C58C70 /* DBAdvertisingViewController.m */,
-				345574931996A4AF00C58C70 /* MRGameViewController.m */,
 				345574941996A4AF00C58C70 /* DBGameViewController.m */,
 				345574951996A4AF00C58C70 /* DBGameOverViewController.m */,
 			);
@@ -604,7 +599,6 @@
 				345574B51996A4AF00C58C70 /* DBGameScene.m in Sources */,
 				345574C31996A4AF00C58C70 /* MRChildTutorialViewController.m in Sources */,
 				345574461996A3F500C58C70 /* main.m in Sources */,
-				345574B21996A4AF00C58C70 /* MRGameViewController.m in Sources */,
 				345574B71996A4AF00C58C70 /* DBTimeAttackGameScene.m in Sources */,
 				345574B31996A4AF00C58C70 /* DBGameViewController.m in Sources */,
 				345574B11996A4AF00C58C70 /* DBAdvertisingViewController.m in Sources */,
@@ -741,6 +735,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/AdMobFramework",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -762,6 +757,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/AdMobFramework",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -827,6 +823,7 @@
 				345574641996A3F500C58C70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		345574651996A3F500C58C70 /* Build configuration list for PBXNativeTarget "DoubledTests" */ = {
 			isa = XCConfigurationList;
@@ -835,6 +832,7 @@
 				345574671996A3F500C58C70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
