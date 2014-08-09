@@ -133,23 +133,6 @@
                 break;
         }
     }
-    // TODO: Might be able to use naming convention to not list different nib names
-    else if (deviceType == iPadType)
-    {
-        switch (index) {
-            case 0:
-                break;
-                
-            default:
-                child = nil;
-                break;
-        }
-    }
-    else
-    {
-        NSLog(@"Error:  Device type not in enum");
-        child = [[DBChildMenuViewController alloc] init];
-    }
     
     return child;
 }
