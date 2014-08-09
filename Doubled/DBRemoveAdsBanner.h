@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MRGameViewController.h"
 
 @interface DBRemoveAdsBanner : UIImageView
 
