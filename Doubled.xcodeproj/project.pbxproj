@@ -40,7 +40,7 @@
 		345574BE1996A4AF00C58C70 /* MRSpriteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455749F1996A4AF00C58C70 /* MRSpriteButton.m */; };
 		345574BF1996A4AF00C58C70 /* MRSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A01996A4AF00C58C70 /* MRSlider.m */; };
 		345574C01996A4AF00C58C70 /* DBRemoveAdsBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A11996A4AF00C58C70 /* DBRemoveAdsBanner.m */; };
-		345574C11996A4AF00C58C70 /* DBGameInterfaceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A21996A4AF00C58C70 /* DBGameInterfaceConfig.m */; };
+		345574C11996A4AF00C58C70 /* DBGameInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A21996A4AF00C58C70 /* DBGameInterface.m */; };
 		345574C21996A4AF00C58C70 /* MRTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A31996A4AF00C58C70 /* MRTutorialViewController.m */; };
 		345574C31996A4AF00C58C70 /* MRChildTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A41996A4AF00C58C70 /* MRChildTutorialViewController.m */; };
 		345574C41996A4AF00C58C70 /* DBMainMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345574A51996A4AF00C58C70 /* DBMainMenuView.xib */; };
@@ -60,8 +60,6 @@
 		345574EF1996A58000C58C70 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345574EE1996A58000C58C70 /* AdSupport.framework */; };
 		345574F11996A58B00C58C70 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345574F01996A58B00C58C70 /* SpriteKit.framework */; };
 		345574F31996A59400C58C70 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345574F21996A59400C58C70 /* AudioToolbox.framework */; };
-		3476987E1996C82900B5525E /* DBGameInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3476987D1996C82900B5525E /* DBGameInterface.xib */; };
-		347698811996C89B00B5525E /* DBGameInterfaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 347698801996C89B00B5525E /* DBGameInterfaceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +111,7 @@
 		3455747F1996A44E00C58C70 /* MRSpriteButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRSpriteButton.h; sourceTree = "<group>"; };
 		345574801996A44E00C58C70 /* MRSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRSlider.h; sourceTree = "<group>"; };
 		345574811996A44E00C58C70 /* DBRemoveAdsBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBRemoveAdsBanner.h; sourceTree = "<group>"; };
-		345574821996A44E00C58C70 /* DBGameInterfaceConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBGameInterfaceConfig.h; sourceTree = "<group>"; };
+		345574821996A44E00C58C70 /* DBGameInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBGameInterface.h; sourceTree = "<group>"; };
 		345574831996A44E00C58C70 /* MRTutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRTutorialViewController.h; sourceTree = "<group>"; };
 		345574841996A44E00C58C70 /* MRChildTutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRChildTutorialViewController.h; sourceTree = "<group>"; };
 		3455748C1996A4AF00C58C70 /* DBLaunchConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBLaunchConfiguration.m; sourceTree = "<group>"; };
@@ -137,7 +135,7 @@
 		3455749F1996A4AF00C58C70 /* MRSpriteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRSpriteButton.m; sourceTree = "<group>"; };
 		345574A01996A4AF00C58C70 /* MRSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRSlider.m; sourceTree = "<group>"; };
 		345574A11996A4AF00C58C70 /* DBRemoveAdsBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBRemoveAdsBanner.m; sourceTree = "<group>"; };
-		345574A21996A4AF00C58C70 /* DBGameInterfaceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBGameInterfaceConfig.m; sourceTree = "<group>"; };
+		345574A21996A4AF00C58C70 /* DBGameInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBGameInterface.m; sourceTree = "<group>"; };
 		345574A31996A4AF00C58C70 /* MRTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRTutorialViewController.m; sourceTree = "<group>"; };
 		345574A41996A4AF00C58C70 /* MRChildTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRChildTutorialViewController.m; sourceTree = "<group>"; };
 		345574A51996A4AF00C58C70 /* DBMainMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBMainMenuView.xib; sourceTree = "<group>"; };
@@ -170,9 +168,6 @@
 		345574EE1996A58000C58C70 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		345574F01996A58B00C58C70 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		345574F21996A59400C58C70 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		3476987D1996C82900B5525E /* DBGameInterface.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBGameInterface.xib; sourceTree = "<group>"; };
-		3476987F1996C89B00B5525E /* DBGameInterfaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBGameInterfaceViewController.h; sourceTree = "<group>"; };
-		347698801996C89B00B5525E /* DBGameInterfaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBGameInterfaceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,7 +325,6 @@
 				345574711996A44E00C58C70 /* DBSettingsViewController.h */,
 				345574721996A44E00C58C70 /* DBAdvertisingViewController.h */,
 				345574741996A44E00C58C70 /* DBGameViewController.h */,
-				3476987F1996C89B00B5525E /* DBGameInterfaceViewController.h */,
 				345574751996A44E00C58C70 /* DBGameOverViewController.h */,
 			);
 			name = Controllers;
@@ -365,7 +359,7 @@
 				3455747F1996A44E00C58C70 /* MRSpriteButton.h */,
 				345574801996A44E00C58C70 /* MRSlider.h */,
 				345574811996A44E00C58C70 /* DBRemoveAdsBanner.h */,
-				345574821996A44E00C58C70 /* DBGameInterfaceConfig.h */,
+				345574821996A44E00C58C70 /* DBGameInterface.h */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -389,7 +383,6 @@
 				345574911996A4AF00C58C70 /* DBSettingsViewController.m */,
 				345574921996A4AF00C58C70 /* DBAdvertisingViewController.m */,
 				345574941996A4AF00C58C70 /* DBGameViewController.m */,
-				347698801996C89B00B5525E /* DBGameInterfaceViewController.m */,
 				345574951996A4AF00C58C70 /* DBGameOverViewController.m */,
 			);
 			name = Controllers;
@@ -424,7 +417,7 @@
 				3455749F1996A4AF00C58C70 /* MRSpriteButton.m */,
 				345574A01996A4AF00C58C70 /* MRSlider.m */,
 				345574A11996A4AF00C58C70 /* DBRemoveAdsBanner.m */,
-				345574A21996A4AF00C58C70 /* DBGameInterfaceConfig.m */,
+				345574A21996A4AF00C58C70 /* DBGameInterface.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -447,7 +440,6 @@
 				345574A81996A4AF00C58C70 /* DBAdvertisingView.xib */,
 				345574A91996A4AF00C58C70 /* DBStatisticsView.xib */,
 				345574AA1996A4AF00C58C70 /* DBGameOverView.xib */,
-				3476987D1996C82900B5525E /* DBGameInterface.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -567,7 +559,6 @@
 				345574C51996A4AF00C58C70 /* DBGameOptionView.xib in Resources */,
 				345574C91996A4AF00C58C70 /* DBGameOverView.xib in Resources */,
 				3455744C1996A3F500C58C70 /* Images.xcassets in Resources */,
-				3476987E1996C82900B5525E /* DBGameInterface.xib in Resources */,
 				345574C71996A4AF00C58C70 /* DBAdvertisingView.xib in Resources */,
 				345574C41996A4AF00C58C70 /* DBMainMenuView.xib in Resources */,
 				345574C61996A4AF00C58C70 /* DBSettingsView.xib in Resources */,
@@ -600,7 +591,6 @@
 				345574C21996A4AF00C58C70 /* MRTutorialViewController.m in Sources */,
 				345574AE1996A4AF00C58C70 /* DBMainMenuViewController.m in Sources */,
 				345574C01996A4AF00C58C70 /* DBRemoveAdsBanner.m in Sources */,
-				347698811996C89B00B5525E /* DBGameInterfaceViewController.m in Sources */,
 				345574B01996A4AF00C58C70 /* DBSettingsViewController.m in Sources */,
 				345574AF1996A4AF00C58C70 /* DBGameOptionViewController.m in Sources */,
 				345574BC1996A4AF00C58C70 /* IAPHelper.m in Sources */,
@@ -614,7 +604,7 @@
 				345574B11996A4AF00C58C70 /* DBAdvertisingViewController.m in Sources */,
 				345574B91996A4AF00C58C70 /* DBGameData.m in Sources */,
 				345574AD1996A4AF00C58C70 /* DBChildMenuViewController.m in Sources */,
-				345574C11996A4AF00C58C70 /* DBGameInterfaceConfig.m in Sources */,
+				345574C11996A4AF00C58C70 /* DBGameInterface.m in Sources */,
 				345574B61996A4AF00C58C70 /* DBCasualGameScene.m in Sources */,
 				345574BE1996A4AF00C58C70 /* MRSpriteButton.m in Sources */,
 			);
@@ -738,6 +728,7 @@
 				CODE_SIGN_ENTITLEMENTS = Doubled/Doubled.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Doubled/Doubled-Prefix.pch";
 				INFOPLIST_FILE = "Doubled/Doubled-Info.plist";
