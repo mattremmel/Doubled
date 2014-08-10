@@ -50,6 +50,7 @@
 
 - (void)styleView
 {
+    self.view.backgroundColor = defaultBackgroundColor;
     self.buttonCasual.layer.cornerRadius = MenuButtonCornerRadius;
     self.buttonTimeAttack.layer.cornerRadius = MenuButtonCornerRadius;
     self.buttonTutorial.layer.cornerRadius = MenuButtonCornerRadius;
@@ -110,6 +111,7 @@
 - (IBAction)buttonSendFeedback:(id)sender
 {
     [self presentMailViewController];
+    self.view.backgroundColor = defaultBackgroundColor;
 }
 
 
