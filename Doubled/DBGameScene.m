@@ -45,7 +45,6 @@
     {
         NSLog(@"SCNE: Creating game scene content");
         [self setupView];
-        [self addHUD];
         self.gameSceneContentCreated = true;
     }
 }
@@ -64,6 +63,7 @@
     [self addGameTiles];
     [self updateHUD];
     [self checkForEndGame];
+    [self updateBoard];
 }
 
 - (void)setupContinueGame
@@ -99,15 +99,9 @@
     self.backgroundColor = defaultBackgroundColor;
     
     self.gameLayer = [[SKNode alloc] init];
-    self.gameLayer.position = CGPointMake(-tileWidth * columnCount / 2.0, -tileHeight * rowCount / 2.0 + 10);
-    [self addChild:self.gameLayer];
-    
-    self.HUDLayer = [[SKNode alloc] init];
-    self.HUDLayer.position = self.gameLayer.position;
-    [self addChild:self.HUDLayer];
 }
 
-- (void)addHUD
+- (void)addInterface
 {
     NSLog(@"FUNC: Adding HUD");
     [DBGameInterface setUpInterface:self];

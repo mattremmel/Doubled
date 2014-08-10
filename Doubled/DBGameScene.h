@@ -22,7 +22,6 @@ typedef struct {
 
 @property DBGameData *gameData;
 @property SKNode *gameLayer;
-@property SKNode *HUDLayer;
 
 @property NSInteger swipeFromColumn;
 @property NSInteger swipeFromRow;
@@ -34,7 +33,7 @@ typedef struct {
 - (void)setupNewGame;
 - (void)setupContinueGame;
 - (void)setupView;
-- (void)addHUD;
+- (void)addInterface;
 - (void)addGameTiles;
 - (void)newGameBoard;
 - (NSMutableArray *)getNewGameTiles;
