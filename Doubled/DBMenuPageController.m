@@ -31,7 +31,7 @@
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.dataSource = self;
     [[self.pageViewController view] setFrame:self.view.frame];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = defaultBackgroundColor;
     
         self.mainMenuViewController = [[DBMainMenuViewController alloc] initWithNibName:@"DBMainMenuView" bundle:nil];
     
@@ -54,7 +54,7 @@
         }
     }
     
-    pageControl.backgroundColor = [UIColor whiteColor]; // TODO: Set to global background color default
+    pageControl.backgroundColor = defaultBackgroundColor;
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     
