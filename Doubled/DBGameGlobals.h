@@ -21,7 +21,7 @@
 #define defaultFontColor [SKColor colorWithRed: 0.3 green: 0.3 blue: 0.3 alpha: 1.0]
 #define defaultNodeColor [SKColor colorWithRed: 0.663 green: 0.886 blue: 0.953 alpha: 1.0]
 #define defaultNodeBackgroundColor [SKColor colorWithRed: 0.87 green: 0.87 blue: 0.87 alpha: 1.0]
-#define defaultBackgroundColor [UIColor whiteColor]
+#define defaultBackgroundColor [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.0]
 
 // Tile Colors
 #define tile2Color [SKColor colorWithRed: 0.663 green: 0.886 blue: 0.953 alpha: 1.0]
