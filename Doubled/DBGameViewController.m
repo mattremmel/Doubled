@@ -163,6 +163,7 @@
     SKView *skView = [[SKView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
     [self.view addSubview:skView];
     [skView presentScene:scene];
+    [scene addInterface];
 }
 
 
