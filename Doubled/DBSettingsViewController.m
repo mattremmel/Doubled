@@ -32,6 +32,7 @@
 
 - (void)styleView
 {
+    self.view.backgroundColor = defaultBackgroundColor;
     self.buttonResetGameData.layer.cornerRadius = MenuButtonCornerRadius;
 }
 

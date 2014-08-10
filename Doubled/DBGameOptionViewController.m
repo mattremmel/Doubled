@@ -34,8 +34,9 @@
 
 - (void)styleview
 {
-    self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.85];
+    self.view.backgroundColor = [UIColor colorWithWhite:0.95 alpha:0.85];
     
+    self.buttonBackground.backgroundColor = defaultBackgroundColor;
     self.buttonBackground.layer.cornerRadius = 5;
     self.buttonBackground.layer.shadowOpacity = 0.8;
     self.buttonBackground.layer.shadowOffset = CGSizeMake(0.0, 0.0);
@@ -67,7 +68,7 @@
 
 - (void)removeFromView
 {
-        [self removeAnimate];
+        [self removeAnimateWithCompletionSelector:nil];
 }
 
 - (void)showAnimate
@@ -80,7 +81,7 @@
     }];
 }
 
-- (void)removeAnimate
+- (void)removeAnimateWithCompletionSelector:(SEL)selector
 {
     [UIView animateWithDuration:.25 animations:^{
         self.view.transform = CGAffineTransformMakeScale(1.3, 1.3);
@@ -88,6 +89,10 @@
     } completion:^(BOOL finished) {
         if (finished) {
             [self.view removeFromSuperview];
+            if (selector != nil && [self.target respondsToSelector:selector])
+            {
+                [self.target performSelector:selector];
+            }
         }
     }];
 }
@@ -97,20 +102,12 @@
 
 - (IBAction)buttonNewGame:(id)sender
 {
-    [self removeAnimate];
-    if ([self.target respondsToSelector:self.actionNewGame])
-    {
-        [self.target performSelector:self.actionNewGame];
-    }
+    [self removeAnimateWithCompletionSelector:self.actionNewGame];
 }
 
 - (IBAction)buttonContinueGame:(id)sender
 {
-    [self removeAnimate];
-    if ([self.target respondsToSelector:self.actionContinueGame])
-    {
-        [self.target performSelector:self.actionContinueGame];
-    }
+    [self removeAnimateWithCompletionSelector:self.actionContinueGame];
 }
 
 
@@ -119,7 +116,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"Touches began");
-    [self removeAnimate];
+    [self removeAnimateWithCompletionSelector:nil];
 }
 
 

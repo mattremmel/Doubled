@@ -28,6 +28,7 @@
 
 - (void)styleView
 {
+    self.view.backgroundColor = defaultBackgroundColor;
     self.buttonRemoveAds.layer.cornerRadius = MenuButtonCornerRadius;
     self.buttonRestore.layer.cornerRadius = MenuButtonCornerRadius;
 }
