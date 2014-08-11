@@ -18,25 +18,25 @@
 
 // UI Defaults
 #define defaultFont @"BanglaSangamMN-Bold"
-#define defaultFontColor [SKColor colorWithRed: 0.3 green: 0.3 blue: 0.3 alpha: 1.0]
-#define defaultNodeColor [SKColor colorWithRed: 0.663 green: 0.886 blue: 0.953 alpha: 1.0]
-#define defaultNodeBackgroundColor [SKColor colorWithRed: 0.87 green: 0.87 blue: 0.87 alpha: 1.0]
+#define defaultFontColor [UIColor colorWithRed: 0.3 green: 0.3 blue: 0.3 alpha: 1.0]
+#define defaultNodeColor [UIColor colorWithRed: 0.663 green: 0.886 blue: 0.953 alpha: 1.0]
+#define defaultNodeBackgroundColor [UIColor colorWithRed: 0.87 green: 0.87 blue: 0.87 alpha: 1.0]
 #define defaultBackgroundColor [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.0]
 
 // Tile Colors
-#define tile2Color [SKColor colorWithRed: 0.663 green: 0.886 blue: 0.953 alpha: 1.0]
-#define tile4Color [SKColor colorWithRed: 0.4509 green: 0.862 blue: 1.0 alpha: 1.0]
-#define tile8Color [SKColor colorWithRed: 0.18 green: 0.604 blue: 0.996 alpha: 1.0]
-#define tile16Color [SKColor colorWithRed: 0.18 green: 0.392 blue: 0.996 alpha: 1.0]
-#define tile32Color [SKColor colorWithRed: 0.078 green: 0.318 blue: 0.573 alpha: 1.0]
-#define tile64Color [SKColor colorWithRed: 0.69 green: 0.988 blue: 0.937 alpha: 1.0]
-#define tile128Color [SKColor colorWithRed: 0.231 green: 0.858 blue: 0.800 alpha: 1.0]
-#define tile256Color [SKColor colorWithRed: 0.149 green: 0.557 blue: 0.514 alpha: 1.0]
-#define tile512Color [SKColor colorWithRed: 0.671 green: 0.616 blue: 0.996 alpha: 1.0]
-#define tile1024Color [SKColor colorWithRed: 0.518 green: 0.439 blue: 0.961 alpha: 1.0]
-#define tile2048Color [SKColor colorWithRed: 0.8 green: 0.4 blue: 0.6 alpha: 1.0]
-#define tile4096Color [SKColor colorWithRed: 0.575 green: 0.245 blue: 0.58 alpha: 1.0]
-#define tileDefaultColor [SKColor colorWithRed: 0.3 green: 0.3 blue: 0.3 alpha: 1.0]
+#define tile2Color [UIColor colorWithRed: 0.663 green: 0.886 blue: 0.953 alpha: 1.0]
+#define tile4Color [UIColor colorWithRed: 0.4509 green: 0.862 blue: 1.0 alpha: 1.0]
+#define tile8Color [UIColor colorWithRed: 0.18 green: 0.604 blue: 0.996 alpha: 1.0]
+#define tile16Color [UIColor colorWithRed: 0.18 green: 0.392 blue: 0.996 alpha: 1.0]
+#define tile32Color [UIColor colorWithRed: 0.078 green: 0.318 blue: 0.573 alpha: 1.0]
+#define tile64Color [UIColor colorWithRed: 0.69 green: 0.988 blue: 0.937 alpha: 1.0]
+#define tile128Color [UIColor colorWithRed: 0.231 green: 0.858 blue: 0.800 alpha: 1.0]
+#define tile256Color [UIColor colorWithRed: 0.149 green: 0.557 blue: 0.514 alpha: 1.0]
+#define tile512Color [UIColor colorWithRed: 0.671 green: 0.616 blue: 0.996 alpha: 1.0]
+#define tile1024Color [UIColor colorWithRed: 0.518 green: 0.439 blue: 0.961 alpha: 1.0]
+#define tile2048Color [UIColor colorWithRed: 0.8 green: 0.4 blue: 0.6 alpha: 1.0]
+#define tile4096Color [UIColor colorWithRed: 0.575 green: 0.245 blue: 0.58 alpha: 1.0]
+#define tileDefaultColor [UIColor colorWithRed: 0.3 green: 0.3 blue: 0.3 alpha: 1.0]
 
 // Button Identifiers
 #define NewGameButtonName @"newGameButton"
