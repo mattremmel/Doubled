@@ -311,6 +311,13 @@
 {
     NSLog(@"DATA: Resetting ALL game data");
     
+    for (int i = 0; i < [self.gameboard count]; ++i)
+    {
+        DBTile *tile = [self.gameboard objectAtIndex:i];
+        [tile removeFromParent];
+        tile = nil;
+    }
+    
     [self setDefaultValues];
     [self saveGameData];
     
