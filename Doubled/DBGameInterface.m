@@ -155,7 +155,7 @@
     
     
     // Next Goal Label
-    UILabel *goalLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 440, 320, 30)];
+    UILabel *goalLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 435, 320, 30)];
     goalLabel.text = [NSString stringWithFormat:@"Your next goal is the %i tile!", scene.gameData.largestTileRecord * 2];
     goalLabel.font = [UIFont fontWithName:defaultFont size:20];
     goalLabel.textAlignment = NSTextAlignmentCenter;

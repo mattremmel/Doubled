@@ -157,7 +157,6 @@
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
-    // Handle any errors here & check for controller's result as well
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
