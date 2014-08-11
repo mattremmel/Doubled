@@ -46,12 +46,10 @@
     /* HUD */
     
     // Title
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 5, 300, 50)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 15, 300, 50)];
     titleLabel.text = @"DOUBLED";
-    titleLabel.font = [UIFont fontWithName:defaultFont size:40];
+    titleLabel.font = [UIFont fontWithName:defaultFont size:45];
     [titleLabel setTextColor:defaultFontColor];
-    titleLabel.layer.shadowOpacity = 0.08;
-    titleLabel.layer.shadowOffset = MenuButtonShadowOffset;
     [scene.view addSubview:titleLabel];
     
     
@@ -59,11 +57,9 @@
     if ([scene class] == [DBCasualGameScene class])
     {
         // Score Box
-        UIView *gameModeBox = [[UIView alloc] initWithFrame:CGRectMake(105, 50, 120, 40)];
+        UIView *gameModeBox = [[UIView alloc] initWithFrame:CGRectMake(105, 60, 120, 40)];
         gameModeBox.backgroundColor = defaultNodeColor;
         gameModeBox.layer.cornerRadius = MenuButtonCornerRadius;
-        gameModeBox.layer.shadowOpacity = 0.08;
-        gameModeBox.layer.shadowOffset = MenuButtonShadowOffset;
         [scene.view addSubview:gameModeBox];
         
         UILabel *gameModeLabel = [[UILabel alloc] init];
@@ -76,12 +72,10 @@
     }
     
 
-//    // Score Box
-    UIView *scoreBox = [[UIView alloc] initWithFrame:CGRectMake(8, 5, 90, 40)];
+    // Score Box
+    UIView *scoreBox = [[UIView alloc] initWithFrame:CGRectMake(8, 15, 90, 40)];
     scoreBox.backgroundColor = defaultNodeColor;
     scoreBox.layer.cornerRadius = MenuButtonCornerRadius;
-    scoreBox.layer.shadowOpacity = 0.08;
-    scoreBox.layer.shadowOffset = MenuButtonShadowOffset;
     [scene.view addSubview:scoreBox];
     
     UILabel *scoreLabel = [[UILabel alloc] init];
@@ -103,11 +97,9 @@
     
     
     // Best Score Box
-    UIView *highScoreBox = [[UIView alloc] initWithFrame:CGRectMake(8, 50, 90, 40)];
+    UIView *highScoreBox = [[UIView alloc] initWithFrame:CGRectMake(8, 60, 90, 40)];
     highScoreBox.backgroundColor = defaultNodeColor;
     highScoreBox.layer.cornerRadius = MenuButtonCornerRadius;
-    highScoreBox.layer.shadowOpacity = 0.08;
-    highScoreBox.layer.shadowOffset = MenuButtonShadowOffset;
     [scene.view addSubview:highScoreBox];
     
     UILabel *highScoreLabel = [[UILabel alloc] init];
@@ -130,14 +122,12 @@
     
     // Buttons
     UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    menuButton.frame = CGRectMake(247, 62, 65, 28);
+    menuButton.frame = CGRectMake(247, 72, 65, 28);
     [menuButton setTitle:@"MENU" forState:UIControlStateNormal];
     menuButton.titleLabel.font = [UIFont fontWithName:defaultFont size:15];
     [menuButton setTitleColor:defaultFontColor forState:UIControlStateNormal];
     [menuButton setBackgroundColor:tile4Color];
     menuButton.layer.cornerRadius = MenuButtonCornerRadius;
-    menuButton.layer.shadowOpacity = 0.08;
-    menuButton.layer.shadowOffset = MenuButtonShadowOffset;
     [menuButton addTarget:scene action:@selector(buttonMenu) forControlEvents:UIControlEventTouchUpInside];
     [scene.view addSubview:menuButton];
     
@@ -146,7 +136,7 @@
     
     if ([scene.gameLayer parent] == nil)
     {
-        scene.gameLayer.position = CGPointMake(-tileWidth * columnCount / 2.0, -tileHeight * rowCount / 2.0 - 15);
+        scene.gameLayer.position = CGPointMake(-tileWidth * columnCount / 2.0, -tileHeight * rowCount / 2.0 - 25);
         [scene addChild:scene.gameLayer];
         
         // Tile Background
@@ -187,8 +177,7 @@
 
 + (void)setUpGameScene_iPhone5:(DBGameScene *)scene
 {
-    [self setUpGameScene_iPhone4:scene];
-    scene.gameLayer.position = CGPointMake(-tileWidth * columnCount / 2.0, -tileHeight * rowCount / 2.0 + 25);
+    
     
 }
 
