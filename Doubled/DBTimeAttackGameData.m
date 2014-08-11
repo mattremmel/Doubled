@@ -9,6 +9,8 @@
 #import "DBTimeAttackGameData.h"
 #import "DBGameGlobals.h"
 
+#define DBGameDataTimeRemainingKey @"timeRemaining"
+
 @implementation DBTimeAttackGameData
 
 #pragma mark - Shared Instance
@@ -48,6 +50,31 @@
 
 
 #pragma mark - Overrides
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [super encodeWithCoder:encoder];
+    [encoder encodeDouble: self.timeRemaining forKey:DBGameDataTimeRemainingKey];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    self = [super initWithCoder:decoder];
+    self.timeRemaining = [decoder decodeDoubleForKey:DBGameDataTimeRemainingKey];
+    return self;
+}
+
+- (NSData *)loadGameData
+{
+    NSData *decodedData = [super loadGameData];
+    if (decodedData != nil)
+    {
+        DBTimeAttackGameData *data = (DBTimeAttackGameData *)[NSKeyedUnarchiver unarchiveObjectWithData:decodedData];
+        self.timeRemaining = data. timeRemaining;
+    }
+    
+    return decodedData;
+}
 
 - (NSString *)getFilePath
 {
