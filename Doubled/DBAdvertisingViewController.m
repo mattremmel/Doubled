@@ -31,6 +31,9 @@
     self.view.backgroundColor = defaultBackgroundColor;
     self.buttonRemoveAds.layer.cornerRadius = MenuButtonCornerRadius;
     self.buttonRestore.layer.cornerRadius = MenuButtonCornerRadius;
+    
+    [self.buttonRemoveAds setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.buttonRestore setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 

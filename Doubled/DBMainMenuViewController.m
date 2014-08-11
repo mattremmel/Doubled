@@ -56,6 +56,12 @@
     self.buttonTutorial.layer.cornerRadius = MenuButtonCornerRadius;
     self.buttonRate.layer.cornerRadius = MenuButtonCornerRadius;
     self.buttonSendFeedback.layer.cornerRadius = MenuButtonCornerRadius;
+    
+    [self.buttonCasual setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.buttonTimeAttack setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.buttonTutorial setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.buttonRate setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.buttonSendFeedback setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 

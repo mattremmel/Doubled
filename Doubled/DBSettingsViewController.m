@@ -35,6 +35,7 @@
 {
     self.view.backgroundColor = defaultBackgroundColor;
     self.buttonResetGameData.layer.cornerRadius = MenuButtonCornerRadius;
+    [self.buttonResetGameData setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 
