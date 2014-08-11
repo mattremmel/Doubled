@@ -27,6 +27,9 @@
 @property SEL actionMainMenu;
 @property SEL actionLeaderboard;
 
+@property NSInteger score;
+@property NSInteger highScore;
+
 @end
 
 @implementation DBGameOverViewController
@@ -39,32 +42,52 @@
 
 - (void)styleView
 {
-    self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];
+    self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.4];
     self.view.userInteractionEnabled = true;
     
     self.viewBackground.backgroundColor = defaultBackgroundColor;
-    self.viewBackground.layer.cornerRadius = MenuButtonCornerRadius;
+    self.viewBackground.layer.cornerRadius = 15;
     self.viewBackground.layer.shadowOpacity = 0.8;
     self.viewBackground.layer.shadowOffset = MenuButtonShadowOffset;
     
-    self.viewScoreBackground.backgroundColor = [UIColor lightGrayColor];
+    self.viewScoreBackground.backgroundColor = defaultNodeColor;
     self.viewScoreBackground.layer.cornerRadius = MenuButtonCornerRadius;
     
-    self.viewRankBackground.backgroundColor = [UIColor lightGrayColor];
-    self.viewRankBackground.layer.cornerRadius = MenuButtonCornerRadius;
+    self.viewHighScoreBackground.backgroundColor = defaultNodeColor;
+    self.viewHighScoreBackground.layer.cornerRadius = MenuButtonCornerRadius;
     
     self.buttonLeaderboard.layer.cornerRadius = MenuButtonCornerRadius;
-    self.buttonLeaderboard.backgroundColor = [UIColor lightGrayColor];
+    self.buttonLeaderboard.backgroundColor = defaultNodeColor;
+    [self.buttonLeaderboard setTitleColor:defaultFontColor forState:UIControlStateNormal];
     
-    self.buttonNewGame.layer.cornerRadius = MenuButtonCornerRadius;
-    self.buttonNewGame.backgroundColor = [UIColor lightGrayColor];
+//    self.buttonNewGame.layer.cornerRadius = MenuButtonCornerRadius;
+    self.buttonNewGame.backgroundColor = defaultNodeColor;
+    [self.buttonNewGame setTitleColor:defaultFontColor forState:UIControlStateNormal];
     
-    self.buttonMainMenu.layer.cornerRadius = MenuButtonCornerRadius;
-    self.buttonMainMenu.backgroundColor = [UIColor lightGrayColor];
+//    self.buttonMainMenu.layer.cornerRadius = MenuButtonCornerRadius;
+    self.buttonMainMenu.backgroundColor = defaultNodeColor;
+    [self.buttonMainMenu setTitleColor:defaultFontColor forState:UIControlStateNormal];
+    
+    self.labelScore.textAlignment = NSTextAlignmentCenter;
+    self.labelScore.adjustsFontSizeToFitWidth = true;
+    
+    self.labelHighScore.textAlignment = NSTextAlignmentCenter;
+    self.labelHighScore.adjustsFontSizeToFitWidth = true;
+    
+    
+    // TODO: DEBUG
+    self.labelScore.text = @"FOO";
+    self.labelHighScore.text = @"BAR";
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.labelScore.text = [NSString stringWithFormat:@"%li", (long)self.score];
+    self.labelHighScore.text = [NSString stringWithFormat:@"%li", (long)self.highScore];
 }
 
 
-#pragma mark - Target Methods
+#pragma mark - Setter Methods
 
 - (void)setActionTarget:(id)target actionNewGame:(SEL)newGameAction actionMainMenu:(SEL)mainMenuAction actionLeaderboard:(SEL)leaderboardAction
 {
@@ -72,6 +95,12 @@
     self.actionNewGame = newGameAction;
     self.actionMainMenu = mainMenuAction;
     self.actionLeaderboard = leaderboardAction;
+}
+
+- (void)setScore:(NSInteger)score andHighScore:(NSInteger)highScore
+{
+    self.score = score;
+    self.highScore = highScore;
 }
 
 
