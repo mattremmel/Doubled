@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *viewBackground;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UIView *viewScoreBackground;
 @property (weak, nonatomic) IBOutlet UILabel *labelScore;
 @property (weak, nonatomic) IBOutlet UIView *viewHighScoreBackground;
@@ -58,32 +59,36 @@
     
     self.buttonLeaderboard.layer.cornerRadius = MenuButtonCornerRadius;
     self.buttonLeaderboard.backgroundColor = defaultNodeColor;
-    [self.buttonLeaderboard setTitleColor:defaultFontColor forState:UIControlStateNormal];
+    [self.buttonLeaderboard setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
-//    self.buttonNewGame.layer.cornerRadius = MenuButtonCornerRadius;
     self.buttonNewGame.backgroundColor = defaultNodeColor;
-    [self.buttonNewGame setTitleColor:defaultFontColor forState:UIControlStateNormal];
+    [self.buttonNewGame setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
-//    self.buttonMainMenu.layer.cornerRadius = MenuButtonCornerRadius;
     self.buttonMainMenu.backgroundColor = defaultNodeColor;
-    [self.buttonMainMenu setTitleColor:defaultFontColor forState:UIControlStateNormal];
+    [self.buttonMainMenu setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     self.labelScore.textAlignment = NSTextAlignmentCenter;
     self.labelScore.adjustsFontSizeToFitWidth = true;
     
     self.labelHighScore.textAlignment = NSTextAlignmentCenter;
     self.labelHighScore.adjustsFontSizeToFitWidth = true;
-    
-    
-    // TODO: DEBUG
-    self.labelScore.text = @"FOO";
-    self.labelHighScore.text = @"BAR";
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     self.labelScore.text = [NSString stringWithFormat:@"%li", (long)self.score];
     self.labelHighScore.text = [NSString stringWithFormat:@"%li", (long)self.highScore];
+    
+    if (self.score == self.highScore)
+    {
+        self.labelTitle.text = @"New High Score!";
+        self.labelTitle.font = [UIFont fontWithName:defaultFont size:32];
+    }
+    else
+    {
+        self.labelTitle.text = @"Game Over";
+        self.labelTitle.font = [UIFont fontWithName:defaultFont size:35];
+    }
 }
 
 
@@ -151,6 +156,7 @@
 
 - (IBAction)buttonNewGame:(id)sender
 {
+    [self removeAnimate];
     if ([self.target respondsToSelector:self.actionNewGame])
     {
         [self.target performSelector:self.actionNewGame];
