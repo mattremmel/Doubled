@@ -32,9 +32,6 @@
         
         [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(saveGameData) name:AppWillResignActive object:nil];
         [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(saveGameData) name: AppWillTerminate object: nil];
-        
-        NSTimer *adTimer = [NSTimer scheduledTimerWithTimeInterval: 15.0 target: self selector:@selector(updatePlayerRank) userInfo: nil repeats: true];
-        [adTimer setTolerance: 5];
     }
     
     return self;
@@ -71,7 +68,6 @@
     [encoder encodeInteger: self.tile65536Count forKey: DBGameDataTile65536CountKey];
     [encoder encodeInteger: self.gamesPlayed forKey:DBGameDataGamesPlayedKey];
     [encoder encodeObject: self.gameboard forKey: DBGameDataGameBoardKey];
-    NSLog(@"DEBUG: Encoding game board with count: %lu", (unsigned long)[self.gameboard count]);
 }
 - (id)initWithCoder:(NSCoder *)decoder
 {
@@ -143,7 +139,7 @@
 
 #pragma mark - Persistance
 
-- (void)loadGameData
+- (NSData *)loadGameData
 {
     NSLog(@"DATA: Loading game data from path: %@", [self getFilePath]);
     
@@ -179,6 +175,8 @@
     }
     
     [self updateFromiCloud];
+    
+    return decodedData;
 }
 
 - (void)saveGameData
@@ -342,7 +340,7 @@
 {
     if (gameCenterAuthenticated && gameCenterEnabled)
     {
-        NSLog(@"Game Center Enabled = true");
+        NSLog(@"DATA: Reporting score to game center");
         if (self.score > self.highScore)
         {
             GKScore *score = [[GKScore alloc] initWithLeaderboardIdentifier: [self getLeaderboardIdentifier]];
@@ -361,22 +359,6 @@
 {
     NSLog(@"Must be overridden to return correct leaderboard for game mode");
     assert(false);
-}
-
-- (void)updatePlayerRank
-{
-    if (gameCenterAuthenticated && gameCenterEnabled)
-    {
-        GKLeaderboard *leaderboard = [[GKLeaderboard alloc] init];
-        leaderboard.identifier = [self getLeaderboardIdentifier];
-        leaderboard.timeScope = GKLeaderboardTimeScopeAllTime;
-        leaderboard.playerScope = GKLeaderboardPlayerScopeGlobal;
-        leaderboard.range = NSMakeRange(1, 1);
-        [leaderboard loadScoresWithCompletionHandler:^(NSArray *scores, NSError *error) {
-            self.leaderboardRank = leaderboard.localPlayerScore.rank;
-            NSLog(@"DATA: Player Rank: %li", (long)self.leaderboardRank);
-        }];
-    }
 }
 
 

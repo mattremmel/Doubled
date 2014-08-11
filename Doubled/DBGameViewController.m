@@ -45,6 +45,7 @@
     {
         self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self configureCasualGameScene];
+        [self configureTimeAttackGameScene];
     }
     
     return self;
@@ -127,7 +128,7 @@
 
 - (void)configureTimeAttackGameScene
 {
-    self.timeAttackGameScene = [[DBTimeAttackGameScene alloc] init];
+    self.timeAttackGameScene = [[DBTimeAttackGameScene alloc] initWithSize:self.view.frame.size];
     self.timeAttackGameScene.gameController = self;
 }
 
@@ -150,12 +151,16 @@
 
 - (void)startTimeAttackNewGame
 {
-    
+    NSLog(@"CONT: Presenting new casual game scene");
+    [self.timeAttackGameScene setupNewGame];
+    [self presentViewWithScene:self.timeAttackGameScene];
 }
 
 - (void)startTimeAttackContinueGame
 {
-    
+    NSLog(@"CONT: Presenting new casual game scene");
+    [self.timeAttackGameScene setupContinueGame];
+    [self presentViewWithScene:self.timeAttackGameScene];
 }
 
 - (void)presentViewWithScene:(DBGameScene *)scene
@@ -189,7 +194,7 @@
             NSLog(@"GAD:  Requesting google ad");
             GADRequest *request = [GADRequest request];
             request.testDevices = @[ @"6c58f45e4871b58e5f70e8be96d2b96e", @"Simulator" ];
-            [self.GADBannerView loadRequest: request];
+            //[self.GADBannerView loadRequest: request];
         }
     }
 }

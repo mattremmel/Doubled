@@ -10,6 +10,7 @@
 #import "DBSettingsManager.h"
 #import "DBGameGlobals.h"
 #import "DBCasualGameData.h"
+#import "DBTimeAttackGameData.h"
 #import <GameKit/GameKit.h>
 
 @interface DBSettingsViewController ()
@@ -120,8 +121,8 @@
 (NSInteger)buttonIndex
 {
     if (buttonIndex == 0) {
-        // TODO: Delete all game mode data classes
         [[DBCasualGameData sharedInstance] resetAllGameData];
+        [[DBTimeAttackGameData sharedInstance] resetAllGameData];
     }
 }
 

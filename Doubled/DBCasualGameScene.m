@@ -18,6 +18,9 @@
 
 @implementation DBCasualGameScene
 
+
+#pragma mark - Initilization
+
 - (id)initWithSize:(CGSize)size
 {
     self = [super initWithSize:size];
@@ -32,7 +35,7 @@
 }
 
 
-#pragma mark - Set Up
+#pragma mark - Setup
 
 - (void)createContent
 {

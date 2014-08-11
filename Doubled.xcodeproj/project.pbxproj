@@ -292,6 +292,7 @@
 				345574851996A45500C58C70 /* Controllers */,
 				345574861996A45D00C58C70 /* Scenes */,
 				345574871996A46400C58C70 /* Model */,
+				34B1B8C9199945C8005B7C7E /* Persistance */,
 				3455748A1996A48F00C58C70 /* UI */,
 				3455748B1996A49700C58C70 /* Tutorial */,
 			);
@@ -305,6 +306,7 @@
 				345574CA1996A4B500C58C70 /* Controllers */,
 				345574CB1996A4BE00C58C70 /* Scenes */,
 				345574CC1996A4D000C58C70 /* Model */,
+				34B1B8C8199945AD005B7C7E /* Persistance */,
 				345574CD1996A4DD00C58C70 /* UI */,
 				345574CE1996A4E500C58C70 /* Tutorial */,
 				345574CF1996A4EF00C58C70 /* Views */,
@@ -341,9 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				345574791996A44E00C58C70 /* DBTile.h */,
-				3455747A1996A44E00C58C70 /* DBGameData.h */,
-				3455747B1996A44E00C58C70 /* DBCasualGameData.h */,
-				34B1B8C51999136B005B7C7E /* DBTimeAttackGameData.h */,
 				3455747C1996A44E00C58C70 /* DBSettingsManager.h */,
 				3455747D1996A44E00C58C70 /* IAPHelper.h */,
 				3455747E1996A44E00C58C70 /* DoubledIAPHelper.h */,
@@ -398,9 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				345574991996A4AF00C58C70 /* DBTile.m */,
-				3455749A1996A4AF00C58C70 /* DBGameData.m */,
-				3455749B1996A4AF00C58C70 /* DBCasualGameData.m */,
-				34B1B8C61999136B005B7C7E /* DBTimeAttackGameData.m */,
 				3455749C1996A4AF00C58C70 /* DBSettingsManager.m */,
 				3455749D1996A4AF00C58C70 /* IAPHelper.m */,
 				3455749E1996A4AF00C58C70 /* DoubledIAPHelper.m */,
@@ -458,6 +454,26 @@
 				345574E31996A53C00C58C70 /* README.txt */,
 			);
 			path = AdMobFramework;
+			sourceTree = "<group>";
+		};
+		34B1B8C8199945AD005B7C7E /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				3455749A1996A4AF00C58C70 /* DBGameData.m */,
+				3455749B1996A4AF00C58C70 /* DBCasualGameData.m */,
+				34B1B8C61999136B005B7C7E /* DBTimeAttackGameData.m */,
+			);
+			name = Persistance;
+			sourceTree = "<group>";
+		};
+		34B1B8C9199945C8005B7C7E /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				3455747A1996A44E00C58C70 /* DBGameData.h */,
+				3455747B1996A44E00C58C70 /* DBCasualGameData.h */,
+				34B1B8C51999136B005B7C7E /* DBTimeAttackGameData.h */,
+			);
+			name = Persistance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

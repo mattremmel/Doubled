@@ -89,3 +89,7 @@ BOOL gameCenterEnabled;
 #define continuousSwipeEnabledKey @"continuousSwipeEnabled"
 #define gameCenterEnabledKey @"gameCenterEnabled"
 
+// Time Attack Game Mode
+#define timeAttackStartingTime 10.0
+#define timeAttackMergeAddTime 0.51
+

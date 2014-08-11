@@ -43,7 +43,7 @@
 
 - (void)styleView
 {
-    self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.4];
+    self.view.backgroundColor = [UIColor colorWithWhite:0.95 alpha:0.4];
     self.view.userInteractionEnabled = true;
     
     self.viewBackground.backgroundColor = defaultBackgroundColor;

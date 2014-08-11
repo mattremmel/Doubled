@@ -64,8 +64,10 @@
 @property NSInteger gamesPlayed;    // TODO: Increase this property. At start of game? at end? if game quit prematurely.. does it count?
 @property NSInteger leaderboardRank;
 
+- (void)encodeWithCoder:(NSCoder *)encoder;
+- (id)initWithCoder:(NSCoder *)decoder;
 - (void)setDefaultValues;
-- (void)loadGameData;
+- (NSData *)loadGameData;
 - (void)saveGameData;
 - (NSString *)getFilePath;
 - (void)increaseScoreBy:(NSInteger)deltaScore;
@@ -76,7 +78,6 @@
 - (void)resetAllGameData;
 - (void)reportHighScoreToGameCenter;
 - (NSString *)getLeaderboardIdentifier;
-- (void)updatePlayerRank;
 - (void)updateiCloud;
 - (void)updateFromiCloud;
 - (NSString *)getiCloudHighScoreKey;

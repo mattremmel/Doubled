@@ -77,12 +77,16 @@
 
 - (void)startTimeAttackNewGame
 {
-    
+    NSLog(@"CONT: Presenting game view controller and starting time attack new game");
+    [self presentViewController:self.gameViewController animated:true completion:nil];
+    [self.gameViewController startTimeAttackNewGame];
 }
 
 - (void)startTimeAttackContinueGame
 {
-    
+    NSLog(@"CONT: Presenting game view controller and starting time attack new game");
+    [self presentViewController:self.gameViewController animated:true completion:nil];
+    [self.gameViewController startTimeAttackContinueGame];
 }
 
 

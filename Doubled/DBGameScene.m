@@ -466,7 +466,7 @@
 {
     if (![self boardHasMovesLeft])
     {
-        NSTimer *endGameTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target: self selector: @selector(endGame) userInfo: nil repeats: false];
+        NSTimer *endGameTimer = [NSTimer scheduledTimerWithTimeInterval: 0.8 target: self selector: @selector(endGame) userInfo: nil repeats: false];
         [endGameTimer setTolerance: 0.1];
     }
 }
