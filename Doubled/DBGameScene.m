@@ -477,6 +477,7 @@
     [self.gameData saveGameData];
     [self.gameData reportHighScoreToGameCenter];
     [self.gameOverView setActionTarget:self actionNewGame:@selector(setupNewGame) actionMainMenu:@selector(buttonMenu) actionLeaderboard:nil];
+    [self.gameOverView setScore:self.gameData.score andHighScore:self.gameData.highScore];
     [self.gameOverView showInView:self.view animated:true];
 }
 
@@ -486,6 +487,7 @@
 {
     self.scoreLabel.text = [NSString stringWithFormat: @"%li", (long)self.gameData.score];
     self.highScoreLabel.text = [NSString stringWithFormat: @"%li", (long)self.gameData.highScore];
+    self.goalLabel.text = [NSString stringWithFormat:@"Your next goal is the %li tile!", (long)self.gameData.largestTileRecord * 2];
 }
 
 - (void)updateBoard
