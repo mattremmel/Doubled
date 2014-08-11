@@ -21,7 +21,8 @@
 
 @property DBCasualGameScene *casualGameScene;
 @property DBTimeAttackGameScene *timeAttackGameScene;
-// TODO: May need to hold reference to skview so a new one isn't created every time, possible memory leak
+@property SKView *skView;
+@property BOOL viewIsVisible;
 
 @property GADBannerView *GADBannerView;
 @property DBRemoveAdsBanner *removeAdsBanner;
@@ -60,6 +61,9 @@
     [[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(removeAdsPurchased) name:IAPHelperProductPurchasedNotification object:nil];
     
     [self configureBannerView];
+    
+    self.adTimer = [NSTimer scheduledTimerWithTimeInterval: 45.0 target: self selector:@selector(loadAds) userInfo: nil repeats: true];
+    [self.adTimer setTolerance: 5];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -67,15 +71,14 @@
     [self.view bringSubviewToFront:self.GADBannerView];
     [self.view bringSubviewToFront:self.removeAdsBanner];
     
+    self.viewIsVisible = true;
     [self loadAds];
-    self.adTimer = [NSTimer scheduledTimerWithTimeInterval: 45.0 target: self selector:@selector(loadAds) userInfo: nil repeats: true];
-    [self.adTimer setTolerance: 5];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    self.adTimer = nil;
+    self.viewIsVisible = false;
 }
 
 
@@ -160,9 +163,9 @@
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
-    SKView *skView = [[SKView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
-    [self.view addSubview:skView];
-    [skView presentScene:scene];
+    self.skView = [[SKView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
+    [self.view addSubview:self.skView];
+    [self.skView presentScene:scene];
     [scene addInterface];
 }
 
@@ -181,10 +184,13 @@
     }
     else
     {
-        NSLog(@"GAD:  Requesting google ad");
-        GADRequest *request = [GADRequest request];
-        request.testDevices = @[ @"6c58f45e4871b58e5f70e8be96d2b96e", @"Simulator" ];
-        [self.GADBannerView loadRequest: request];
+        if (self.viewIsVisible)
+        {
+            NSLog(@"GAD:  Requesting google ad");
+            GADRequest *request = [GADRequest request];
+            request.testDevices = @[ @"6c58f45e4871b58e5f70e8be96d2b96e", @"Simulator" ];
+            [self.GADBannerView loadRequest: request];
+        }
     }
 }
 
@@ -277,6 +283,8 @@
 
 - (void)dismissGameController
 {
+    [self.skView removeFromSuperview];
+    self.skView = nil;
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
