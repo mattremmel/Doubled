@@ -26,8 +26,10 @@ typedef struct {
 @property NSInteger swipeFromColumn;
 @property NSInteger swipeFromRow;
 
-@property SKLabelNode *scoreLabel;
-@property SKLabelNode *highScoreLabel;
+@property UILabel *scoreLabel;
+@property UILabel *highScoreLabel;
+@property UILabel *gameModeLabel;
+@property UILabel *goalLabel;
 
 
 - (void)setupNewGame;
