@@ -8,9 +8,9 @@
 
 #import "DBGameInterface.h"
 #import "DBGameGlobals.h"
-#import "MRSpriteButton.h"
 #import "DBCasualGameScene.h"
 #import "DBTimeAttackGameScene.h"
+#import "DBTimeAttackGameData.h"
 
 @implementation DBGameInterface
 
@@ -58,22 +58,38 @@
     gameModeBox.layer.cornerRadius = MenuButtonCornerRadius;
     [scene.view addSubview:gameModeBox];
     
-    UILabel *gameModeLabel = [[UILabel alloc] init];
-    
-    gameModeLabel.font = [UIFont fontWithName:defaultFont size:13];
-    [gameModeLabel setTextColor:defaultFontColor];
-    gameModeLabel.textAlignment = NSTextAlignmentCenter;
-    gameModeLabel.numberOfLines = 2;
-    gameModeLabel.frame = CGRectMake(0, 0, 120, 40);
-    
     // Game Mode
     if ([scene class] == [DBCasualGameScene class])
     {
+        UILabel *gameModeLabel = [[UILabel alloc] init];
+        gameModeLabel.font = [UIFont fontWithName:defaultFont size:13];
+        [gameModeLabel setTextColor:defaultFontColor];
+        gameModeLabel.textAlignment = NSTextAlignmentCenter;
+        gameModeLabel.numberOfLines = 2;
+        gameModeLabel.frame = CGRectMake(0, 0, 120, 40);
         gameModeLabel.text = @"CASUAL\nMODE";
+        [gameModeBox addSubview:gameModeLabel];
+        scene.gameModeLabel = gameModeLabel;
     }
-    
-    [gameModeBox addSubview:gameModeLabel];
-    scene.gameModeLabel = gameModeLabel;
+    else if ([scene class] == [DBTimeAttackGameScene class])
+    {
+        UILabel *timeRemainingLabel = [[UILabel alloc] init];
+        timeRemainingLabel.font = [UIFont fontWithName:defaultFont size:12];
+        [timeRemainingLabel setTextColor:defaultFontColor];
+        timeRemainingLabel.textAlignment = NSTextAlignmentCenter;
+        timeRemainingLabel.frame = CGRectMake(0, 4, 120, 15);
+        timeRemainingLabel.text = @"TIME REMAINING";
+        [gameModeBox addSubview:timeRemainingLabel];
+        
+        UILabel *timeRemainingValue = [[UILabel alloc] init];
+        timeRemainingValue.font = [UIFont fontWithName:defaultFont size:15];
+        [timeRemainingValue setTextColor:defaultFontColor];
+        timeRemainingValue.textAlignment = NSTextAlignmentCenter;
+        timeRemainingValue.frame = CGRectMake(0, 20, 120, 15);
+        timeRemainingValue.text = [NSString stringWithFormat:@"%.1f", ((DBTimeAttackGameData *)scene.gameData).timeRemaining];
+        [gameModeBox addSubview:timeRemainingValue];
+        scene.gameModeLabel = timeRemainingValue;
+    }
     
 
     // Score Box
@@ -139,7 +155,7 @@
     
     
     // Next Goal Label
-    UILabel *goalLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 430, 320, 30)];
+    UILabel *goalLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 440, 320, 30)];
     goalLabel.text = [NSString stringWithFormat:@"Your next goal is the %i tile!", scene.gameData.largestTileRecord * 2];
     goalLabel.font = [UIFont fontWithName:defaultFont size:20];
     goalLabel.textAlignment = NSTextAlignmentCenter;
@@ -209,21 +225,42 @@
     gameModeBox.layer.cornerRadius = MenuButtonCornerRadius;
     [scene.view addSubview:gameModeBox];
     
-    UILabel *gameModeLabel = [[UILabel alloc] init];
-    gameModeLabel.font = [UIFont fontWithName:defaultFont size:13];
-    [gameModeLabel setTextColor:defaultFontColor];
-    gameModeLabel.textAlignment = NSTextAlignmentCenter;
-    gameModeLabel.numberOfLines = 2;
-    gameModeLabel.frame = CGRectMake(0, 0, 120, 40);
+    
     
     // Game Mode
     if ([scene class] == [DBCasualGameScene class])
     {
+        UILabel *gameModeLabel = [[UILabel alloc] init];
+        gameModeLabel.font = [UIFont fontWithName:defaultFont size:13];
+        [gameModeLabel setTextColor:defaultFontColor];
+        gameModeLabel.textAlignment = NSTextAlignmentCenter;
+        gameModeLabel.numberOfLines = 2;
+        gameModeLabel.frame = CGRectMake(0, 0, 120, 40);
         gameModeLabel.text = @"CASUAL\nMODE";
+        [gameModeBox addSubview:gameModeLabel];
+        scene.gameModeLabel = gameModeLabel;
+    }
+    else if ([scene class] == [DBTimeAttackGameScene class])
+    {
+        UILabel *timeRemainingLabel = [[UILabel alloc] init];
+        timeRemainingLabel.font = [UIFont fontWithName:defaultFont size:12];
+        [timeRemainingLabel setTextColor:defaultFontColor];
+        timeRemainingLabel.textAlignment = NSTextAlignmentCenter;
+        timeRemainingLabel.frame = CGRectMake(0, 4, 120, 15);
+        timeRemainingLabel.text = @"TIME REMAINING";
+        [gameModeBox addSubview:timeRemainingLabel];
+        
+        UILabel *timeRemainingValue = [[UILabel alloc] init];
+        timeRemainingValue.font = [UIFont fontWithName:defaultFont size:15];
+        [timeRemainingValue setTextColor:defaultFontColor];
+        timeRemainingValue.textAlignment = NSTextAlignmentCenter;
+        timeRemainingValue.frame = CGRectMake(0, 20, 120, 15);
+        timeRemainingValue.text = [NSString stringWithFormat:@"%.1f", ((DBTimeAttackGameData *)scene.gameData).timeRemaining];
+        [gameModeBox addSubview:timeRemainingValue];
+        scene.gameModeLabel = timeRemainingValue;
     }
     
-    [gameModeBox addSubview:gameModeLabel];
-    scene.gameModeLabel = gameModeLabel;
+    
     
     
     // Score Box
