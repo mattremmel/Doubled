@@ -37,8 +37,6 @@
 		345574BB1996A4AF00C58C70 /* DBSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455749C1996A4AF00C58C70 /* DBSettingsManager.m */; };
 		345574BC1996A4AF00C58C70 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455749D1996A4AF00C58C70 /* IAPHelper.m */; };
 		345574BD1996A4AF00C58C70 /* DoubledIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455749E1996A4AF00C58C70 /* DoubledIAPHelper.m */; };
-		345574BE1996A4AF00C58C70 /* MRSpriteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455749F1996A4AF00C58C70 /* MRSpriteButton.m */; };
-		345574BF1996A4AF00C58C70 /* MRSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A01996A4AF00C58C70 /* MRSlider.m */; };
 		345574C01996A4AF00C58C70 /* DBRemoveAdsBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A11996A4AF00C58C70 /* DBRemoveAdsBanner.m */; };
 		345574C11996A4AF00C58C70 /* DBGameInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A21996A4AF00C58C70 /* DBGameInterface.m */; };
 		345574C21996A4AF00C58C70 /* MRTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A31996A4AF00C58C70 /* MRTutorialViewController.m */; };
@@ -60,6 +58,7 @@
 		345574EF1996A58000C58C70 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345574EE1996A58000C58C70 /* AdSupport.framework */; };
 		345574F11996A58B00C58C70 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345574F01996A58B00C58C70 /* SpriteKit.framework */; };
 		345574F31996A59400C58C70 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345574F21996A59400C58C70 /* AudioToolbox.framework */; };
+		34B1B8C71999136B005B7C7E /* DBTimeAttackGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B1B8C61999136B005B7C7E /* DBTimeAttackGameData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,8 +107,6 @@
 		3455747C1996A44E00C58C70 /* DBSettingsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBSettingsManager.h; sourceTree = "<group>"; };
 		3455747D1996A44E00C58C70 /* IAPHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		3455747E1996A44E00C58C70 /* DoubledIAPHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoubledIAPHelper.h; sourceTree = "<group>"; };
-		3455747F1996A44E00C58C70 /* MRSpriteButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRSpriteButton.h; sourceTree = "<group>"; };
-		345574801996A44E00C58C70 /* MRSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRSlider.h; sourceTree = "<group>"; };
 		345574811996A44E00C58C70 /* DBRemoveAdsBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBRemoveAdsBanner.h; sourceTree = "<group>"; };
 		345574821996A44E00C58C70 /* DBGameInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBGameInterface.h; sourceTree = "<group>"; };
 		345574831996A44E00C58C70 /* MRTutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRTutorialViewController.h; sourceTree = "<group>"; };
@@ -132,8 +129,6 @@
 		3455749C1996A4AF00C58C70 /* DBSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSettingsManager.m; sourceTree = "<group>"; };
 		3455749D1996A4AF00C58C70 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
 		3455749E1996A4AF00C58C70 /* DoubledIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubledIAPHelper.m; sourceTree = "<group>"; };
-		3455749F1996A4AF00C58C70 /* MRSpriteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRSpriteButton.m; sourceTree = "<group>"; };
-		345574A01996A4AF00C58C70 /* MRSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRSlider.m; sourceTree = "<group>"; };
 		345574A11996A4AF00C58C70 /* DBRemoveAdsBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBRemoveAdsBanner.m; sourceTree = "<group>"; };
 		345574A21996A4AF00C58C70 /* DBGameInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBGameInterface.m; sourceTree = "<group>"; };
 		345574A31996A4AF00C58C70 /* MRTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRTutorialViewController.m; sourceTree = "<group>"; };
@@ -168,6 +163,8 @@
 		345574EE1996A58000C58C70 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		345574F01996A58B00C58C70 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		345574F21996A59400C58C70 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		34B1B8C51999136B005B7C7E /* DBTimeAttackGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTimeAttackGameData.h; sourceTree = "<group>"; };
+		34B1B8C61999136B005B7C7E /* DBTimeAttackGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTimeAttackGameData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +343,7 @@
 				345574791996A44E00C58C70 /* DBTile.h */,
 				3455747A1996A44E00C58C70 /* DBGameData.h */,
 				3455747B1996A44E00C58C70 /* DBCasualGameData.h */,
+				34B1B8C51999136B005B7C7E /* DBTimeAttackGameData.h */,
 				3455747C1996A44E00C58C70 /* DBSettingsManager.h */,
 				3455747D1996A44E00C58C70 /* IAPHelper.h */,
 				3455747E1996A44E00C58C70 /* DoubledIAPHelper.h */,
@@ -356,8 +354,6 @@
 		3455748A1996A48F00C58C70 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				3455747F1996A44E00C58C70 /* MRSpriteButton.h */,
-				345574801996A44E00C58C70 /* MRSlider.h */,
 				345574811996A44E00C58C70 /* DBRemoveAdsBanner.h */,
 				345574821996A44E00C58C70 /* DBGameInterface.h */,
 			);
@@ -404,6 +400,7 @@
 				345574991996A4AF00C58C70 /* DBTile.m */,
 				3455749A1996A4AF00C58C70 /* DBGameData.m */,
 				3455749B1996A4AF00C58C70 /* DBCasualGameData.m */,
+				34B1B8C61999136B005B7C7E /* DBTimeAttackGameData.m */,
 				3455749C1996A4AF00C58C70 /* DBSettingsManager.m */,
 				3455749D1996A4AF00C58C70 /* IAPHelper.m */,
 				3455749E1996A4AF00C58C70 /* DoubledIAPHelper.m */,
@@ -414,8 +411,6 @@
 		345574CD1996A4DD00C58C70 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				3455749F1996A4AF00C58C70 /* MRSpriteButton.m */,
-				345574A01996A4AF00C58C70 /* MRSlider.m */,
 				345574A11996A4AF00C58C70 /* DBRemoveAdsBanner.m */,
 				345574A21996A4AF00C58C70 /* DBGameInterface.m */,
 			);
@@ -585,7 +580,6 @@
 				345574AB1996A4AF00C58C70 /* DBLaunchConfiguration.m in Sources */,
 				345574BA1996A4AF00C58C70 /* DBCasualGameData.m in Sources */,
 				345574BB1996A4AF00C58C70 /* DBSettingsManager.m in Sources */,
-				345574BF1996A4AF00C58C70 /* MRSlider.m in Sources */,
 				345574AC1996A4AF00C58C70 /* DBMenuPageController.m in Sources */,
 				345574BD1996A4AF00C58C70 /* DoubledIAPHelper.m in Sources */,
 				345574C21996A4AF00C58C70 /* MRTutorialViewController.m in Sources */,
@@ -598,6 +592,7 @@
 				345574B81996A4AF00C58C70 /* DBTile.m in Sources */,
 				345574B51996A4AF00C58C70 /* DBGameScene.m in Sources */,
 				345574C31996A4AF00C58C70 /* MRChildTutorialViewController.m in Sources */,
+				34B1B8C71999136B005B7C7E /* DBTimeAttackGameData.m in Sources */,
 				345574461996A3F500C58C70 /* main.m in Sources */,
 				345574B71996A4AF00C58C70 /* DBTimeAttackGameScene.m in Sources */,
 				345574B31996A4AF00C58C70 /* DBGameViewController.m in Sources */,
@@ -606,7 +601,6 @@
 				345574AD1996A4AF00C58C70 /* DBChildMenuViewController.m in Sources */,
 				345574C11996A4AF00C58C70 /* DBGameInterface.m in Sources */,
 				345574B61996A4AF00C58C70 /* DBCasualGameScene.m in Sources */,
-				345574BE1996A4AF00C58C70 /* MRSpriteButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
