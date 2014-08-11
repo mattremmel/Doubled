@@ -11,6 +11,7 @@
 @interface DBGameOverViewController : UIViewController
 
 - (void)setActionTarget:(id)target actionNewGame:(SEL)newGameAction actionMainMenu:(SEL)mainMenuAction actionLeaderboard:(SEL)leaderboardAction;
+- (void)setScore:(NSInteger)score andHighScore:(NSInteger)highScore;
 - (void)showInView:(UIView *)view animated:(BOOL)animated;
 
 
