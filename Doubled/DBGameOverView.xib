@@ -9,12 +9,14 @@
                 <outlet property="buttonLeaderboard" destination="SfB-1v-pZM" id="6B6-q2-b3d"/>
                 <outlet property="buttonMainMenu" destination="M27-46-u8Y" id="ypv-ag-bt7"/>
                 <outlet property="buttonNewGame" destination="9w3-JG-gi8" id="hYG-GP-7Lm"/>
+                <outlet property="labelHighScore" destination="IXc-fJ-oI1" id="yiY-cU-BdF"/>
                 <outlet property="labelRank" destination="IXc-fJ-oI1" id="t5f-f7-S9F"/>
                 <outlet property="labelScore" destination="YqA-OY-hqA" id="edC-CZ-ncV"/>
                 <outlet property="view" destination="iN0-l3-epB" id="FqQ-tI-GfA"/>
                 <outlet property="viewBackground" destination="Wky-pk-1Si" id="9eF-g3-wCz"/>
+                <outlet property="viewHighScoreBackground" destination="L08-RE-G9O" id="VAb-Tn-qCk"/>
                 <outlet property="viewRankBackground" destination="L08-RE-G9O" id="TaE-Wv-gsB"/>
-                <outlet property="viewScoreBackground" destination="HVf-yy-ZUW" id="vzc-Sh-ROf"/>
+                <outlet property="viewScoreBackground" destination="HVf-yy-ZUW" id="gdI-U5-BmK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -56,14 +58,14 @@
                             <rect key="frame" x="25" y="127" width="240" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rank:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFY-Er-mF2">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFY-Er-mF2">
                                     <rect key="frame" x="0.0" y="12" width="77" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="BanglaSangamMN" family="Bangla Sangam MN" pointSize="20"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="myRank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXc-fJ-oI1">
-                                    <rect key="frame" x="70" y="12" width="150" height="25"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="myHighScore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXc-fJ-oI1">
+                                    <rect key="frame" x="70" y="12" width="150" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="BanglaSangamMN" family="Bangla Sangam MN" pointSize="25"/>
                                     <nil key="highlightedColor"/>
