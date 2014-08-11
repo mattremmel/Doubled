@@ -15,8 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *viewScoreBackground;
 @property (weak, nonatomic) IBOutlet UILabel *labelScore;
-@property (weak, nonatomic) IBOutlet UIView *viewRankBackground;
-@property (weak, nonatomic) IBOutlet UILabel *labelRank;
+@property (weak, nonatomic) IBOutlet UIView *viewHighScoreBackground;
+@property (weak, nonatomic) IBOutlet UILabel *labelHighScore;
 
 @property (weak, nonatomic) IBOutlet UIButton *buttonLeaderboard;
 @property (weak, nonatomic) IBOutlet UIButton *buttonNewGame;
@@ -105,7 +105,7 @@
     }];
 }
 
-- (void)removeAnimateWithCompletionSelector:(SEL)selector
+- (void)removeAnimate
 {
     [UIView animateWithDuration:.25 animations:^{
         self.view.transform = CGAffineTransformMakeScale(1.3, 1.3);
@@ -113,10 +113,6 @@
     } completion:^(BOOL finished) {
         if (finished) {
             [self.view removeFromSuperview];
-            if (selector != nil && [self.target respondsToSelector:selector])
-            {
-                [self.target performSelector:selector];
-            }
         }
     }];
 }
@@ -126,12 +122,18 @@
 
 - (IBAction)buttonNewGame:(id)sender
 {
-    [self removeAnimateWithCompletionSelector:self.actionNewGame];
+    if ([self.target respondsToSelector:self.actionNewGame])
+    {
+        [self.target performSelector:self.actionNewGame];
+    }
 }
 
 - (IBAction)buttonMainMenu:(id)sender
 {
-    [self removeAnimateWithCompletionSelector:self.actionMainMenu];
+    if ([self.target respondsToSelector:self.actionMainMenu])
+    {
+        [self.target performSelector:self.actionMainMenu];
+    }
 }
 
 - (IBAction)buttonLeaderboard:(id)sender
