@@ -28,6 +28,7 @@ typedef struct {
 
 @property UILabel *scoreLabel;
 @property UILabel *highScoreLabel;
+@property UIView *gameModeBackground;
 @property UILabel *gameModeLabel;
 @property UILabel *goalLabel;
 
