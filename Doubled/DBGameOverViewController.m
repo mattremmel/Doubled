@@ -82,12 +82,12 @@
     if (self.score == self.highScore)
     {
         self.labelTitle.text = @"New High Score!";
-        self.labelTitle.font = [UIFont fontWithName:defaultFont size:32];
+//        self.labelTitle.font = [UIFont fontWithName:defaultFont size:32];
     }
     else
     {
         self.labelTitle.text = @"Game Over";
-        self.labelTitle.font = [UIFont fontWithName:defaultFont size:35];
+//        self.labelTitle.font = [UIFont fontWithName:defaultFont size:35];
     }
 }
 
