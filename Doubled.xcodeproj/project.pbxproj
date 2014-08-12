@@ -56,6 +56,12 @@
 		345574EF1996A58000C58C70 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345574EE1996A58000C58C70 /* AdSupport.framework */; };
 		345574F11996A58B00C58C70 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345574F01996A58B00C58C70 /* SpriteKit.framework */; };
 		345574F31996A59400C58C70 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345574F21996A59400C58C70 /* AudioToolbox.framework */; };
+		345FF9681999A4F9006C9915 /* DBMainMenuView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345FF9671999A4F9006C9915 /* DBMainMenuView~ipad.xib */; };
+		345FF96A1999A945006C9915 /* DBGameOptionView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345FF9691999A945006C9915 /* DBGameOptionView~ipad.xib */; };
+		345FF96C1999A95E006C9915 /* DBSettingsView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345FF96B1999A95E006C9915 /* DBSettingsView~ipad.xib */; };
+		345FF96E1999A979006C9915 /* DBAdvertisingView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345FF96D1999A979006C9915 /* DBAdvertisingView~ipad.xib */; };
+		345FF9701999A991006C9915 /* DBStatisticsView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345FF96F1999A991006C9915 /* DBStatisticsView~ipad.xib */; };
+		345FF9721999A9A9006C9915 /* DBGameOverView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345FF9711999A9A9006C9915 /* DBGameOverView~ipad.xib */; };
 		34604AAF199972B600625D3B /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34604AAD199972B600625D3B /* libGoogleAdMobAds.a */; };
 		34604AB0199972B600625D3B /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 34604AAE199972B600625D3B /* README.txt */; };
 		34B1B8C71999136B005B7C7E /* DBTimeAttackGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B1B8C61999136B005B7C7E /* DBTimeAttackGameData.m */; };
@@ -149,6 +155,12 @@
 		345574EE1996A58000C58C70 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		345574F01996A58B00C58C70 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		345574F21996A59400C58C70 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		345FF9671999A4F9006C9915 /* DBMainMenuView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DBMainMenuView~ipad.xib"; sourceTree = "<group>"; };
+		345FF9691999A945006C9915 /* DBGameOptionView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DBGameOptionView~ipad.xib"; sourceTree = "<group>"; };
+		345FF96B1999A95E006C9915 /* DBSettingsView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DBSettingsView~ipad.xib"; sourceTree = "<group>"; };
+		345FF96D1999A979006C9915 /* DBAdvertisingView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DBAdvertisingView~ipad.xib"; sourceTree = "<group>"; };
+		345FF96F1999A991006C9915 /* DBStatisticsView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DBStatisticsView~ipad.xib"; sourceTree = "<group>"; };
+		345FF9711999A9A9006C9915 /* DBGameOverView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DBGameOverView~ipad.xib"; sourceTree = "<group>"; };
 		34604A90199972B600625D3B /* DFPBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPBannerView.h; sourceTree = "<group>"; };
 		34604A91199972B600625D3B /* DFPExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPExtras.h; sourceTree = "<group>"; };
 		34604A92199972B600625D3B /* DFPInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPInterstitial.h; sourceTree = "<group>"; };
@@ -440,6 +452,15 @@
 		345574CF1996A4EF00C58C70 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				345FF9651999A43B006C9915 /* iPhone */,
+				345FF9661999A445006C9915 /* iPad */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		345FF9651999A43B006C9915 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
 				345574A51996A4AF00C58C70 /* DBMainMenuView.xib */,
 				345574A61996A4AF00C58C70 /* DBGameOptionView.xib */,
 				345574A71996A4AF00C58C70 /* DBSettingsView.xib */,
@@ -447,7 +468,20 @@
 				345574A91996A4AF00C58C70 /* DBStatisticsView.xib */,
 				345574AA1996A4AF00C58C70 /* DBGameOverView.xib */,
 			);
-			name = Views;
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		345FF9661999A445006C9915 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				345FF9671999A4F9006C9915 /* DBMainMenuView~ipad.xib */,
+				345FF9691999A945006C9915 /* DBGameOptionView~ipad.xib */,
+				345FF96B1999A95E006C9915 /* DBSettingsView~ipad.xib */,
+				345FF96D1999A979006C9915 /* DBAdvertisingView~ipad.xib */,
+				345FF96F1999A991006C9915 /* DBStatisticsView~ipad.xib */,
+				345FF9711999A9A9006C9915 /* DBGameOverView~ipad.xib */,
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 		34604A8D199972B600625D3B /* AdMobFramework-6.11.1 */ = {
@@ -628,10 +662,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				345574441996A3F500C58C70 /* InfoPlist.strings in Resources */,
+				345FF96A1999A945006C9915 /* DBGameOptionView~ipad.xib in Resources */,
+				345FF9721999A9A9006C9915 /* DBGameOverView~ipad.xib in Resources */,
 				34604AB0199972B600625D3B /* README.txt in Resources */,
 				345574C51996A4AF00C58C70 /* DBGameOptionView.xib in Resources */,
+				345FF96E1999A979006C9915 /* DBAdvertisingView~ipad.xib in Resources */,
 				345574C91996A4AF00C58C70 /* DBGameOverView.xib in Resources */,
+				345FF9701999A991006C9915 /* DBStatisticsView~ipad.xib in Resources */,
 				3455744C1996A3F500C58C70 /* Images.xcassets in Resources */,
+				345FF96C1999A95E006C9915 /* DBSettingsView~ipad.xib in Resources */,
+				345FF9681999A4F9006C9915 /* DBMainMenuView~ipad.xib in Resources */,
 				345574C71996A4AF00C58C70 /* DBAdvertisingView.xib in Resources */,
 				345574C41996A4AF00C58C70 /* DBMainMenuView.xib in Resources */,
 				345574C61996A4AF00C58C70 /* DBSettingsView.xib in Resources */,
@@ -806,7 +846,6 @@
 				INFOPLIST_FILE = "Doubled/Doubled-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/AdMobFramework",
 					"$(PROJECT_DIR)/AdMobFramework-6.11.1",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -829,7 +868,6 @@
 				INFOPLIST_FILE = "Doubled/Doubled-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/AdMobFramework",
 					"$(PROJECT_DIR)/AdMobFramework-6.11.1",
 				);
 				OTHER_LDFLAGS = "-ObjC";
