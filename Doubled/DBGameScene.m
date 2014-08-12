@@ -53,9 +53,9 @@
 {
     NSLog(@"SCNE: Setting up new game");
     
-    for (int i = 0; i <[self.gameData.gameboard count]; ++i)
+    for (DBTile *tile in self.gameData.gameboard)
     {
-        [[self.gameData.gameboard objectAtIndex:i] removeFromParent];
+        [tile removeFromParent];
     }
     
     [self.gameData resetGameDataForNewGame];
@@ -81,9 +81,11 @@
     }
     else
     {
-        for (int i = 0; i <[self.gameData.gameboard count]; ++i)
+        for (DBTile *tile in self.gameData.gameboard)
         {
-            [[self.gameData.gameboard objectAtIndex:i] removeFromParent];
+            [tile removeFromParent];
+            [tile removeAllActions];
+            [tile updateTileWithValue:[tile getValue]];
         }
         
         [self addGameTiles];
@@ -104,7 +106,7 @@
 - (void)addInterface
 {
     NSLog(@"FUNC: Adding HUD");
-    [DBGameInterface setUpInterface:self];
+    [DBGameInterface setupInterface:self];
 }
 
 - (void)addGameTiles
