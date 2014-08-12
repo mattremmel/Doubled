@@ -11,6 +11,9 @@
 
 // App Delegate Identifiers
 #define AppWillResignActive @"appWillResignActive"
+#define AppDidEnterBackground @"appWillEnterBackground"
+#define AppWillEnterForeground @"appWillEnterForeground"
+#define AppDidBecomeActive @"appDidBecomeActive"
 #define AppWillTerminate @"appWillTerminate"
 
 // Game Notification Identifiers
@@ -56,6 +59,8 @@ typedef enum {
 NSInteger deviceType;
 NSInteger tileWidth;
 NSInteger tileHeight;
+NSInteger tileFontSize;
+NSInteger tileSizeShrink;
 NSInteger columnCount;
 NSInteger rowCount;
 NSInteger touchTolerance;
@@ -91,5 +96,5 @@ BOOL gameCenterEnabled;
 
 // Time Attack Game Mode
 #define timeAttackStartingTime 10.0
-#define timeAttackMergeAddTime 0.51
+#define timeAttackMergeAddTime 0.55
 

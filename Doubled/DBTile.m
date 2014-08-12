@@ -34,7 +34,7 @@
 
 - (id)initWithValue:(NSInteger)value
 {
-    CGSize size = CGSizeMake(tileWidth - 5, tileHeight - 5);
+    CGSize size = CGSizeMake(tileWidth - tileSizeShrink, tileHeight - tileSizeShrink);
     self = [super initWithColor:[SKColor redColor] size:size];
     
     self.value = value;
@@ -42,7 +42,7 @@
     
     self.label = [SKLabelNode labelNodeWithFontNamed: defaultFont];
     self.label.text = [NSString stringWithFormat:@"%li", (long)self.value];
-    self.label.fontSize = 30;
+    self.label.fontSize = tileFontSize;
     self.label.fontColor = defaultFontColor;
     self.label.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
     self.label.zPosition = 1;
@@ -149,28 +149,28 @@
         case 1024:
             self.color = tile1024Color;
             self.label.fontColor = [SKColor whiteColor];
-            self.label.fontSize = 25;
+            self.label.fontSize = tileFontSize - 5;
             break;
         case 2048:
             self.color = tile2048Color;
             self.label.fontColor = [SKColor whiteColor];
-            self.label.fontSize = 25;
+            self.label.fontSize = tileFontSize - 5;
             break;
         case 4096:
             self.color = tile4096Color;
             self.label.fontColor = [SKColor whiteColor];
-            self.label.fontSize = 25;
+            self.label.fontSize = tileFontSize - 5;
             break;
         case 8192:
             self.color = tileDefaultColor;
             self.label.fontColor = [SKColor whiteColor];
-            self.label.fontSize = 25;
+            self.label.fontSize = tileFontSize - 5;
             
             // Anything bigger than that needs a smaller font size
         default:
             self.color = tileDefaultColor;
             self.label.fontColor = [SKColor whiteColor];
-            self.label.fontSize = 20;
+            self.label.fontSize = tileFontSize - 10;
             break;
     }
 }
