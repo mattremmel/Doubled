@@ -385,15 +385,15 @@
     /* HUD */
     
     // Title
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(345, 15, 350, 80)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(305, 55, 380, 80)];
     titleLabel.text = @"DOUBLED";
-    titleLabel.font = [UIFont fontWithName:defaultFont size:75];
+    titleLabel.font = [UIFont fontWithName:defaultFont size:80];
     [titleLabel setTextColor:defaultFontColor];
     [scene.view addSubview:titleLabel];
     
     
     // Game Mode Box
-    UIView *gameModeBox = [[UIView alloc] initWithFrame:CGRectMake(103, 70, 120, 40)];
+    UIView *gameModeBox = [[UIView alloc] initWithFrame:CGRectMake(300, 155, 180, 50)];
     gameModeBox.backgroundColor = defaultNodeColor;
     gameModeBox.layer.cornerRadius = MenuButtonCornerRadius;
     scene.gameModeBackground = gameModeBox;
@@ -405,11 +405,11 @@
     if ([scene class] == [DBCasualGameScene class])
     {
         UILabel *gameModeLabel = [[UILabel alloc] init];
-        gameModeLabel.font = [UIFont fontWithName:defaultFont size:13];
+        gameModeLabel.font = [UIFont fontWithName:defaultFont size:17];
         [gameModeLabel setTextColor:defaultFontColor];
         gameModeLabel.textAlignment = NSTextAlignmentCenter;
         gameModeLabel.numberOfLines = 2;
-        gameModeLabel.frame = CGRectMake(0, 0, 120, 40);
+        gameModeLabel.frame = CGRectMake(0, 0, 180, 50);
         gameModeLabel.text = @"CASUAL\nMODE";
         [gameModeBox addSubview:gameModeLabel];
         scene.gameModeLabel = gameModeLabel;
@@ -417,18 +417,18 @@
     else if ([scene class] == [DBTimeAttackGameScene class])
     {
         UILabel *timeRemainingLabel = [[UILabel alloc] init];
-        timeRemainingLabel.font = [UIFont fontWithName:defaultFont size:12];
+        timeRemainingLabel.font = [UIFont fontWithName:defaultFont size:17];
         [timeRemainingLabel setTextColor:defaultFontColor];
         timeRemainingLabel.textAlignment = NSTextAlignmentCenter;
-        timeRemainingLabel.frame = CGRectMake(0, 4, 120, 15);
+        timeRemainingLabel.frame = CGRectMake(0, 2, 180, 25);
         timeRemainingLabel.text = @"TIME REMAINING";
         [gameModeBox addSubview:timeRemainingLabel];
         
         UILabel *timeRemainingValue = [[UILabel alloc] init];
-        timeRemainingValue.font = [UIFont fontWithName:defaultFont size:15];
+        timeRemainingValue.font = [UIFont fontWithName:defaultFont size:20];
         [timeRemainingValue setTextColor:defaultFontColor];
         timeRemainingValue.textAlignment = NSTextAlignmentCenter;
-        timeRemainingValue.frame = CGRectMake(0, 20, 120, 15);
+        timeRemainingValue.frame = CGRectMake(0, 22, 180, 25);
         timeRemainingValue.text = [NSString stringWithFormat:@"%.1f", ((DBTimeAttackGameData *)scene.gameData).timeRemaining];
         [gameModeBox addSubview:timeRemainingValue];
         scene.gameModeLabel = timeRemainingValue;
@@ -437,50 +437,50 @@
 
     
     // Score Box
-    UIView *scoreBox = [[UIView alloc] initWithFrame:CGRectMake(8, 25, 90, 40)];
+    UIView *scoreBox = [[UIView alloc] initWithFrame:CGRectMake(105, 95, 140, 50)];
     scoreBox.backgroundColor = defaultNodeColor;
     scoreBox.layer.cornerRadius = MenuButtonCornerRadius;
     [scene.view addSubview:scoreBox];
     
     UILabel *scoreLabel = [[UILabel alloc] init];
     scoreLabel.text = @"SCORE";
-    scoreLabel.font = [UIFont fontWithName:defaultFont size:12];
+    scoreLabel.font = [UIFont fontWithName:defaultFont size:17];
     [scoreLabel setTextColor:defaultFontColor];
     scoreLabel.textAlignment = NSTextAlignmentCenter;
-    scoreLabel.frame = CGRectMake(0, 4, 90, 15);
+    scoreLabel.frame = CGRectMake(0, 2, 140, 25);
     [scoreBox addSubview:scoreLabel];
     
     UILabel *score = [[UILabel alloc] init];
     score.text = [NSString stringWithFormat:@"%li", (long)scene.gameData.score];
-    score.font = [UIFont fontWithName:defaultFont size:15];
+    score.font = [UIFont fontWithName:defaultFont size:20];
     [score setTextColor:defaultFontColor];
     score.textAlignment = NSTextAlignmentCenter;
-    score.frame = CGRectMake(0, 20, 90, 15);
+    score.frame = CGRectMake(0, 22, 140, 25);
     score.adjustsFontSizeToFitWidth = true;
     [scoreBox addSubview:score];
     scene.scoreLabel = score;
     
     
     // Best Score Box
-    UIView *highScoreBox = [[UIView alloc] initWithFrame:CGRectMake(105, 136, 150, 60)];
+    UIView *highScoreBox = [[UIView alloc] initWithFrame:CGRectMake(105, 155, 140, 50)];
     highScoreBox.backgroundColor = defaultNodeColor;
     highScoreBox.layer.cornerRadius = MenuButtonCornerRadius;
     [scene.view addSubview:highScoreBox];
     
     UILabel *highScoreLabel = [[UILabel alloc] init];
     highScoreLabel.text = @"BEST";
-    highScoreLabel.font = [UIFont fontWithName:defaultFont size:20];
+    highScoreLabel.font = [UIFont fontWithName:defaultFont size:17];
     [highScoreLabel setTextColor:defaultFontColor];
     highScoreLabel.textAlignment = NSTextAlignmentCenter;
-    highScoreLabel.frame = CGRectMake(0, 6, 150, 25);
+    highScoreLabel.frame = CGRectMake(0, 2, 140, 25);
     [highScoreBox addSubview:highScoreLabel];
     
     UILabel *highScore = [[UILabel alloc] init];
     highScore.text = [NSString stringWithFormat:@"%li", (long)scene.gameData.highScore];
-    highScore.font = [UIFont fontWithName:defaultFont size:22];
+    highScore.font = [UIFont fontWithName:defaultFont size:20];
     [highScore setTextColor:defaultFontColor];
     highScore.textAlignment = NSTextAlignmentCenter;
-    highScore.frame = CGRectMake(0, 32, 150, 25);
+    highScore.frame = CGRectMake(0, 22, 140, 25);
     highScore.adjustsFontSizeToFitWidth = true;
     [highScoreBox addSubview:highScore];
     scene.highScoreLabel = highScore;
@@ -488,9 +488,9 @@
     
     // Buttons
     UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    menuButton.frame = CGRectMake(530, 140, 130, 56);
+    menuButton.frame = CGRectMake(550, 160, 110, 45);
     [menuButton setTitle:@"MENU" forState:UIControlStateNormal];
-    menuButton.titleLabel.font = [UIFont fontWithName:defaultFont size:25];
+    menuButton.titleLabel.font = [UIFont fontWithName:defaultFont size:22];
     [menuButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [menuButton setBackgroundColor:tile32Color];
     menuButton.layer.cornerRadius = MenuButtonCornerRadius;
