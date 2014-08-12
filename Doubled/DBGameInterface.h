@@ -11,6 +11,6 @@
 
 @interface DBGameInterface : NSObject
 
-+ (void)setUpInterface:(DBGameScene *)scene;
++ (void)setupInterface:(DBGameScene *)scene;
 
 @end
