@@ -15,6 +15,7 @@
 @property BOOL contentCreated;
 @property BOOL gameIsPaused;
 @property BOOL startGameAlertIsVisible;
+@property BOOL gameModeColorIsAnimateing;
 @property NSTimeInterval lastUpdateTimeInterval;
 
 @end
@@ -108,6 +109,7 @@
     if (!self.gameIsPaused)
     {
         CFTimeInterval timeSinceLast = currentTime - self.lastUpdateTimeInterval;
+        double timeRemaining = ((DBTimeAttackGameData *)self.gameData).timeRemaining;
         
         if (timeSinceLast > 1)
         {
@@ -117,12 +119,13 @@
 
         if (timeSinceLast > 0.1)
         {
-            ((DBTimeAttackGameData *)self.gameData).timeRemaining -= timeSinceLast;
-            [self updateTimeRemainingLabel];
+            timeRemaining -= timeSinceLast;
             self.lastUpdateTimeInterval = currentTime;
+            ((DBTimeAttackGameData *)self.gameData).timeRemaining = timeRemaining;
+            [self updateTimeRemainingLabel];
         }
         
-        if (((DBTimeAttackGameData *)self.gameData).timeRemaining <= 0)
+        if (timeRemaining <= 0)
         {
             [self endGame];
             self.gameIsPaused = true;
@@ -133,6 +136,36 @@
 - (void)updateTimeRemainingLabel
 {
     self.gameModeLabel.text = [NSString stringWithFormat:@"%.1f", ((DBTimeAttackGameData *)self.gameData).timeRemaining];
+    
+    if (!self.gameModeColorIsAnimateing)
+    {
+        double timeRemaining = ((DBTimeAttackGameData *)self.gameData).timeRemaining;
+        self.gameModeColorIsAnimateing = true;
+        if (timeRemaining < 3)
+        {
+            [UIView animateWithDuration:0.2 animations:^{
+                self.gameModeBackground.backgroundColor = [UIColor colorWithRed:1.0 green:0.6 blue:0.6 alpha:1.0];
+            }completion:^(BOOL finished) {
+                self.gameModeColorIsAnimateing = false;
+            }];
+        }
+        else if (timeRemaining < 7)
+        {
+            [UIView animateWithDuration:0.2 animations:^{
+                self.gameModeBackground.backgroundColor = [UIColor colorWithRed:1.0 green:0.98 blue:0.6 alpha:1.0];
+            }completion:^(BOOL finished) {
+                self.gameModeColorIsAnimateing = false;
+            }];
+        }
+        else if (timeRemaining >= 7)
+        {
+            [UIView animateWithDuration:0.2 animations:^{
+                self.gameModeBackground.backgroundColor = [UIColor colorWithRed:0.6 green:1.0 blue:0.7 alpha:1.0];
+            }completion:^(BOOL finished) {
+                self.gameModeColorIsAnimateing = false;
+            }];
+        }
+    }
 }
 
 
