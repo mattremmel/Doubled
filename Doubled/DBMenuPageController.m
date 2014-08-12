@@ -110,28 +110,25 @@
     
     DBChildMenuViewController *child;
     
-    if (deviceType == iPhone4Type || deviceType == iPhone5Type || deviceType == unknownType)
-    {
-        switch (index) {
-            case 0:
-                child = self.mainMenuViewController;
-                child.index = 0;
-                break;
-                
-            case 1:
-                child = [[DBSettingsViewController alloc] initWithNibName:@"DBSettingsView" bundle:nil];
-                child.index = 1;
-                break;
-                
-            case 2:
-                child = [[DBAdvertisingViewController alloc] initWithNibName:@"DBAdvertisingView" bundle:nil];
-                child.index = 2;
-                break;
-                
-            default:
-                child = nil;
-                break;
-        }
+    switch (index) {
+        case 0:
+            child = self.mainMenuViewController;
+            child.index = 0;
+            break;
+            
+        case 1:
+            child = [[DBSettingsViewController alloc] initWithNibName:@"DBSettingsView" bundle:nil];
+            child.index = 1;
+            break;
+            
+        case 2:
+            child = [[DBAdvertisingViewController alloc] initWithNibName:@"DBAdvertisingView" bundle:nil];
+            child.index = 2;
+            break;
+            
+        default:
+            child = nil;
+            break;
     }
     
     return child;
