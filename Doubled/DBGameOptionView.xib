@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DBGameOptionViewController">
             <connections>
-                <outlet property="buttonBackground" destination="2yw-GA-3dG" id="4GR-lb-flh"/>
+                <outlet property="buttonBackground" destination="5pH-Pp-GtB" id="0pS-ke-kaw"/>
                 <outlet property="buttonContinue" destination="5mm-HZ-lpd" id="WFA-Sx-HAM"/>
                 <outlet property="buttonNewGame" destination="kvH-os-bS1" id="dCM-kk-h8L"/>
                 <outlet property="view" destination="iN0-l3-epB" id="1iC-f6-Yfa"/>
@@ -17,38 +17,33 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yw-GA-3dG" userLabel="Background">
-                    <rect key="frame" x="47" y="155" width="225" height="170"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5pH-Pp-GtB">
+                    <rect key="frame" x="48" y="155" width="225" height="170"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvH-os-bS1">
+                            <rect key="frame" x="22" y="31" width="180" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="BanglaSangamMN" family="Bangla Sangam MN" pointSize="22"/>
+                            <state key="normal" title="NEW GAME"/>
+                            <connections>
+                                <action selector="buttonNewGame:" destination="-1" eventType="touchUpInside" id="nzK-KE-3G9"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mm-HZ-lpd">
+                            <rect key="frame" x="22" y="89" width="180" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="BanglaSangamMN" family="Bangla Sangam MN" pointSize="22"/>
+                            <state key="normal" title="CONTINUE"/>
+                            <connections>
+                                <action selector="buttonContinueGame:" destination="-1" eventType="touchUpInside" id="GxM-35-dTs"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <accessibility key="accessibilityConfiguration">
-                        <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
-                    </accessibility>
-                    <fontDescription key="fontDescription" name="BanglaSangamMN" family="Bangla Sangam MN" pointSize="23"/>
-                    <connections>
-                        <action selector="buttonNewGame:" destination="-1" eventType="touchUpInside" id="ZFc-mj-v4D"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvH-os-bS1">
-                    <rect key="frame" x="69" y="186" width="180" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="BanglaSangamMN" family="Bangla Sangam MN" pointSize="22"/>
-                    <state key="normal" title="NEW GAME"/>
-                    <connections>
-                        <action selector="buttonNewGame:" destination="-1" eventType="touchUpInside" id="nzK-KE-3G9"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mm-HZ-lpd">
-                    <rect key="frame" x="69" y="244" width="180" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="BanglaSangamMN" family="Bangla Sangam MN" pointSize="22"/>
-                    <state key="normal" title="CONTINUE"/>
-                    <connections>
-                        <action selector="buttonContinueGame:" destination="-1" eventType="touchUpInside" id="GxM-35-dTs"/>
-                    </connections>
-                </button>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
