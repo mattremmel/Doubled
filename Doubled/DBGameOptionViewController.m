@@ -12,7 +12,7 @@
 
 @interface DBGameOptionViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *buttonBackground;
+@property (weak, nonatomic) IBOutlet UIView *buttonBackground;
 @property (weak, nonatomic) IBOutlet UIButton *buttonNewGame;
 @property (weak, nonatomic) IBOutlet UIButton *buttonContinue;
 
