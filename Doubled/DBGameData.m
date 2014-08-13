@@ -340,9 +340,9 @@
 {
     if (gameCenterAuthenticated && gameCenterEnabled)
     {
-        NSLog(@"DATA: Reporting score to game center");
-        if (self.score > self.highScore)
+        if (self.score >= self.highScore)
         {
+            NSLog(@"DATA: Reporting score to game center");
             GKScore *score = [[GKScore alloc] initWithLeaderboardIdentifier: [self getLeaderboardIdentifier]];
             score.value = self.score;
             
@@ -366,10 +366,9 @@
 
 - (void)updateiCloud
 {
-    NSLog(@"DATA: Updating to iCloud");
-    
     if ([NSUbiquitousKeyValueStore defaultStore])
     {
+        NSLog(@"DATA: Updating to iCloud");
         NSUbiquitousKeyValueStore *iCloudStore = [NSUbiquitousKeyValueStore defaultStore];
         NSString *iCloudHighScoreString = [iCloudStore stringForKey: [self getiCloudHighScoreKey]];
         NSInteger iCloudHighScore = 0;
@@ -389,10 +388,9 @@
 
 - (void)updateFromiCloud
 {
-    NSLog(@"DATA: Updating from iCloud");
-    
     if ([NSUbiquitousKeyValueStore defaultStore])
     {
+        NSLog(@"DATA: Updating from iCloud");
         NSUbiquitousKeyValueStore *iCloudStore = [NSUbiquitousKeyValueStore defaultStore];
         NSString *iCloudHighScoreString = [iCloudStore stringForKey: [self getiCloudHighScoreKey]];
         NSInteger iCloudHighScore = 0;
