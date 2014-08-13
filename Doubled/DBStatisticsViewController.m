@@ -10,11 +10,16 @@
 #import "DBCasualGameData.h"
 #import "DBTimeAttackGameData.h"
 #import "DBGameGlobals.h"
+#import <GameKit/GameKit.h>
 
-@interface DBStatisticsViewController ()
+@interface DBStatisticsViewController () <GKGameCenterControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewContainer;
 @property (strong, nonatomic) IBOutlet UIView *contentView;
+
+//Buttons
+@property (weak, nonatomic) IBOutlet UIButton *buttonCasualLeaderboard;
+@property (weak, nonatomic) IBOutlet UIButton *buttonTimeAttackLeaderboard;
 
 // Casual Mode Labels
 @property (weak, nonatomic) IBOutlet UILabel *labelCasualGamesPlayed;
@@ -89,6 +94,14 @@
     self.view.backgroundColor = defaultBackgroundColor;
     self.scrollViewContainer.backgroundColor = defaultBackgroundColor;
     self.contentView.backgroundColor = defaultBackgroundColor;
+    
+    self.buttonCasualLeaderboard.layer.cornerRadius = MenuButtonCornerRadius;
+    self.buttonCasualLeaderboard.backgroundColor = defaultButtonColor;
+    [self.buttonCasualLeaderboard setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+    
+    self.buttonTimeAttackLeaderboard.layer.cornerRadius = MenuButtonCornerRadius;
+    self.buttonTimeAttackLeaderboard.backgroundColor = defaultButtonColor;
+    [self.buttonTimeAttackLeaderboard setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
     
     
     self.labelCasualGamesPlayed.adjustsFontSizeToFitWidth = true;
@@ -191,5 +204,37 @@
         self.labelTimeAttack65536TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile65536Count];
     }
 }
+
+
+#pragma mark - Button Events
+
+- (IBAction)buttonCasualLeaderboard:(id)sender
+{
+    [self showLeaderboardAndAchievementsWithIdentifier:[[DBCasualGameData sharedInstance] getLeaderboardIdentifier]];
+}
+
+- (IBAction)buttonTimeAttackLeaderboard:(id)sender
+{
+    [self showLeaderboardAndAchievementsWithIdentifier:[[DBTimeAttackGameData sharedInstance] getLeaderboardIdentifier]];
+}
+
+
+#pragma mark - Game Center Callback
+
+- (void)showLeaderboardAndAchievementsWithIdentifier:(NSString *)leaderboardID
+{
+    GKGameCenterViewController *gcViewController = [[GKGameCenterViewController alloc] init];
+    
+    gcViewController.gameCenterDelegate = self;
+    gcViewController.viewState = GKGameCenterViewControllerStateLeaderboards;
+    gcViewController.leaderboardIdentifier = leaderboardID;
+    [self presentViewController:gcViewController animated:YES completion:nil];
+}
+
+-(void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController
+{
+    [gameCenterViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end
