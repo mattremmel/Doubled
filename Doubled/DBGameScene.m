@@ -476,6 +476,7 @@
 - (void)endGame
 {
     NSLog(@"SCNE: End game");
+    [self.gameData increaseGamesPlayed];
     [self.gameData saveGameData];
     [self.gameData reportHighScoreToGameCenter];
     [self.gameOverView setActionTarget:self actionNewGame:@selector(setupNewGame) actionMainMenu:@selector(buttonMenu) actionLeaderboard:nil];
