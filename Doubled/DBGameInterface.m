@@ -54,7 +54,7 @@
     
     // Game Mode Box
     UIView *gameModeBox = [[UIView alloc] initWithFrame:CGRectMake(103, 60, 120, 40)];
-    gameModeBox.backgroundColor = defaultNodeColor;
+    gameModeBox.backgroundColor = defaultHUDColor;
     gameModeBox.layer.cornerRadius = MenuButtonCornerRadius;
     scene.gameModeBackground = gameModeBox;
     [scene.view addSubview:gameModeBox];
@@ -95,7 +95,7 @@
 
     // Score Box
     UIView *scoreBox = [[UIView alloc] initWithFrame:CGRectMake(8, 15, 90, 40)];
-    scoreBox.backgroundColor = defaultNodeColor;
+    scoreBox.backgroundColor = defaultHUDColor;
     scoreBox.layer.cornerRadius = MenuButtonCornerRadius;
     [scene.view addSubview:scoreBox];
     
@@ -120,7 +120,7 @@
     
     // Best Score Box
     UIView *highScoreBox = [[UIView alloc] initWithFrame:CGRectMake(8, 60, 90, 40)];
-    highScoreBox.backgroundColor = defaultNodeColor;
+    highScoreBox.backgroundColor = defaultHUDColor;
     highScoreBox.layer.cornerRadius = MenuButtonCornerRadius;
     [scene.view addSubview:highScoreBox];
     
@@ -148,8 +148,8 @@
     menuButton.frame = CGRectMake(247, 72, 65, 28);
     [menuButton setTitle:@"MENU" forState:UIControlStateNormal];
     menuButton.titleLabel.font = [UIFont fontWithName:defaultFont size:15];
-    [menuButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [menuButton setBackgroundColor:tile32Color];
+    [menuButton setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+    [menuButton setBackgroundColor:defaultButtonColor];
     menuButton.layer.cornerRadius = MenuButtonCornerRadius;
     [menuButton addTarget:scene action:@selector(buttonMenu) forControlEvents:UIControlEventTouchUpInside];
     [scene.view addSubview:menuButton];
@@ -222,7 +222,7 @@
     
     // Game Mode Box
     UIView *gameModeBox = [[UIView alloc] initWithFrame:CGRectMake(103, 70, 120, 40)];
-    gameModeBox.backgroundColor = defaultNodeColor;
+    gameModeBox.backgroundColor = defaultHUDColor;
     gameModeBox.layer.cornerRadius = MenuButtonCornerRadius;
     scene.gameModeBackground = gameModeBox;
     [scene.view addSubview:gameModeBox];
@@ -267,7 +267,7 @@
     
     // Score Box
     UIView *scoreBox = [[UIView alloc] initWithFrame:CGRectMake(8, 25, 90, 40)];
-    scoreBox.backgroundColor = defaultNodeColor;
+    scoreBox.backgroundColor = defaultHUDColor;
     scoreBox.layer.cornerRadius = MenuButtonCornerRadius;
     [scene.view addSubview:scoreBox];
     
@@ -292,7 +292,7 @@
     
     // Best Score Box
     UIView *highScoreBox = [[UIView alloc] initWithFrame:CGRectMake(8, 70, 90, 40)];
-    highScoreBox.backgroundColor = defaultNodeColor;
+    highScoreBox.backgroundColor = defaultHUDColor;
     highScoreBox.layer.cornerRadius = MenuButtonCornerRadius;
     [scene.view addSubview:highScoreBox];
     
@@ -320,8 +320,8 @@
     menuButton.frame = CGRectMake(247, 82, 65, 28);
     [menuButton setTitle:@"MENU" forState:UIControlStateNormal];
     menuButton.titleLabel.font = [UIFont fontWithName:defaultFont size:15];
-    [menuButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [menuButton setBackgroundColor:tile32Color];
+    [menuButton setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+    [menuButton setBackgroundColor:defaultButtonColor];
     menuButton.layer.cornerRadius = MenuButtonCornerRadius;
     [menuButton addTarget:scene action:@selector(buttonMenu) forControlEvents:UIControlEventTouchUpInside];
     [scene.view addSubview:menuButton];
@@ -394,7 +394,7 @@
     
     // Game Mode Box
     UIView *gameModeBox = [[UIView alloc] initWithFrame:CGRectMake(300, 155, 180, 50)];
-    gameModeBox.backgroundColor = defaultNodeColor;
+    gameModeBox.backgroundColor = defaultHUDColor;
     gameModeBox.layer.cornerRadius = MenuButtonCornerRadius;
     scene.gameModeBackground = gameModeBox;
     [scene.view addSubview:gameModeBox];
@@ -438,7 +438,7 @@
     
     // Score Box
     UIView *scoreBox = [[UIView alloc] initWithFrame:CGRectMake(105, 95, 140, 50)];
-    scoreBox.backgroundColor = defaultNodeColor;
+    scoreBox.backgroundColor = defaultHUDColor;
     scoreBox.layer.cornerRadius = MenuButtonCornerRadius;
     [scene.view addSubview:scoreBox];
     
@@ -463,7 +463,7 @@
     
     // Best Score Box
     UIView *highScoreBox = [[UIView alloc] initWithFrame:CGRectMake(105, 155, 140, 50)];
-    highScoreBox.backgroundColor = defaultNodeColor;
+    highScoreBox.backgroundColor = defaultHUDColor;
     highScoreBox.layer.cornerRadius = MenuButtonCornerRadius;
     [scene.view addSubview:highScoreBox];
     
@@ -491,8 +491,8 @@
     menuButton.frame = CGRectMake(550, 160, 110, 45);
     [menuButton setTitle:@"MENU" forState:UIControlStateNormal];
     menuButton.titleLabel.font = [UIFont fontWithName:defaultFont size:22];
-    [menuButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [menuButton setBackgroundColor:tile32Color];
+    [menuButton setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+    [menuButton setBackgroundColor:defaultButtonColor];
     menuButton.layer.cornerRadius = MenuButtonCornerRadius;
     [menuButton addTarget:scene action:@selector(buttonMenu) forControlEvents:UIControlEventTouchUpInside];
     [scene.view addSubview:menuButton];
