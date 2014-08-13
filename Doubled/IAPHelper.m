@@ -112,12 +112,6 @@ NSMutableSet * _purchasedProductIdentifiers; // List of product identifiers alre
     NSLog(@"STOR: completeTransaction...");
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Bought successfully!"
-                                                      message:@"Thank you for your purchase. Enjoy!"
-                                                     delegate:nil
-                                            cancelButtonTitle:@"OK"
-                                            otherButtonTitles:nil];
-    [message show];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:transaction.payment.productIdentifier];
 }
 
