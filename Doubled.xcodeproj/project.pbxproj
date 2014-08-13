@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34194A1E199B0B650046423D /* DBStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34194A1D199B0B650046423D /* DBStatisticsViewController.m */; };
+		341E1F42199C1BA700F4B538 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 341E1F41199C1BA700F4B538 /* KeychainWrapper.m */; };
 		3455743A1996A3F500C58C70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345574391996A3F500C58C70 /* Foundation.framework */; };
 		3455743C1996A3F500C58C70 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3455743B1996A3F500C58C70 /* CoreGraphics.framework */; };
 		3455743E1996A3F500C58C70 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3455743D1996A3F500C58C70 /* UIKit.framework */; };
@@ -81,6 +82,8 @@
 /* Begin PBXFileReference section */
 		34194A1C199B0B650046423D /* DBStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBStatisticsViewController.h; sourceTree = "<group>"; };
 		34194A1D199B0B650046423D /* DBStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBStatisticsViewController.m; sourceTree = "<group>"; };
+		341E1F40199C1BA700F4B538 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		341E1F41199C1BA700F4B538 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		345574361996A3F500C58C70 /* Doubled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doubled.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		345574391996A3F500C58C70 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3455743B1996A3F500C58C70 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -561,6 +564,7 @@
 			isa = PBXGroup;
 			children = (
 				3455749A1996A4AF00C58C70 /* DBGameData.m */,
+				341E1F41199C1BA700F4B538 /* KeychainWrapper.m */,
 				3455749B1996A4AF00C58C70 /* DBCasualGameData.m */,
 				34B1B8C61999136B005B7C7E /* DBTimeAttackGameData.m */,
 			);
@@ -571,6 +575,7 @@
 			isa = PBXGroup;
 			children = (
 				3455747A1996A44E00C58C70 /* DBGameData.h */,
+				341E1F40199C1BA700F4B538 /* KeychainWrapper.h */,
 				3455747B1996A44E00C58C70 /* DBCasualGameData.h */,
 				34B1B8C51999136B005B7C7E /* DBTimeAttackGameData.h */,
 			);
@@ -708,6 +713,7 @@
 				345574C21996A4AF00C58C70 /* MRTutorialViewController.m in Sources */,
 				345574AE1996A4AF00C58C70 /* DBMainMenuViewController.m in Sources */,
 				345574C01996A4AF00C58C70 /* DBRemoveAdsBanner.m in Sources */,
+				341E1F42199C1BA700F4B538 /* KeychainWrapper.m in Sources */,
 				345574B01996A4AF00C58C70 /* DBSettingsViewController.m in Sources */,
 				345574AF1996A4AF00C58C70 /* DBGameOptionViewController.m in Sources */,
 				345574BC1996A4AF00C58C70 /* IAPHelper.m in Sources */,
