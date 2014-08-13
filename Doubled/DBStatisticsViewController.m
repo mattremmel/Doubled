@@ -139,59 +139,57 @@
 
 - (void)reloadData
 {
-    if ([self.labelCasualTotalMoves.text isEqualToString:[NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].totalMoves]])
+    if (![self.labelCasualTotalMoves.text isEqualToString:[NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].totalMoves]])
     {
-        return;
+        // Casual Game Data
+        self.labelCasualGamesPlayed.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].gamesPlayed];
+        self.labelCasualLargestTileRecord.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].largestTileRecord];
+        self.labelCasualHighScore.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].highScore];
+        self.labelCasualCumulativeScore.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].cumulativeScore];
+        self.labelCasualTotalMoves.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].totalMoves];
+        self.labelCasual4TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile4Count];
+        self.labelCasual8TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile8Count];
+        self.labelCasual16TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile16Count];
+        self.labelCasual32TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile32Count];
+        self.labelCasual64TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile64Count];
+        self.labelCasual128TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile128Count];
+        self.labelCasual256TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile256Count];
+        self.labelCasual512TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile512Count];
+        self.labelCasual1024TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile1024Count];
+        self.labelCasual2048TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile2048Count];
+        self.labelCasual4096TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile4096Count];
+        self.labelCasual8192TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile8192Count];
+        self.labelCasual16384TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile16384Count];
+        self.labelCasual32768TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile32768Count];
+        self.labelCasual65536TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile65536Count];
     }
     
-    // Casual Game Data
-    self.labelCasualGamesPlayed.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].gamesPlayed];
-    self.labelCasualLargestTileRecord.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].largestTileRecord];
-    self.labelCasualHighScore.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].highScore];
-    self.labelCasualCumulativeScore.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].cumulativeScore];
-    self.labelCasualTotalMoves.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].totalMoves];
-    self.labelCasual4TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile4Count];
-    self.labelCasual8TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile8Count];
-    self.labelCasual16TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile16Count];
-    self.labelCasual32TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile32Count];
-    self.labelCasual64TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile64Count];
-    self.labelCasual128TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile128Count];
-    self.labelCasual256TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile256Count];
-    self.labelCasual512TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile512Count];
-    self.labelCasual1024TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile1024Count];
-    self.labelCasual2048TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile2048Count];
-    self.labelCasual4096TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile4096Count];
-    self.labelCasual8192TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile8192Count];
-    self.labelCasual16384TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile16384Count];
-    self.labelCasual32768TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile32768Count];
-    self.labelCasual65536TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].tile65536Count];
     
-    if ([self.labelTimeAttackTotalMoves.text isEqualToString:[NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].totalMoves]])
+    
+    if (![self.labelTimeAttackTotalMoves.text isEqualToString:[NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].totalMoves]])
     {
-        return;
+        // Time Attack Game Data
+        self.labelTimeAttackGamesPlayed.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].gamesPlayed];
+        self.labelTimeAttackLargestTileRecord.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].largestTileRecord];
+        self.labelTimeAttackHighScore.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].highScore];
+        self.labelTimeAttackCumulativeScore.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].cumulativeScore];
+        self.labelTimeAttackTotalMoves.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].totalMoves];
+        self.labelTimeAttack4TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile4Count];
+        self.labelTimeAttack8TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile8Count];
+        self.labelTimeAttack16TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile16Count];
+        self.labelTimeAttack32TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile32Count];
+        self.labelTimeAttack64TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile64Count];
+        self.labelTimeAttack128TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile128Count];
+        self.labelTimeAttack256TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile256Count];
+        self.labelTimeAttack512TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile512Count];
+        self.labelTimeAttack1024TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile1024Count];
+        self.labelTimeAttack2048TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile2048Count];
+        self.labelTimeAttack4096TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile4096Count];
+        self.labelTimeAttack8192TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile8192Count];
+        self.labelTimeAttack16384TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile16384Count];
+        self.labelTimeAttack32768TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile32768Count];
+        self.labelTimeAttack65536TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile65536Count];
     }
-    
-    // Time Attack Game Data
-    self.labelTimeAttackGamesPlayed.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].gamesPlayed];
-    self.labelTimeAttackLargestTileRecord.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].largestTileRecord];
-    self.labelTimeAttackHighScore.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].highScore];
-    self.labelTimeAttackCumulativeScore.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].cumulativeScore];
-    self.labelTimeAttackTotalMoves.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].totalMoves];
-    self.labelTimeAttack4TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile4Count];
-    self.labelTimeAttack8TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile8Count];
-    self.labelTimeAttack16TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile16Count];
-    self.labelTimeAttack32TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile32Count];
-    self.labelTimeAttack64TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile64Count];
-    self.labelTimeAttack128TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile128Count];
-    self.labelTimeAttack256TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile256Count];
-    self.labelTimeAttack512TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile512Count];
-    self.labelTimeAttack1024TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile1024Count];
-    self.labelTimeAttack2048TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile2048Count];
-    self.labelTimeAttack4096TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile4096Count];
-    self.labelTimeAttack8192TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile8192Count];
-    self.labelTimeAttack16384TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile16384Count];
-    self.labelTimeAttack32768TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile32768Count];
-    self.labelTimeAttack65536TileCount.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].tile65536Count];
 }
 
 @end
