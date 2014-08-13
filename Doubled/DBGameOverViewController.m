@@ -8,8 +8,10 @@
 
 #import "DBGameOverViewController.h"
 #import "DBGameGlobals.h"
+#import <GameKit/GameKit.h>
+#import "DBGameScene.h"
 
-@interface DBGameOverViewController ()
+@interface DBGameOverViewController () <GKGameCenterControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *viewBackground;
 
@@ -171,10 +173,23 @@
 
 - (IBAction)buttonLeaderboard:(id)sender
 {
-    if ([self.target respondsToSelector:self.actionLeaderboard])
-    {
-        [self.target performSelector:self.actionLeaderboard];
-    }
+    [self showLeaderboardAndAchievements];
+}
+
+
+#pragma mark - Game Center Callback
+
+- (void)showLeaderboardAndAchievements
+{
+    GKGameCenterViewController *gcViewController = [[GKGameCenterViewController alloc] init];
+    gcViewController.gameCenterDelegate = self;
+    gcViewController.viewState = GKGameCenterViewControllerStateLeaderboards;
+    [self presentViewController:gcViewController animated:YES completion:nil];
+}
+
+-(void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController
+{
+    [gameCenterViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 
