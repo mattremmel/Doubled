@@ -29,7 +29,6 @@
         tileSizeShrink = 5;
         columnCount = 4;
         rowCount = 4;
-        touchTolerance = 40;
     }
     else if (size.width == 320 && size.height == 568) // iPhone 5
     {
@@ -40,7 +39,6 @@
         tileSizeShrink = 5;
         columnCount = 4;
         rowCount = 4;
-        touchTolerance = 40;
     }
     else if (size.width == 768 && size.height == 1024) // iPad
     {
@@ -51,7 +49,6 @@
         tileSizeShrink = 6;
         columnCount = 4;
         rowCount = 4;
-        touchTolerance = 80;
     }
     else
     {
@@ -62,7 +59,6 @@
         tileSizeShrink = 5;
         columnCount = 4;
         rowCount = 4;
-        touchTolerance = 40;
     }
 }
 
