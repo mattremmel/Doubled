@@ -44,8 +44,11 @@
     self.buttonNewGame.layer.cornerRadius = MenuButtonCornerRadius;
     self.buttonContinue.layer.cornerRadius = MenuButtonCornerRadius;
     
-    [self.buttonNewGame setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.buttonContinue setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.buttonNewGame setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+    [self.buttonContinue setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+    
+    self.buttonNewGame.backgroundColor = defaultButtonColor;
+    self.buttonContinue.backgroundColor = defaultButtonColor;
 }
 
 #pragma mark - Target Methods

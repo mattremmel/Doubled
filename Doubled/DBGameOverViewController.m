@@ -51,21 +51,21 @@
     self.viewBackground.layer.shadowOpacity = 0.8;
     self.viewBackground.layer.shadowOffset = MenuButtonShadowOffset;
     
-    self.viewScoreBackground.backgroundColor = defaultNodeColor;
+    self.viewScoreBackground.backgroundColor = defaultHUDColor;
     self.viewScoreBackground.layer.cornerRadius = MenuButtonCornerRadius;
     
-    self.viewHighScoreBackground.backgroundColor = defaultNodeColor;
+    self.viewHighScoreBackground.backgroundColor = defaultHUDColor;
     self.viewHighScoreBackground.layer.cornerRadius = MenuButtonCornerRadius;
     
     self.buttonLeaderboard.layer.cornerRadius = MenuButtonCornerRadius;
-    self.buttonLeaderboard.backgroundColor = defaultNodeColor;
-    [self.buttonLeaderboard setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.buttonLeaderboard.backgroundColor = defaultButtonColor;
+    [self.buttonLeaderboard setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
     
-    self.buttonNewGame.backgroundColor = defaultNodeColor;
-    [self.buttonNewGame setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.buttonNewGame.backgroundColor = defaultButtonColor;
+    [self.buttonNewGame setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
     
-    self.buttonMainMenu.backgroundColor = defaultNodeColor;
-    [self.buttonMainMenu setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.buttonMainMenu.backgroundColor = defaultButtonColor;
+    [self.buttonMainMenu setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
     
     self.labelScore.textAlignment = NSTextAlignmentCenter;
     self.labelScore.adjustsFontSizeToFitWidth = true;
