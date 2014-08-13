@@ -522,17 +522,11 @@
     [self.gameController dismissGameController];
 }
 
-- (void)buttonLeaderboard
-{
-    // TODO: Implement showing leaderboard
-}
-
 
 #pragma mark - Touch Delegate
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"DEBUG: Touches began");
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInNode: self.gameLayer];
     

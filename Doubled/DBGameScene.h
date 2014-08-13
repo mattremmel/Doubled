@@ -54,7 +54,6 @@ typedef struct {
 - (void)moveTilesToPositionWithAnimation:(BOOL)animate;
 
 - (void)buttonMenu;
-- (void)buttonLeaderboard;
 
 - (void)checkForEndGame;
 - (void)endGame;
