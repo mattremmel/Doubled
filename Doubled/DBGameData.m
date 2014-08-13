@@ -9,6 +9,7 @@
 #import "DBGameData.h"
 #import "DBGameGlobals.h"
 #import <GameKit/GameKit.h>
+#import "KeychainWrapper.h"
 
 @interface DBGameData() <NSCoding>
 
@@ -146,6 +147,23 @@
     NSData *decodedData = [NSData dataWithContentsOfFile: [self getFilePath] options:NSDataReadingMappedAlways error:nil];
     if (decodedData != nil)
     {
+        // Check that the file hasn't been tampered with
+        NSString *checksumOfSavedFile = [KeychainWrapper computeSHA256DigestForData: decodedData];
+        NSString *checksumInKeychain = [KeychainWrapper keychainStringFromMatchingIdentifier: [self getCheckSumIdentifier]];
+        NSLog(@"DATA: Checksum of saved file: %@", checksumOfSavedFile);
+        NSLog(@"DATA: Checksum in keychain:   %@", checksumInKeychain);
+        
+        if (![checksumOfSavedFile isEqualToString: checksumInKeychain])
+        {
+            NSLog(@"DATA: File does not mach checksum, resetting data");
+            [self resetAllGameData];
+            return nil;
+        }
+        else
+        {
+            NSLog(@"DATA: File matches checksum, loading data");
+        }
+        
         DBGameData *data = (DBGameData *)[NSKeyedUnarchiver unarchiveObjectWithData:decodedData];
         
         self.score = data.score;
@@ -185,6 +203,13 @@
     
     NSData *encodedData = [NSKeyedArchiver archivedDataWithRootObject: self];
     [encodedData writeToFile: [self getFilePath] atomically:true];
+    NSString* checksum = [KeychainWrapper computeSHA256DigestForData: encodedData];
+    if ([KeychainWrapper keychainStringFromMatchingIdentifier: [self getCheckSumIdentifier]]) {
+        [KeychainWrapper updateKeychainValue:checksum forIdentifier:[self getCheckSumIdentifier]];
+    } else {
+        [KeychainWrapper createKeychainValue:checksum forIdentifier:[self getCheckSumIdentifier]];
+    }
+    
     [self updateiCloud];
 }
 
@@ -362,6 +387,15 @@
 }
 
 
+#pragma mark - Security
+
+- (NSString *)getCheckSumIdentifier
+{
+    NSLog(@"Must be overridden to return correct checksum identifier for game mode");
+    assert(false);
+}
+
+
 #pragma mark - iCloud Support
 
 - (void)updateiCloud
@@ -417,7 +451,7 @@
 
 - (void)dealloc
 {
-    NSLog(@"APP:  Deallocating instance of game data");
+    NSLog(@"DATA: Deallocating instance of game data");
     [[NSNotificationCenter defaultCenter] removeObserver: self];
 }
 

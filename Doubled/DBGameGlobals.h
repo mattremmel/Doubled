@@ -9,6 +9,10 @@
 // Google Admob Identifier
 #define AdMobUnitID @"ca-app-pub-3971901954060500/5725838873"
 
+// Security
+#define CasualGameDataChecksumKey @"CasualGameDataChecksumKey"
+#define TimeAttackGameDataChecksumKey @"TimeAttackGameDataChecksumKey"
+
 // App Delegate Identifiers
 #define AppWillResignActive @"appWillResignActive"
 #define AppDidEnterBackground @"appWillEnterBackground"
@@ -76,8 +80,8 @@ typedef enum {
 
 // Game Center properties
 BOOL gameCenterAuthenticated;
-#define highScoreCasualIdentifier @"HighScoreCasual"
-#define highScoreTimeAttackIdentifier @"HighScoreTimeAttack"
+#define HighScoreCasualIdentifier @"HighScoreCasual"
+#define HighScoreTimeAttackIdentifier @"HighScoreTimeAttack"
 
 // Menu Properties
 #define MenuItemsCount 4

@@ -22,6 +22,8 @@
 // *** END NOTE ***
 + (NSMutableDictionary *)setupSearchDirectoryForIdentifier:(NSString *)identifier {
     
+    NSLog(@"KEY:  Setting up search directory for identifier: %@", identifier);
+    
     // Setup dictionary to access keychain
     NSMutableDictionary *searchDictionary = [[NSMutableDictionary alloc] init];  
     // Specify we are using a Password (vs Certificate, Internet Password, etc)
@@ -38,6 +40,7 @@
 }
 
 + (NSData *)searchKeychainCopyMatchingIdentifier:(NSString *)identifier {
+    NSLog(@"KEY:  Searching for keychain copy matching identifier: %@", identifier);
    
     NSMutableDictionary *searchDictionary = [self setupSearchDirectoryForIdentifier:identifier];
     // Limit search results to one
@@ -61,6 +64,8 @@
 }
 
 + (NSString *)keychainStringFromMatchingIdentifier:(NSString *)identifier {
+    NSLog(@"KEY:  Getting keychain string for identifier: %@", identifier);
+    
    NSData *valueData = [self searchKeychainCopyMatchingIdentifier:identifier];
     if (valueData) {
         NSString *value = [[NSString alloc] initWithData:valueData
@@ -72,6 +77,8 @@
 }
 
 + (BOOL)createKeychainValue:(NSString *)value forIdentifier:(NSString *)identifier {
+    
+    NSLog(@"KEY:  Creating keychain value for identifier: %@", identifier);
    
     NSMutableDictionary *dictionary = [self setupSearchDirectoryForIdentifier:identifier];
     NSData *valueData = [value dataUsingEncoding:NSUTF8StringEncoding];
@@ -94,6 +101,7 @@
 }
 
 + (BOOL)updateKeychainValue:(NSString *)value forIdentifier:(NSString *)identifier {
+    NSLog(@"KEY:  Updating keychain value for identifier: %@", identifier);
     
     NSMutableDictionary *searchDictionary = [self setupSearchDirectoryForIdentifier:identifier];
     NSMutableDictionary *updateDictionary = [[NSMutableDictionary alloc] init];
@@ -112,6 +120,7 @@
 }
 
 + (void)deleteItemFromKeychainWithIdentifier:(NSString *)identifier {
+    NSLog(@"KEY:  Deleting item from keychain with identifier: %@", identifier);
     NSMutableDictionary *searchDictionary = [self setupSearchDirectoryForIdentifier:identifier];
     CFDictionaryRef dictionary = (__bridge CFDictionaryRef)searchDictionary;
     
@@ -129,6 +138,7 @@
 // a one way encryption algorithm.  One way meaning that it can never be reverse-engineered, only brute-force attacked
 // The algorthim we are using is 'Hash = SHA256(Name + Salt + (Hash(PIN)))'.  This is called "Digest Authentication"
 + (NSString *)securedSHA256DigestHashForPIN:(NSUInteger)pinHash {
+    NSLog(@"KEY:  Secured SHA256 digest for hash pin");
     // 1
     NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:APP_NAME];
     name = [name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -150,6 +160,7 @@
 
 +(NSString*)computeSHA256DigestForData:(NSData*)data
 {
+    NSLog(@"KEY:  Computing SHA256 digest for data");
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];
     
     // This is an iOS5-specific method

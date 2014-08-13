@@ -57,12 +57,17 @@
 
 - (NSString *)getLeaderboardIdentifier
 {
-    return highScoreCasualIdentifier;
+    return HighScoreCasualIdentifier;
+}
+
+- (NSString *)getCheckSumIdentifier
+{
+    return CasualGameDataChecksumKey;
 }
 
 - (NSString *)getiCloudHighScoreKey
 {
-    return highScoreCasualIdentifier;
+    return HighScoreCasualIdentifier;
 }
 
 @end

@@ -84,12 +84,17 @@
 
 - (NSString *)getLeaderboardIdentifier
 {
-    return highScoreTimeAttackIdentifier;
+    return HighScoreTimeAttackIdentifier;
+}
+
+- (NSString *)getCheckSumIdentifier
+{
+    return TimeAttackGameDataChecksumKey;
 }
 
 - (NSString *)getiCloudHighScoreKey
 {
-    return highScoreTimeAttackIdentifier;
+    return HighScoreTimeAttackIdentifier;
 }
 
 @end
