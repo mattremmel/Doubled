@@ -12,5 +12,6 @@
 
 + (void)loadSettings;
 + (void)saveSettings;
++ (void)resetSettings;
 
 @end

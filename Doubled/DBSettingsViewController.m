@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *switchContinuousSwipe;
 @property (weak, nonatomic) IBOutlet UISwitch *switchGameCenterEnabled;
 @property (weak, nonatomic) IBOutlet UIButton *buttonResetGameData;
+@property (weak, nonatomic) IBOutlet UISlider *sliderTouchTolerance;
 
 @end
 
@@ -35,7 +36,8 @@
 {
     self.view.backgroundColor = defaultBackgroundColor;
     self.buttonResetGameData.layer.cornerRadius = MenuButtonCornerRadius;
-    [self.buttonResetGameData setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.buttonResetGameData setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+    self.buttonResetGameData.backgroundColor = defaultButtonColor;
 }
 
 
@@ -43,15 +45,9 @@
 
 - (void)setCurrentSettingsState
 {
-    if (!continuousSwipeEnabled)
-    {
-        self.switchContinuousSwipe.on = false;
-    }
-    
-    if (!gameCenterEnabled)
-    {
-        self.switchGameCenterEnabled.on = false;
-    }
+    self.switchContinuousSwipe.on = continuousSwipeEnabled;
+    self.switchGameCenterEnabled.on = gameCenterEnabled;
+    self.sliderTouchTolerance.value = touchTolerance;
 }
 
 - (IBAction)swipeContSwipeChanged:(id)sender
@@ -109,6 +105,12 @@
     [DBSettingsManager saveSettings];
 }
 
+- (IBAction)sliderEditingDidEnd:(id)sender
+{
+    touchTolerance = (NSInteger)self.sliderTouchTolerance.value;
+    [DBSettingsManager saveSettings];
+}
+
 - (IBAction)buttonResetGameData:(id)sender
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset Game Data?" message:@"Are you sure you would like to reset all game data on this device? This will not effect in-app purchases." delegate:self cancelButtonTitle:@"Yes" otherButtonTitles:@"No", nil];
@@ -124,6 +126,8 @@
     if (buttonIndex == 0) {
         [[DBCasualGameData sharedInstance] resetAllGameData];
         [[DBTimeAttackGameData sharedInstance] resetAllGameData];
+        [DBSettingsManager resetSettings];
+        [self setCurrentSettingsState];
     }
 }
 
