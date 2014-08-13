@@ -10,6 +10,7 @@
 #import <GameKit/GameKit.h>
 #import "DBGameGlobals.h"
 #import "DBMainMenuViewController.h"
+#import "DBStatisticsViewController.h"
 #import "DBSettingsViewController.h"
 #import "DBAdvertisingViewController.h"
 
@@ -117,13 +118,18 @@
             break;
             
         case 1:
-            child = [[DBSettingsViewController alloc] initWithNibName:@"DBSettingsView" bundle:nil];
+            child = [[DBStatisticsViewController alloc] initWithNibName:@"DBStatisticsView" bundle:nil];
             child.index = 1;
             break;
             
         case 2:
-            child = [[DBAdvertisingViewController alloc] initWithNibName:@"DBAdvertisingView" bundle:nil];
+            child = [[DBSettingsViewController alloc] initWithNibName:@"DBSettingsView" bundle:nil];
             child.index = 2;
+            break;
+            
+        case 3:
+            child = [[DBAdvertisingViewController alloc] initWithNibName:@"DBAdvertisingView" bundle:nil];
+            child.index = 3;
             break;
             
         default:

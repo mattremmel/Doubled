@@ -25,7 +25,7 @@
 #define defaultNodeColor [UIColor colorWithRed: 0.663 green: 0.886 blue: 0.953 alpha: 1.0]
 #define defaultNodeBackgroundColor [UIColor colorWithRed: 0.87 green: 0.87 blue: 0.87 alpha: 1.0]
 #define defaultBackgroundColor [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.0]
-#define defaultButtonColor [UIColor colorWithWhite:0.3 alpha:1.0]
+#define defaultButtonColor [UIColor colorWithRed:0.08 green:0.23 blue:0.42 alpha:1.0]
 #define defaultButtonTextColor [UIColor whiteColor]
 #define defaultHUDColor [UIColor colorWithRed: 0.8 green: 0.88 blue: 0.92 alpha: 1.0]
 
@@ -80,7 +80,7 @@ BOOL gameCenterAuthenticated;
 #define highScoreTimeAttackIdentifier @"HighScoreTimeAttack"
 
 // Menu Properties
-#define MenuItemsCount 3
+#define MenuItemsCount 4
 #define InitialMenuItemIndex 0
 #define MenuButtonWidth 180
 #define MenuButtonHeight 60

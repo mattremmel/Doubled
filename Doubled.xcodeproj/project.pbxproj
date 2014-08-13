@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34194A1E199B0B650046423D /* DBStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34194A1D199B0B650046423D /* DBStatisticsViewController.m */; };
 		3455743A1996A3F500C58C70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345574391996A3F500C58C70 /* Foundation.framework */; };
 		3455743C1996A3F500C58C70 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3455743B1996A3F500C58C70 /* CoreGraphics.framework */; };
 		3455743E1996A3F500C58C70 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3455743D1996A3F500C58C70 /* UIKit.framework */; };
@@ -78,6 +79,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34194A1C199B0B650046423D /* DBStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBStatisticsViewController.h; sourceTree = "<group>"; };
+		34194A1D199B0B650046423D /* DBStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBStatisticsViewController.m; sourceTree = "<group>"; };
 		345574361996A3F500C58C70 /* Doubled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doubled.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		345574391996A3F500C58C70 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3455743B1996A3F500C58C70 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -348,6 +351,7 @@
 				3455746E1996A44E00C58C70 /* DBChildMenuViewController.h */,
 				3455746F1996A44E00C58C70 /* DBMainMenuViewController.h */,
 				345574701996A44E00C58C70 /* DBGameOptionViewController.h */,
+				34194A1C199B0B650046423D /* DBStatisticsViewController.h */,
 				345574711996A44E00C58C70 /* DBSettingsViewController.h */,
 				345574721996A44E00C58C70 /* DBAdvertisingViewController.h */,
 				345574741996A44E00C58C70 /* DBGameViewController.h */,
@@ -402,6 +406,7 @@
 				3455748E1996A4AF00C58C70 /* DBChildMenuViewController.m */,
 				3455748F1996A4AF00C58C70 /* DBMainMenuViewController.m */,
 				345574901996A4AF00C58C70 /* DBGameOptionViewController.m */,
+				34194A1D199B0B650046423D /* DBStatisticsViewController.m */,
 				345574911996A4AF00C58C70 /* DBSettingsViewController.m */,
 				345574921996A4AF00C58C70 /* DBAdvertisingViewController.m */,
 				345574941996A4AF00C58C70 /* DBGameViewController.m */,
@@ -463,9 +468,9 @@
 			children = (
 				345574A51996A4AF00C58C70 /* DBMainMenuView.xib */,
 				345574A61996A4AF00C58C70 /* DBGameOptionView.xib */,
+				345574A91996A4AF00C58C70 /* DBStatisticsView.xib */,
 				345574A71996A4AF00C58C70 /* DBSettingsView.xib */,
 				345574A81996A4AF00C58C70 /* DBAdvertisingView.xib */,
-				345574A91996A4AF00C58C70 /* DBStatisticsView.xib */,
 				345574AA1996A4AF00C58C70 /* DBGameOverView.xib */,
 			);
 			name = iPhone;
@@ -476,9 +481,9 @@
 			children = (
 				345FF9671999A4F9006C9915 /* DBMainMenuView~ipad.xib */,
 				345FF9691999A945006C9915 /* DBGameOptionView~ipad.xib */,
+				345FF96F1999A991006C9915 /* DBStatisticsView~ipad.xib */,
 				345FF96B1999A95E006C9915 /* DBSettingsView~ipad.xib */,
 				345FF96D1999A979006C9915 /* DBAdvertisingView~ipad.xib */,
-				345FF96F1999A991006C9915 /* DBStatisticsView~ipad.xib */,
 				345FF9711999A9A9006C9915 /* DBGameOverView~ipad.xib */,
 			);
 			name = iPad;
@@ -709,6 +714,7 @@
 				3455744A1996A3F500C58C70 /* AppDelegate.m in Sources */,
 				345574B81996A4AF00C58C70 /* DBTile.m in Sources */,
 				345574B51996A4AF00C58C70 /* DBGameScene.m in Sources */,
+				34194A1E199B0B650046423D /* DBStatisticsViewController.m in Sources */,
 				345574C31996A4AF00C58C70 /* MRChildTutorialViewController.m in Sources */,
 				34B1B8C71999136B005B7C7E /* DBTimeAttackGameData.m in Sources */,
 				345574461996A3F500C58C70 /* main.m in Sources */,
