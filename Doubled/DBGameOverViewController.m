@@ -43,7 +43,7 @@
 
 - (void)styleView
 {
-    self.view.backgroundColor = [UIColor colorWithWhite:0.95 alpha:0.4];
+    self.view.backgroundColor = [UIColor colorWithWhite:0.95 alpha:0.6];
     self.view.userInteractionEnabled = true;
     
     self.viewBackground.backgroundColor = defaultBackgroundColor;
@@ -58,8 +58,8 @@
     self.viewHighScoreBackground.layer.cornerRadius = MenuButtonCornerRadius;
     
     self.buttonLeaderboard.layer.cornerRadius = MenuButtonCornerRadius;
-    self.buttonLeaderboard.backgroundColor = defaultButtonColor;
-    [self.buttonLeaderboard setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+    self.buttonLeaderboard.backgroundColor = defaultHUDColor;
+    [self.buttonLeaderboard setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     self.buttonNewGame.backgroundColor = defaultButtonColor;
     [self.buttonNewGame setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
