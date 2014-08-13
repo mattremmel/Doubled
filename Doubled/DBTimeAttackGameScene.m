@@ -181,7 +181,7 @@
 {
     if (!self.startGameAlertIsVisible)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ready?" message:@"Clicking OK will start the timer. If the timer reaches zero the game will end. Time is added everytime you make a move. Be quick." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ready?" message:@"Clicking START will start the timer. If the timer reaches zero the game will end. Time is added everytime you make a move. Be quick." delegate:self cancelButtonTitle:@"START" otherButtonTitles:nil];
         [alert show];
         self.startGameAlertIsVisible = true;
     }
