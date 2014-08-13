@@ -78,6 +78,7 @@
 - (void)resetAllGameData;
 - (void)reportHighScoreToGameCenter;
 - (NSString *)getLeaderboardIdentifier;
+- (NSString *)getCheckSumIdentifier;
 - (void)updateiCloud;
 - (void)updateFromiCloud;
 - (NSString *)getiCloudHighScoreKey;
