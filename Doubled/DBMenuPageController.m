@@ -13,6 +13,8 @@
 #import "DBStatisticsViewController.h"
 #import "DBSettingsViewController.h"
 #import "DBAdvertisingViewController.h"
+#import "DBTutorialPageViewController.h"
+#import "DBSettingsManager.h"
 
 @interface DBMenuPageController () <UIPageViewControllerDataSource>
 
@@ -61,6 +63,42 @@
     
     // Game Center
     [self authenticateLocalPlayer];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [self handleFirstLaunchAfterUpdate];
+}
+
+#pragma mark - First Launch / Update Handler
+
+// Gets called everytime the app launches so it can check if this is first launch, or the first
+// launch after an update in order to show tutorial or whats new screen.
+- (void)handleFirstLaunchAfterUpdate
+{
+    NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    
+    bool hasHadFirstLaunch = [[NSUserDefaults standardUserDefaults] boolForKey:hasHadFirstLaunchKey];
+    if (!hasHadFirstLaunch)
+    {
+        // Set the last launch version to this current launch since there wasn't one before and no need to show whats new.
+        [[NSUserDefaults standardUserDefaults] setObject:appVersion forKey:LastVersionLaunchedKey];
+        
+        // Tutorial
+        DBTutorialPageViewController *tutorialController = [[DBTutorialPageViewController alloc] init];
+        [self.pageViewController presentViewController:tutorialController animated:true completion:nil];
+        [[NSUserDefaults standardUserDefaults] setBool:true forKey:hasHadFirstLaunchKey];
+        
+        // Don't want to show the whats new so ending here
+        return;
+    }
+    
+    NSString *lastVersionLaunched = [[NSUserDefaults standardUserDefaults] stringForKey:LastVersionLaunchedKey];
+    if (![lastVersionLaunched isEqualToString:appVersion])
+    {
+        // TODO: Show whats new controller or something fancy
+        [[NSUserDefaults standardUserDefaults] setObject:appVersion forKey:LastVersionLaunchedKey];
+    }
 }
 
 #pragma mark - Game Center
