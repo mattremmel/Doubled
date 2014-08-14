@@ -13,6 +13,10 @@
 #define CasualGameDataChecksumKey @"CasualGameDataChecksumKey"
 #define TimeAttackGameDataChecksumKey @"TimeAttackGameDataChecksumKey"
 
+// First Launch / Update Keys
+#define hasHadFirstLaunchKey @"hasHadFirstLaunch"
+#define LastVersionLaunchedKey @"lastVersionLaunched"
+
 // App Delegate Identifiers
 #define AppWillResignActive @"appWillResignActive"
 #define AppDidEnterBackground @"appWillEnterBackground"
@@ -97,13 +101,11 @@ BOOL gameCenterAuthenticated;
 #define InitialTutorialViewIndex 0
 
 // Settings
-BOOL isFirstLaunch;
 BOOL ContinuousSwipeEnabled;
 BOOL GameCenterEnabled;
 BOOL iCloudEnabled;
 NSInteger TouchTolerance;
 
-#define IsFirstLaunchKey @"isFirstLaunch"
 #define ContinuousSwipeEnabledKey @"continuousSwipeEnabled"
 #define GameCenterEnabledKey @"gameCenterEnabled"
 #define iCloudEnabledKey @"iCloudEnabledKey"
