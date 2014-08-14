@@ -74,7 +74,7 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
         </view>
         <view contentMode="scaleToFill" id="Gu6-Vx-QSn">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1650"/>
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1700"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CASUAL MODE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lK-NI-x46">
