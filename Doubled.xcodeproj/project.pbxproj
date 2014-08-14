@@ -590,10 +590,26 @@
 		34E581FB199C59D100332B96 /* Tutorial Views */ = {
 			isa = PBXGroup;
 			children = (
-				34E581FC199C5A0100332B96 /* DBTutorialPageOneView.xib */,
-				34E581FE199C5AB100332B96 /* DBTutorialPageOneView~ipad.xib */,
+				34E58200199C69EF00332B96 /* iPhone */,
+				34E58201199C69FB00332B96 /* iPad */,
 			);
 			name = "Tutorial Views";
+			sourceTree = "<group>";
+		};
+		34E58200199C69EF00332B96 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				34E581FC199C5A0100332B96 /* DBTutorialPageOneView.xib */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		34E58201199C69FB00332B96 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				34E581FE199C5AB100332B96 /* DBTutorialPageOneView~ipad.xib */,
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
