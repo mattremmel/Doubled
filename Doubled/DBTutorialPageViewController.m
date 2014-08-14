@@ -81,7 +81,7 @@
             break;
             
         case 3:
-            child = [[DBChildTutorialViewController alloc] initWithNibName:@"DBTutorialPageFinal" bundle:nil];
+            child = [[DBChildTutorialViewController alloc] initWithNibName:@"DBTutorialFinalView" bundle:nil];
             [child setActionTarget:self actionDismissTutorial:@selector(dismissTutorial)];
             child.index = 3;
             break;
