@@ -41,8 +41,8 @@
 		345574BD1996A4AF00C58C70 /* DoubledIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455749E1996A4AF00C58C70 /* DoubledIAPHelper.m */; };
 		345574C01996A4AF00C58C70 /* DBRemoveAdsBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A11996A4AF00C58C70 /* DBRemoveAdsBanner.m */; };
 		345574C11996A4AF00C58C70 /* DBGameInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A21996A4AF00C58C70 /* DBGameInterface.m */; };
-		345574C21996A4AF00C58C70 /* MRTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A31996A4AF00C58C70 /* MRTutorialViewController.m */; };
-		345574C31996A4AF00C58C70 /* MRChildTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A41996A4AF00C58C70 /* MRChildTutorialViewController.m */; };
+		345574C21996A4AF00C58C70 /* DBTutorialPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A31996A4AF00C58C70 /* DBTutorialPageViewController.m */; };
+		345574C31996A4AF00C58C70 /* DBChildTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345574A41996A4AF00C58C70 /* DBChildTutorialViewController.m */; };
 		345574C41996A4AF00C58C70 /* DBMainMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345574A51996A4AF00C58C70 /* DBMainMenuView.xib */; };
 		345574C51996A4AF00C58C70 /* DBGameOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345574A61996A4AF00C58C70 /* DBGameOptionView.xib */; };
 		345574C61996A4AF00C58C70 /* DBSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345574A71996A4AF00C58C70 /* DBSettingsView.xib */; };
@@ -67,6 +67,8 @@
 		34604AAF199972B600625D3B /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34604AAD199972B600625D3B /* libGoogleAdMobAds.a */; };
 		34604AB0199972B600625D3B /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 34604AAE199972B600625D3B /* README.txt */; };
 		34B1B8C71999136B005B7C7E /* DBTimeAttackGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B1B8C61999136B005B7C7E /* DBTimeAttackGameData.m */; };
+		34E581FD199C5A0100332B96 /* DBTutorialPageOneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E581FC199C5A0100332B96 /* DBTutorialPageOneView.xib */; };
+		34E581FF199C5AB100332B96 /* DBTutorialPageOneView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E581FE199C5AB100332B96 /* DBTutorialPageOneView~ipad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,8 +123,8 @@
 		3455747E1996A44E00C58C70 /* DoubledIAPHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoubledIAPHelper.h; sourceTree = "<group>"; };
 		345574811996A44E00C58C70 /* DBRemoveAdsBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBRemoveAdsBanner.h; sourceTree = "<group>"; };
 		345574821996A44E00C58C70 /* DBGameInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBGameInterface.h; sourceTree = "<group>"; };
-		345574831996A44E00C58C70 /* MRTutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRTutorialViewController.h; sourceTree = "<group>"; };
-		345574841996A44E00C58C70 /* MRChildTutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRChildTutorialViewController.h; sourceTree = "<group>"; };
+		345574831996A44E00C58C70 /* DBTutorialPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBTutorialPageViewController.h; sourceTree = "<group>"; };
+		345574841996A44E00C58C70 /* DBChildTutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBChildTutorialViewController.h; sourceTree = "<group>"; };
 		3455748C1996A4AF00C58C70 /* DBLaunchConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBLaunchConfiguration.m; sourceTree = "<group>"; };
 		3455748D1996A4AF00C58C70 /* DBMenuPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMenuPageController.m; sourceTree = "<group>"; };
 		3455748E1996A4AF00C58C70 /* DBChildMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBChildMenuViewController.m; sourceTree = "<group>"; };
@@ -143,8 +145,8 @@
 		3455749E1996A4AF00C58C70 /* DoubledIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubledIAPHelper.m; sourceTree = "<group>"; };
 		345574A11996A4AF00C58C70 /* DBRemoveAdsBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBRemoveAdsBanner.m; sourceTree = "<group>"; };
 		345574A21996A4AF00C58C70 /* DBGameInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBGameInterface.m; sourceTree = "<group>"; };
-		345574A31996A4AF00C58C70 /* MRTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRTutorialViewController.m; sourceTree = "<group>"; };
-		345574A41996A4AF00C58C70 /* MRChildTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRChildTutorialViewController.m; sourceTree = "<group>"; };
+		345574A31996A4AF00C58C70 /* DBTutorialPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTutorialPageViewController.m; sourceTree = "<group>"; };
+		345574A41996A4AF00C58C70 /* DBChildTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBChildTutorialViewController.m; sourceTree = "<group>"; };
 		345574A51996A4AF00C58C70 /* DBMainMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBMainMenuView.xib; sourceTree = "<group>"; };
 		345574A61996A4AF00C58C70 /* DBGameOptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBGameOptionView.xib; sourceTree = "<group>"; };
 		345574A71996A4AF00C58C70 /* DBSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBSettingsView.xib; sourceTree = "<group>"; };
@@ -198,6 +200,8 @@
 		34604AAE199972B600625D3B /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		34B1B8C51999136B005B7C7E /* DBTimeAttackGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTimeAttackGameData.h; sourceTree = "<group>"; };
 		34B1B8C61999136B005B7C7E /* DBTimeAttackGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTimeAttackGameData.m; sourceTree = "<group>"; };
+		34E581FC199C5A0100332B96 /* DBTutorialPageOneView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBTutorialPageOneView.xib; sourceTree = "<group>"; };
+		34E581FE199C5AB100332B96 /* DBTutorialPageOneView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DBTutorialPageOneView~ipad.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -396,8 +400,8 @@
 		3455748B1996A49700C58C70 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				345574831996A44E00C58C70 /* MRTutorialViewController.h */,
-				345574841996A44E00C58C70 /* MRChildTutorialViewController.h */,
+				345574831996A44E00C58C70 /* DBTutorialPageViewController.h */,
+				345574841996A44E00C58C70 /* DBChildTutorialViewController.h */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -451,8 +455,9 @@
 		345574CE1996A4E500C58C70 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				345574A31996A4AF00C58C70 /* MRTutorialViewController.m */,
-				345574A41996A4AF00C58C70 /* MRChildTutorialViewController.m */,
+				345574A31996A4AF00C58C70 /* DBTutorialPageViewController.m */,
+				345574A41996A4AF00C58C70 /* DBChildTutorialViewController.m */,
+				34E581FB199C59D100332B96 /* Tutorial Views */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -582,6 +587,15 @@
 			name = Persistance;
 			sourceTree = "<group>";
 		};
+		34E581FB199C59D100332B96 /* Tutorial Views */ = {
+			isa = PBXGroup;
+			children = (
+				34E581FC199C5A0100332B96 /* DBTutorialPageOneView.xib */,
+				34E581FE199C5AB100332B96 /* DBTutorialPageOneView~ipad.xib */,
+			);
+			name = "Tutorial Views";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -677,6 +691,8 @@
 				34604AB0199972B600625D3B /* README.txt in Resources */,
 				345574C51996A4AF00C58C70 /* DBGameOptionView.xib in Resources */,
 				345FF96E1999A979006C9915 /* DBAdvertisingView~ipad.xib in Resources */,
+				34E581FF199C5AB100332B96 /* DBTutorialPageOneView~ipad.xib in Resources */,
+				34E581FD199C5A0100332B96 /* DBTutorialPageOneView.xib in Resources */,
 				345574C91996A4AF00C58C70 /* DBGameOverView.xib in Resources */,
 				345FF9701999A991006C9915 /* DBStatisticsView~ipad.xib in Resources */,
 				3455744C1996A3F500C58C70 /* Images.xcassets in Resources */,
@@ -710,7 +726,7 @@
 				345574BB1996A4AF00C58C70 /* DBSettingsManager.m in Sources */,
 				345574AC1996A4AF00C58C70 /* DBMenuPageController.m in Sources */,
 				345574BD1996A4AF00C58C70 /* DoubledIAPHelper.m in Sources */,
-				345574C21996A4AF00C58C70 /* MRTutorialViewController.m in Sources */,
+				345574C21996A4AF00C58C70 /* DBTutorialPageViewController.m in Sources */,
 				345574AE1996A4AF00C58C70 /* DBMainMenuViewController.m in Sources */,
 				345574C01996A4AF00C58C70 /* DBRemoveAdsBanner.m in Sources */,
 				341E1F42199C1BA700F4B538 /* KeychainWrapper.m in Sources */,
@@ -721,7 +737,7 @@
 				345574B81996A4AF00C58C70 /* DBTile.m in Sources */,
 				345574B51996A4AF00C58C70 /* DBGameScene.m in Sources */,
 				34194A1E199B0B650046423D /* DBStatisticsViewController.m in Sources */,
-				345574C31996A4AF00C58C70 /* MRChildTutorialViewController.m in Sources */,
+				345574C31996A4AF00C58C70 /* DBChildTutorialViewController.m in Sources */,
 				34B1B8C71999136B005B7C7E /* DBTimeAttackGameData.m in Sources */,
 				345574461996A3F500C58C70 /* main.m in Sources */,
 				345574B71996A4AF00C58C70 /* DBTimeAttackGameScene.m in Sources */,
