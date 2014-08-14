@@ -141,7 +141,7 @@
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
         mailController.mailComposeDelegate = self;
-        [mailController setToRecipients:@[@"matt.remmel@gmail.com"]];
+        [mailController setToRecipients:@[@"doubled.app@gmail.com"]];
         [mailController setSubject:@"Doubled - Feedback / Bug Report"];
         [mailController setMessageBody:[NSString stringWithFormat:@"General Feedback:<br/><br/><br/><br/>Bug Report / How to Reproduce:<br/><br/><br/><br/><hr/>%@<hr/>", [self getDeviceSpecs]] isHTML:true];
         [self presentViewController:mailController animated:YES completion:nil];
