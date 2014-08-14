@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Matthew Remmel. All rights reserved.
 //
 
-#import "MRChildTutorialViewController.h"
+#import "DBChildTutorialViewController.h"
 
-@interface MRTutorialPageViewController ()
+@interface DBChildTutorialViewController ()
 
 @end
 
-@implementation MRTutorialPageViewController
+@implementation DBChildTutorialViewController
 
 - (id)initWithIndex:(NSInteger)index
 {

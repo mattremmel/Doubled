@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DBTutorialPageViewController : UIViewController
+@interface DBChildTutorialViewController : UIViewController
 
 @property NSInteger index;
 
