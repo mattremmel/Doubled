@@ -18,7 +18,6 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:settingsFilePath])
     {
         NSDictionary *userSettings = [[NSDictionary alloc] initWithContentsOfFile:settingsFilePath];
-        isFirstLaunch = [[userSettings valueForKey:IsFirstLaunchKey] boolValue];
         ContinuousSwipeEnabled = [[userSettings valueForKey:ContinuousSwipeEnabledKey] boolValue];
         GameCenterEnabled = [[userSettings valueForKey:GameCenterEnabledKey] boolValue];
         iCloudEnabled = [[userSettings valueForKey:iCloudEnabledKey] boolValue];
@@ -46,7 +45,6 @@
     NSLog(@"SETT: Saving Settings");
     NSString *settingsFilePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0] stringByAppendingPathComponent:@"settings"];
     NSMutableDictionary *userSettings = [[NSMutableDictionary alloc] init];
-    [userSettings setObject:[NSNumber numberWithBool:isFirstLaunch] forKey:IsFirstLaunchKey];
     [userSettings setObject:[NSNumber numberWithBool:ContinuousSwipeEnabled] forKey:ContinuousSwipeEnabledKey];
     [userSettings setObject:[NSNumber numberWithBool:GameCenterEnabled] forKey:GameCenterEnabledKey];
     [userSettings setObject:[NSNumber numberWithBool:iCloudEnabled] forKey:iCloudEnabledKey];
@@ -58,7 +56,6 @@
     NSLog(@"SETT: Using default settings");
     NSMutableDictionary *defaultSettings = [[NSMutableDictionary alloc] init];
      NSString *settingsFilePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0] stringByAppendingPathComponent:@"settings"];
-    [defaultSettings setValue:@YES forKey:IsFirstLaunchKey];
     [defaultSettings setValue:@YES forKey:ContinuousSwipeEnabledKey];
     [defaultSettings setValue:@YES forKey:GameCenterEnabledKey];
     [defaultSettings setValue:@YES forKey:iCloudEnabledKey];
