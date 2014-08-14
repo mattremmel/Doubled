@@ -12,4 +12,6 @@
 
 @property NSInteger index;
 
+- (void)setActionTarget:(id)target actionDismissTutorial:(SEL)dismissTutorialAction;
+
 @end

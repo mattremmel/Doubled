@@ -92,6 +92,10 @@ BOOL gameCenterAuthenticated;
 #define MenuButtonShadowOpacity 0.3
 #define MenuButtonShadowOffset CGSizeMake(0.0, 0.0)
 
+// Tutorial Properties
+#define TutorialViewsCount 4
+#define InitialTutorialViewIndex 0
+
 // Settings
 BOOL isFirstLaunch;
 BOOL ContinuousSwipeEnabled;

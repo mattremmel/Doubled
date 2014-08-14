@@ -12,6 +12,7 @@
 #import "DBGameViewController.h"
 #import "DBGameOptionViewController.h"
 #import <MessageUI/MFMailComposeViewController.h>
+#import "DBTutorialPageViewController.h"
 
 @interface DBMainMenuViewController () <MFMailComposeViewControllerDelegate>
 
@@ -118,6 +119,8 @@
 
 - (IBAction)buttonTutorial:(id)sender
 {
+    DBTutorialPageViewController *tutorialController = [[DBTutorialPageViewController alloc] init];
+    [self presentViewController:tutorialController animated:true completion:nil];
 }
 
 - (IBAction)buttonRate:(id)sender

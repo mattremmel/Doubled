@@ -7,37 +7,58 @@
 //
 
 #import "DBChildTutorialViewController.h"
+#import "DBGameGlobals.h"
 
 @interface DBChildTutorialViewController ()
+@property id target;
+@property SEL actionDismissTutorial;
+@property (weak, nonatomic) IBOutlet UIButton *buttonFinishTutorial;
 
 @end
 
 @implementation DBChildTutorialViewController
 
-- (id)initWithIndex:(NSInteger)index
-{
-    self = [super init];
-    if (self)
-    {
-        self.index = index;
-        // Load image based on index
-    }
-
-    return self;
-}
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self styleView];
     
 }
 
-- (void)didReceiveMemoryWarning {
+#pragma mark - Stylize
+
+- (void)styleView
+{
+    if (self.buttonFinishTutorial)
+    {
+        self.buttonFinishTutorial.layer.cornerRadius = MenuButtonCornerRadius;
+        self.buttonFinishTutorial.backgroundColor = defaultButtonColor;
+        [self.buttonFinishTutorial setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+    }
     
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-    
+    self.view.backgroundColor = defaultBackgroundColor;
 }
+
+
+#pragma mark - Target Action
+
+- (void)setActionTarget:(id)target actionDismissTutorial:(SEL)dismissTutorialAction
+{
+    self.target = target;
+    self.actionDismissTutorial = dismissTutorialAction;
+}
+
+
+#pragma mark - Button Events
+
+- (IBAction)buttonFinishTutorial:(id)sender
+{
+    if ([self.target respondsToSelector:self.actionDismissTutorial])
+    {
+        [self.target performSelector:self.actionDismissTutorial];
+    }
+}
+
 
 @end

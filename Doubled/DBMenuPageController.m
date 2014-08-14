@@ -34,7 +34,7 @@
     [[self.pageViewController view] setFrame:self.view.frame];
     self.view.backgroundColor = defaultBackgroundColor;
     
-        self.mainMenuViewController = [[DBMainMenuViewController alloc] initWithNibName:@"DBMainMenuView" bundle:nil];
+    self.mainMenuViewController = [[DBMainMenuViewController alloc] initWithNibName:@"DBMainMenuView" bundle:nil];
     
     DBChildMenuViewController *initialViewController = [self viewControllerAtIndex: InitialMenuItemIndex];
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
@@ -102,7 +102,6 @@
 
 - (DBChildMenuViewController *)viewControllerAtIndex:(NSInteger)index
 {
-    NSLog(@"CONT: Getting view controller at index: %i", index);
     if (index < 0 || index >= MenuItemsCount)
     {
         return nil;
