@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341267C6199D03E2007CC2B6 /* DBTutorialPageTwoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341267C5199D03E2007CC2B6 /* DBTutorialPageTwoView.xib */; };
 		34194A1E199B0B650046423D /* DBStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34194A1D199B0B650046423D /* DBStatisticsViewController.m */; };
 		341E1F42199C1BA700F4B538 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 341E1F41199C1BA700F4B538 /* KeychainWrapper.m */; };
 		3455743A1996A3F500C58C70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345574391996A3F500C58C70 /* Foundation.framework */; };
@@ -82,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		341267C5199D03E2007CC2B6 /* DBTutorialPageTwoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBTutorialPageTwoView.xib; sourceTree = "<group>"; };
 		34194A1C199B0B650046423D /* DBStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBStatisticsViewController.h; sourceTree = "<group>"; };
 		34194A1D199B0B650046423D /* DBStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBStatisticsViewController.m; sourceTree = "<group>"; };
 		341E1F40199C1BA700F4B538 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
@@ -600,6 +602,7 @@
 			isa = PBXGroup;
 			children = (
 				34E581FC199C5A0100332B96 /* DBTutorialPageOneView.xib */,
+				341267C5199D03E2007CC2B6 /* DBTutorialPageTwoView.xib */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				345FF9701999A991006C9915 /* DBStatisticsView~ipad.xib in Resources */,
 				3455744C1996A3F500C58C70 /* Images.xcassets in Resources */,
 				345FF96C1999A95E006C9915 /* DBSettingsView~ipad.xib in Resources */,
+				341267C6199D03E2007CC2B6 /* DBTutorialPageTwoView.xib in Resources */,
 				345FF9681999A4F9006C9915 /* DBMainMenuView~ipad.xib in Resources */,
 				345574C71996A4AF00C58C70 /* DBAdvertisingView.xib in Resources */,
 				345574C41996A4AF00C58C70 /* DBMainMenuView.xib in Resources */,

@@ -10,6 +10,7 @@
                 <outlet property="sliderTouchTolerance" destination="sPE-TE-1uv" id="t9m-hd-moh"/>
                 <outlet property="switchContinuousSwipe" destination="o2E-6K-krx" id="rUA-YD-wwx"/>
                 <outlet property="switchGameCenterEnabled" destination="cUg-PV-Cc5" id="Ebo-SE-Rd4"/>
+                <outlet property="switchiCloudEnabled" destination="S1P-kS-y5f" id="0U7-19-A3d"/>
                 <outlet property="view" destination="iN0-l3-epB" id="G00-be-STC"/>
             </connections>
         </placeholder>
@@ -68,7 +69,7 @@
                     </connections>
                 </button>
                 <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="40" minValue="15" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="sPE-TE-1uv">
-                    <rect key="frame" x="18" y="235" width="284" height="31"/>
+                    <rect key="frame" x="18" y="269" width="284" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <connections>
                         <action selector="sliderEditingDidEnd:" destination="-1" eventType="touchUpInside" id="IWX-rY-Wkh"/>
@@ -76,23 +77,37 @@
                     </connections>
                 </slider>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Touch Tolerance. Smaller value is more strict. Used to prevent accidental swiping." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="259" translatesAutoresizingMaskIntoConstraints="NO" id="oUH-LD-gbU">
-                    <rect key="frame" x="31" y="195" width="259" height="38"/>
+                    <rect key="frame" x="31" y="229" width="259" height="38"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="BanglaSangamMN" family="Bangla Sangam MN" pointSize="14"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHe-aB-po0">
-                    <rect key="frame" x="20" y="264" width="20" height="21"/>
+                    <rect key="frame" x="20" y="298" width="20" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAP-rL-anp">
-                    <rect key="frame" x="280" y="264" width="20" height="21"/>
+                    <rect key="frame" x="280" y="298" width="20" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iCloud Score Sync" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saV-8k-YTs">
+                    <rect key="frame" x="20" y="186" width="136" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="BanglaSangamMN" family="Bangla Sangam MN" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S1P-kS-y5f">
+                    <rect key="frame" x="251" y="181" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="switchGCEnabledChanged:" destination="-1" eventType="valueChanged" id="eMf-fL-7aH"/>
+                        <action selector="switchiCloudEnabledChanged:" destination="-1" eventType="valueChanged" id="be0-F2-g62"/>
+                    </connections>
+                </switch>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

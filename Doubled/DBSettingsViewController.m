@@ -16,6 +16,7 @@
 @interface DBSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UISwitch *switchContinuousSwipe;
 @property (weak, nonatomic) IBOutlet UISwitch *switchGameCenterEnabled;
+@property (weak, nonatomic) IBOutlet UISwitch *switchiCloudEnabled;
 @property (weak, nonatomic) IBOutlet UIButton *buttonResetGameData;
 @property (weak, nonatomic) IBOutlet UISlider *sliderTouchTolerance;
 
@@ -45,20 +46,21 @@
 
 - (void)setCurrentSettingsState
 {
-    self.switchContinuousSwipe.on = continuousSwipeEnabled;
-    self.switchGameCenterEnabled.on = gameCenterEnabled;
-    self.sliderTouchTolerance.value = touchTolerance;
+    self.switchContinuousSwipe.on = ContinuousSwipeEnabled;
+    self.switchGameCenterEnabled.on = GameCenterEnabled;
+    self.switchiCloudEnabled.on = iCloudEnabled;
+    self.sliderTouchTolerance.value = TouchTolerance;
 }
 
 - (IBAction)swipeContSwipeChanged:(id)sender
 {
     if (self.switchContinuousSwipe.on)
     {
-        continuousSwipeEnabled = true;
+        ContinuousSwipeEnabled = true;
     }
     else
     {
-        continuousSwipeEnabled = false;
+        ContinuousSwipeEnabled = false;
     }
     
     [DBSettingsManager saveSettings];
@@ -67,7 +69,7 @@
 {
     if (self.switchGameCenterEnabled.on)
     {
-        gameCenterEnabled = true;
+        GameCenterEnabled = true;
         
         // Authenticating local player
         NSLog(@"GAME: Authenticating local player");
@@ -87,7 +89,7 @@
                 }
             }
             
-            if (gameCenterEnabled)
+            if (GameCenterEnabled)
             {
                 if (error != nil)
                 {
@@ -99,15 +101,30 @@
     }
     else
     {
-        gameCenterEnabled = false;
+        GameCenterEnabled = false;
     }
     
     [DBSettingsManager saveSettings];
 }
 
+- (IBAction)switchiCloudEnabledChanged:(id)sender
+{
+    if (self.switchiCloudEnabled.on)
+    {
+        iCloudEnabled = true;
+    }
+    else
+    {
+        iCloudEnabled = false;
+    }
+    
+    [DBSettingsManager saveSettings];
+}
+
+
 - (IBAction)sliderEditingDidEnd:(id)sender
 {
-    touchTolerance = (NSInteger)self.sliderTouchTolerance.value;
+    TouchTolerance = (NSInteger)self.sliderTouchTolerance.value;
     [DBSettingsManager saveSettings];
 }
 

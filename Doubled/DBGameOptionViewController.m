@@ -121,7 +121,6 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"Touches began");
     [self removeAnimateWithCompletionSelector:nil];
 }
 

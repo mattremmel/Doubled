@@ -18,19 +18,20 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:settingsFilePath])
     {
         NSDictionary *userSettings = [[NSDictionary alloc] initWithContentsOfFile:settingsFilePath];
-        isFirstLaunch = [[userSettings valueForKey:isFirstLaunchKey] boolValue];
-        continuousSwipeEnabled = [[userSettings valueForKey:continuousSwipeEnabledKey] boolValue];
-        gameCenterEnabled = [[userSettings valueForKey:gameCenterEnabledKey] boolValue];
-        touchTolerance = [[userSettings valueForKey:touchToleranceKey] integerValue];
-        if (touchTolerance == 0)
+        isFirstLaunch = [[userSettings valueForKey:IsFirstLaunchKey] boolValue];
+        ContinuousSwipeEnabled = [[userSettings valueForKey:ContinuousSwipeEnabledKey] boolValue];
+        GameCenterEnabled = [[userSettings valueForKey:GameCenterEnabledKey] boolValue];
+        iCloudEnabled = [[userSettings valueForKey:iCloudEnabledKey] boolValue];
+        TouchTolerance = [[userSettings valueForKey:TouchToleranceKey] integerValue];
+        if (TouchTolerance == 0)
         {
             if (deviceType == iPadType)
             {
-                touchTolerance = 60;
+                TouchTolerance = 60;
             }
             else
             {
-                touchTolerance = 40;
+                TouchTolerance = 40;
             }
         }
     }
@@ -45,9 +46,10 @@
     NSLog(@"SETT: Saving Settings");
     NSString *settingsFilePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0] stringByAppendingPathComponent:@"settings"];
     NSMutableDictionary *userSettings = [[NSMutableDictionary alloc] init];
-    [userSettings setObject:[NSNumber numberWithBool:isFirstLaunch] forKey:isFirstLaunchKey];
-    [userSettings setObject:[NSNumber numberWithBool:continuousSwipeEnabled] forKey:continuousSwipeEnabledKey];
-    [userSettings setObject:[NSNumber numberWithBool:gameCenterEnabled] forKey:gameCenterEnabledKey];
+    [userSettings setObject:[NSNumber numberWithBool:isFirstLaunch] forKey:IsFirstLaunchKey];
+    [userSettings setObject:[NSNumber numberWithBool:ContinuousSwipeEnabled] forKey:ContinuousSwipeEnabledKey];
+    [userSettings setObject:[NSNumber numberWithBool:GameCenterEnabled] forKey:GameCenterEnabledKey];
+    [userSettings setObject:[NSNumber numberWithBool:iCloudEnabled] forKey:iCloudEnabledKey];
     [userSettings writeToFile:settingsFilePath atomically:true];
 }
 
@@ -56,17 +58,18 @@
     NSLog(@"SETT: Using default settings");
     NSMutableDictionary *defaultSettings = [[NSMutableDictionary alloc] init];
      NSString *settingsFilePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0] stringByAppendingPathComponent:@"settings"];
-    [defaultSettings setValue:@YES forKey:isFirstLaunchKey];
-    [defaultSettings setValue:@YES forKey:continuousSwipeEnabledKey];
-    [defaultSettings setValue:@YES forKey:gameCenterEnabledKey];
+    [defaultSettings setValue:@YES forKey:IsFirstLaunchKey];
+    [defaultSettings setValue:@YES forKey:ContinuousSwipeEnabledKey];
+    [defaultSettings setValue:@YES forKey:GameCenterEnabledKey];
+    [defaultSettings setValue:@YES forKey:iCloudEnabledKey];
     
     if (deviceType == iPadType)
     {
-        [defaultSettings setValue:@60 forKey:touchToleranceKey];
+        [defaultSettings setValue:@60 forKey:TouchToleranceKey];
     }
     else
     {
-        [defaultSettings setValue:@40 forKey:touchToleranceKey];
+        [defaultSettings setValue:@40 forKey:TouchToleranceKey];
     }
     
     

@@ -67,7 +67,7 @@
 
 -(void)authenticateLocalPlayer
 {
-    if (gameCenterEnabled)
+    if (GameCenterEnabled)
     {
         NSLog(@"GAME: Authenticating local player");
         GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
@@ -77,7 +77,6 @@
                 [self presentViewController:viewController animated:true completion:nil];
             }
             else{
-                NSLog(@"GAME: Game center error: %@", error.description);
                 if ([GKLocalPlayer localPlayer].authenticated) {
                     gameCenterAuthenticated = true;
                 }
@@ -86,7 +85,7 @@
                 }
             }
             
-            if (gameCenterEnabled)
+            if (GameCenterEnabled)
             {
                 if (error != nil)
                 {

@@ -10,6 +10,7 @@
                 <outlet property="sliderTouchTolerance" destination="CF1-UL-GU1" id="afU-Ga-oKs"/>
                 <outlet property="switchContinuousSwipe" destination="F6u-NZ-22W" id="0sQ-gW-VGg"/>
                 <outlet property="switchGameCenterEnabled" destination="ngE-Kv-tY9" id="L1Y-zT-kN8"/>
+                <outlet property="switchiCloudEnabled" destination="q1E-My-MhO" id="8rZ-n6-RS8"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kfL-Qu-AKs"/>
             </connections>
         </placeholder>
@@ -99,6 +100,21 @@
                     <fontDescription key="fontDescription" name="BanglaSangamMN" family="Bangla Sangam MN" pointSize="19"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iCloud Score Sync" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQw-x9-SMC">
+                    <rect key="frame" x="157" y="307" width="233" height="27"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="BanglaSangamMN" family="Bangla Sangam MN" pointSize="22"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q1E-My-MhO">
+                    <rect key="frame" x="562" y="305" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="switchGCEnabledChanged:" destination="-1" eventType="valueChanged" id="plU-0f-lfC"/>
+                        <action selector="switchiCloudEnabledChanged:" destination="-1" eventType="valueChanged" id="Rv8-sg-nze"/>
+                    </connections>
+                </switch>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

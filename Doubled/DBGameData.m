@@ -344,12 +344,15 @@
     [self setDefaultValues];
     [self saveGameData];
     
-    if ([NSUbiquitousKeyValueStore defaultStore])
+    if (iCloudEnabled)
     {
-        [[NSUbiquitousKeyValueStore defaultStore] setString: @"0" forKey: [self getiCloudHighScoreKey]];
-        [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+        if ([NSUbiquitousKeyValueStore defaultStore])
+        {
+            [[NSUbiquitousKeyValueStore defaultStore] setString: @"0" forKey: [self getiCloudHighScoreKey]];
+            [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+        }
     }
-    
+
     // Reset game center data and acheivments
     [GKAchievement resetAchievementsWithCompletionHandler:^(NSError *error) {
         if (error != nil) {
@@ -363,7 +366,7 @@
 
 - (void)reportHighScoreToGameCenter
 {
-    if (gameCenterAuthenticated && gameCenterEnabled)
+    if (gameCenterAuthenticated && GameCenterEnabled)
     {
         if (self.score >= self.highScore)
         {
@@ -400,42 +403,48 @@
 
 - (void)updateiCloud
 {
-    if ([NSUbiquitousKeyValueStore defaultStore])
+    if (iCloudEnabled)
     {
-        NSLog(@"DATA: Updating to iCloud");
-        NSUbiquitousKeyValueStore *iCloudStore = [NSUbiquitousKeyValueStore defaultStore];
-        NSString *iCloudHighScoreString = [iCloudStore stringForKey: [self getiCloudHighScoreKey]];
-        NSInteger iCloudHighScore = 0;
-        if (iCloudHighScoreString != nil)
+        if ([NSUbiquitousKeyValueStore defaultStore])
         {
-            iCloudHighScore = [iCloudHighScoreString integerValue];
-        }
-        
-        if (self.highScore > iCloudHighScore)
-        {
-            NSString *stringValue = [NSString stringWithFormat: @"%li", (long)self.highScore];
-            [iCloudStore setString: stringValue forKey: [self getiCloudHighScoreKey]];
-            [iCloudStore synchronize];
+            NSLog(@"DATA: Updating to iCloud");
+            NSUbiquitousKeyValueStore *iCloudStore = [NSUbiquitousKeyValueStore defaultStore];
+            NSString *iCloudHighScoreString = [iCloudStore stringForKey: [self getiCloudHighScoreKey]];
+            NSInteger iCloudHighScore = 0;
+            if (iCloudHighScoreString != nil)
+            {
+                iCloudHighScore = [iCloudHighScoreString integerValue];
+            }
+            
+            if (self.highScore > iCloudHighScore)
+            {
+                NSString *stringValue = [NSString stringWithFormat: @"%li", (long)self.highScore];
+                [iCloudStore setString: stringValue forKey: [self getiCloudHighScoreKey]];
+                [iCloudStore synchronize];
+            }
         }
     }
 }
 
 - (void)updateFromiCloud
 {
-    if ([NSUbiquitousKeyValueStore defaultStore])
+    if (iCloudEnabled)
     {
-        NSLog(@"DATA: Updating from iCloud");
-        NSUbiquitousKeyValueStore *iCloudStore = [NSUbiquitousKeyValueStore defaultStore];
-        NSString *iCloudHighScoreString = [iCloudStore stringForKey: [self getiCloudHighScoreKey]];
-        NSInteger iCloudHighScore = 0;
-        if (iCloudHighScoreString != nil)
+        if ([NSUbiquitousKeyValueStore defaultStore])
         {
-            iCloudHighScore = [iCloudHighScoreString integerValue];
-        }
-        
-        if (iCloudHighScore > self.highScore)
-        {
-            self.highScore = iCloudHighScore;
+            NSLog(@"DATA: Updating from iCloud");
+            NSUbiquitousKeyValueStore *iCloudStore = [NSUbiquitousKeyValueStore defaultStore];
+            NSString *iCloudHighScoreString = [iCloudStore stringForKey: [self getiCloudHighScoreKey]];
+            NSInteger iCloudHighScore = 0;
+            if (iCloudHighScoreString != nil)
+            {
+                iCloudHighScore = [iCloudHighScoreString integerValue];
+            }
+            
+            if (iCloudHighScore > self.highScore)
+            {
+                self.highScore = iCloudHighScore;
+            }
         }
     }
 }

@@ -94,14 +94,16 @@ BOOL gameCenterAuthenticated;
 
 // Settings
 BOOL isFirstLaunch;
-BOOL continuousSwipeEnabled;
-BOOL gameCenterEnabled;
-NSInteger touchTolerance;
+BOOL ContinuousSwipeEnabled;
+BOOL GameCenterEnabled;
+BOOL iCloudEnabled;
+NSInteger TouchTolerance;
 
-#define isFirstLaunchKey @"isFirstLaunch"
-#define continuousSwipeEnabledKey @"continuousSwipeEnabled"
-#define gameCenterEnabledKey @"gameCenterEnabled"
-#define touchToleranceKey @"touchTolerance"
+#define IsFirstLaunchKey @"isFirstLaunch"
+#define ContinuousSwipeEnabledKey @"continuousSwipeEnabled"
+#define GameCenterEnabledKey @"gameCenterEnabled"
+#define iCloudEnabledKey @"iCloudEnabledKey"
+#define TouchToleranceKey @"touchTolerance"
 
 // Time Attack Game Mode
 #define timeAttackStartingTime 10.0

@@ -149,7 +149,6 @@
 
 - (DBTile *)createGameTile
 {
-    NSLog(@"FUNC: Creating game tile");
     DBTile *tile;
     
     NSInteger randNum = (long)(arc4random_uniform(100));
@@ -179,8 +178,6 @@
 
 - (BOOL)boardHasMovesLeft
 {
-    NSLog(@"FUNC: Checking for end game");
-    
     NSInteger movesLeft = 0; // Will be twice as big as moves, because it will detect the same move twice, once for each tile
     DBTile *tileWithMove1;
     DBTile *tileWithMove2;
@@ -267,7 +264,7 @@
         assert(touchXDistanceFromCenter >= 0);
         assert(touchYDistanceFromCenter >= 0);
         
-        if (touchXDistanceFromCenter < touchTolerance && touchYDistanceFromCenter < touchTolerance)
+        if (touchXDistanceFromCenter < TouchTolerance && touchYDistanceFromCenter < TouchTolerance)
         {
             return location;
         }
@@ -309,8 +306,6 @@
 
 - (BOOL)tryMergeHorizantal:(NSInteger)horizDelta andVertical:(NSInteger)vertDelta
 {
-    NSLog(@"FUNC:  Trying to merge tiles");
-    
     if (self.swipeFromColumn < 0 || self.swipeFromColumn >= columnCount) return false;
     if (self.swipeFromRow < 0 || self.swipeFromRow >= rowCount) return false;
     
@@ -332,7 +327,7 @@
         [self fillTileHolesWithHorizantal:horizDelta andVertical:vertDelta];
         [self.gameData addMove];
         
-        if (continuousSwipeEnabled)
+        if (ContinuousSwipeEnabled)
         {
             self.swipeFromColumn = toColumn;
             self.swipeFromRow = toRow;
@@ -353,8 +348,6 @@
 
 - (void)animateTile:(DBTile *)fromTile mergeWith:(DBTile *)toTile
 {
-    NSLog(@"FUNC: Animating tile merge");
-    
     [fromTile removeAllActions];
     [toTile removeAllActions];
     
@@ -370,8 +363,6 @@
 
 - (void)fillTileHolesWithHorizantal:(NSInteger)horizDelta andVertical:(NSInteger)vertDelta
 {
-    NSLog(@"FUNC: Filling tile holes");
-    
     for (int row = 0; row < rowCount; ++row)
     {
         for (int column = 0; column < columnCount; ++column)
@@ -439,8 +430,6 @@
 
 - (void)moveTilesToPositionWithAnimation:(BOOL)animate
 {
-    NSLog(@"FUNC: Animating moving tiles");
-    
     for (int row = 0; row < rowCount; ++row)
     {
         for (int column = 0; column < columnCount; ++column)
@@ -517,7 +506,6 @@
 
 - (void)buttonMenu
 {
-    NSLog(@"SCNE: Button event menu");
     [self.gameData saveGameData];
     [self.gameController dismissGameController];
 }
