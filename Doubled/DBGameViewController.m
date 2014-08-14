@@ -194,8 +194,7 @@
             NSLog(@"GAD:  Requesting google ad");
             GADRequest *request = [GADRequest request];
             request.testDevices = @[ @"6c58f45e4871b58e5f70e8be96d2b96e", @"Simulator" ];
-            //[self.GADBannerView loadRequest: request];
-            [self adView:nil didFailToReceiveAdWithError:nil];
+            [self.GADBannerView loadRequest: request];
         }
     }
 }
