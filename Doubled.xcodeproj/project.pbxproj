@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		341267C6199D03E2007CC2B6 /* DBTutorialTimeAttackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341267C5199D03E2007CC2B6 /* DBTutorialTimeAttackView.xib */; };
 		341267C8199D1133007CC2B6 /* DBTutorialSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341267C7199D1133007CC2B6 /* DBTutorialSettingsView.xib */; };
-		341267CA199D12EA007CC2B6 /* DBTutorialPageFinal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341267C9199D12EA007CC2B6 /* DBTutorialPageFinal.xib */; };
+		341267CA199D12EA007CC2B6 /* DBTutorialFinalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341267C9199D12EA007CC2B6 /* DBTutorialFinalView.xib */; };
+		341267CC199D33E5007CC2B6 /* DBTutorialTimeAttackView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341267CB199D33E5007CC2B6 /* DBTutorialTimeAttackView~ipad.xib */; };
+		341267CE199D33FE007CC2B6 /* DBTutorialSettingsView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341267CD199D33FE007CC2B6 /* DBTutorialSettingsView~ipad.xib */; };
+		341267D0199D3420007CC2B6 /* DBTutorialFinalView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341267CF199D3420007CC2B6 /* DBTutorialFinalView~ipad.xib */; };
 		34194A1E199B0B650046423D /* DBStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34194A1D199B0B650046423D /* DBStatisticsViewController.m */; };
 		341E1F42199C1BA700F4B538 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 341E1F41199C1BA700F4B538 /* KeychainWrapper.m */; };
 		3455743A1996A3F500C58C70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345574391996A3F500C58C70 /* Foundation.framework */; };
@@ -71,7 +74,7 @@
 		34604AB0199972B600625D3B /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 34604AAE199972B600625D3B /* README.txt */; };
 		34B1B8C71999136B005B7C7E /* DBTimeAttackGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B1B8C61999136B005B7C7E /* DBTimeAttackGameData.m */; };
 		34E581FD199C5A0100332B96 /* DBTutorialGeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E581FC199C5A0100332B96 /* DBTutorialGeneralView.xib */; };
-		34E581FF199C5AB100332B96 /* DBTutorialPageOneView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E581FE199C5AB100332B96 /* DBTutorialPageOneView~ipad.xib */; };
+		34E581FF199C5AB100332B96 /* DBTutorialGeneralView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E581FE199C5AB100332B96 /* DBTutorialGeneralView~ipad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +90,10 @@
 /* Begin PBXFileReference section */
 		341267C5199D03E2007CC2B6 /* DBTutorialTimeAttackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBTutorialTimeAttackView.xib; sourceTree = "<group>"; };
 		341267C7199D1133007CC2B6 /* DBTutorialSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBTutorialSettingsView.xib; sourceTree = "<group>"; };
-		341267C9199D12EA007CC2B6 /* DBTutorialPageFinal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBTutorialPageFinal.xib; sourceTree = "<group>"; };
+		341267C9199D12EA007CC2B6 /* DBTutorialFinalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBTutorialFinalView.xib; sourceTree = "<group>"; };
+		341267CB199D33E5007CC2B6 /* DBTutorialTimeAttackView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DBTutorialTimeAttackView~ipad.xib"; sourceTree = "<group>"; };
+		341267CD199D33FE007CC2B6 /* DBTutorialSettingsView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DBTutorialSettingsView~ipad.xib"; sourceTree = "<group>"; };
+		341267CF199D3420007CC2B6 /* DBTutorialFinalView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DBTutorialFinalView~ipad.xib"; sourceTree = "<group>"; };
 		34194A1C199B0B650046423D /* DBStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBStatisticsViewController.h; sourceTree = "<group>"; };
 		34194A1D199B0B650046423D /* DBStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBStatisticsViewController.m; sourceTree = "<group>"; };
 		341E1F40199C1BA700F4B538 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
@@ -207,7 +213,7 @@
 		34B1B8C51999136B005B7C7E /* DBTimeAttackGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTimeAttackGameData.h; sourceTree = "<group>"; };
 		34B1B8C61999136B005B7C7E /* DBTimeAttackGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTimeAttackGameData.m; sourceTree = "<group>"; };
 		34E581FC199C5A0100332B96 /* DBTutorialGeneralView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBTutorialGeneralView.xib; sourceTree = "<group>"; };
-		34E581FE199C5AB100332B96 /* DBTutorialPageOneView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DBTutorialPageOneView~ipad.xib"; sourceTree = "<group>"; };
+		34E581FE199C5AB100332B96 /* DBTutorialGeneralView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DBTutorialGeneralView~ipad.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -608,7 +614,7 @@
 				34E581FC199C5A0100332B96 /* DBTutorialGeneralView.xib */,
 				341267C5199D03E2007CC2B6 /* DBTutorialTimeAttackView.xib */,
 				341267C7199D1133007CC2B6 /* DBTutorialSettingsView.xib */,
-				341267C9199D12EA007CC2B6 /* DBTutorialPageFinal.xib */,
+				341267C9199D12EA007CC2B6 /* DBTutorialFinalView.xib */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -616,7 +622,10 @@
 		34E58201199C69FB00332B96 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
-				34E581FE199C5AB100332B96 /* DBTutorialPageOneView~ipad.xib */,
+				34E581FE199C5AB100332B96 /* DBTutorialGeneralView~ipad.xib */,
+				341267CB199D33E5007CC2B6 /* DBTutorialTimeAttackView~ipad.xib */,
+				341267CD199D33FE007CC2B6 /* DBTutorialSettingsView~ipad.xib */,
+				341267CF199D3420007CC2B6 /* DBTutorialFinalView~ipad.xib */,
 			);
 			name = iPad;
 			sourceTree = "<group>";
@@ -716,19 +725,22 @@
 				34604AB0199972B600625D3B /* README.txt in Resources */,
 				345574C51996A4AF00C58C70 /* DBGameOptionView.xib in Resources */,
 				345FF96E1999A979006C9915 /* DBAdvertisingView~ipad.xib in Resources */,
-				34E581FF199C5AB100332B96 /* DBTutorialPageOneView~ipad.xib in Resources */,
+				34E581FF199C5AB100332B96 /* DBTutorialGeneralView~ipad.xib in Resources */,
 				341267C8199D1133007CC2B6 /* DBTutorialSettingsView.xib in Resources */,
+				341267CE199D33FE007CC2B6 /* DBTutorialSettingsView~ipad.xib in Resources */,
 				34E581FD199C5A0100332B96 /* DBTutorialGeneralView.xib in Resources */,
-				341267CA199D12EA007CC2B6 /* DBTutorialPageFinal.xib in Resources */,
+				341267CA199D12EA007CC2B6 /* DBTutorialFinalView.xib in Resources */,
 				345574C91996A4AF00C58C70 /* DBGameOverView.xib in Resources */,
 				345FF9701999A991006C9915 /* DBStatisticsView~ipad.xib in Resources */,
 				3455744C1996A3F500C58C70 /* Images.xcassets in Resources */,
 				345FF96C1999A95E006C9915 /* DBSettingsView~ipad.xib in Resources */,
+				341267D0199D3420007CC2B6 /* DBTutorialFinalView~ipad.xib in Resources */,
 				341267C6199D03E2007CC2B6 /* DBTutorialTimeAttackView.xib in Resources */,
 				345FF9681999A4F9006C9915 /* DBMainMenuView~ipad.xib in Resources */,
 				345574C71996A4AF00C58C70 /* DBAdvertisingView.xib in Resources */,
 				345574C41996A4AF00C58C70 /* DBMainMenuView.xib in Resources */,
 				345574C61996A4AF00C58C70 /* DBSettingsView.xib in Resources */,
+				341267CC199D33E5007CC2B6 /* DBTutorialTimeAttackView~ipad.xib in Resources */,
 				345574C81996A4AF00C58C70 /* DBStatisticsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
