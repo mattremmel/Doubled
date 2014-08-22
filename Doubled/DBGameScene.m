@@ -155,11 +155,11 @@
     
     if (self.gameData.currentLargestTile >= 1024)
     {
-        if (randNum >= 0 && randNum <= 42)
+        if (randNum >= 0 && randNum <= 45)
         {
             tile = [[DBTile alloc] initWithValue:2];
         }
-        else if (randNum >= 43 && randNum <= 85)
+        else if (randNum >= 46 && randNum <= 90)
         {
             tile = [[DBTile alloc] initWithValue:4];
         }
