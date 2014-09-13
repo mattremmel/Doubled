@@ -368,18 +368,15 @@
 {
     if (gameCenterAuthenticated && GameCenterEnabled)
     {
-        if (self.score >= self.highScore)
-        {
-            NSLog(@"DATA: Reporting score to game center");
-            GKScore *score = [[GKScore alloc] initWithLeaderboardIdentifier: [self getLeaderboardIdentifier]];
-            score.value = self.score;
-            
-            [GKScore reportScores:@[score] withCompletionHandler:^(NSError *error) {
-                if (error != nil) {
-                    NSLog(@"%@", [error localizedDescription]);
-                }
-            }];
-        }
+        NSLog(@"DATA: Reporting score to game center");
+        GKScore *highscore = [[GKScore alloc] initWithLeaderboardIdentifier: [self getLeaderboardIdentifier]];
+        highscore.value = self.highScore;
+        
+        [GKScore reportScores:@[highscore] withCompletionHandler:^(NSError *error) {
+            if (error != nil) {
+                NSLog(@"%@", [error localizedDescription]);
+            }
+        }];
     }
 }
 
