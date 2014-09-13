@@ -55,6 +55,8 @@ typedef struct {
 
 - (void)buttonMenu;
 
+- (void)pauseGame;
+- (void)unpauseGame;
 - (void)checkForEndGame;
 - (void)endGame;
 - (void)updateHUD;

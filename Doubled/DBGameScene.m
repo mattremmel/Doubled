@@ -502,6 +502,19 @@
 }
 
 
+#pragma mark - Pause Game
+
+- (void)pauseGame
+{
+    // no op
+}
+
+- (void)unpauseGame
+{
+    // no op
+}
+
+
 #pragma mark - Button Events
 
 - (void)buttonMenu

@@ -11,22 +11,20 @@
 #import "DBGameScene.h"
 #import "DBCasualGameScene.h"
 #import "DBTimeAttackGameScene.h"
-#import "GADBannerView.h"
-#import "GADRequest.h"
 #import "DBRemoveAdsBanner.h"
 #import "DoubledIAPHelper.h"
 #import "DBGameGlobals.h"
+#import "MPAdView.h"
 
-@interface DBGameViewController () <GADBannerViewDelegate>
+@interface DBGameViewController () <MPAdViewDelegate>
 
 @property DBCasualGameScene *casualGameScene;
 @property DBTimeAttackGameScene *timeAttackGameScene;
 @property SKView *skView;
-@property BOOL viewIsVisible;
 
-@property GADBannerView *GADBannerView;
+@property (nonatomic, retain)MPAdView *mpAdView;
+@property BOOL mpAdViewIsVisible;
 @property DBRemoveAdsBanner *removeAdsBanner;
-@property BOOL GADBannerIsVisible;
 @property BOOL removeAdsBannerIsVisible;
 @property NSTimer *adTimer;
 
@@ -62,24 +60,18 @@
     [[NSNotificationCenter defaultCenter] addObserver: self selector:@selector(removeAdsPurchased) name:IAPHelperProductPurchasedNotification object:nil];
     
     [self configureBannerView];
-    
-    self.adTimer = [NSTimer scheduledTimerWithTimeInterval: 45.0 target: self selector:@selector(loadAds) userInfo: nil repeats: true];
-    [self.adTimer setTolerance: 5];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self.view bringSubviewToFront:self.GADBannerView];
     [self.view bringSubviewToFront:self.removeAdsBanner];
-    
-    self.viewIsVisible = true;
-    [self loadAds];
+    [self.view bringSubviewToFront:self.mpAdView];
+    [self loadMPAd];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    self.viewIsVisible = false;
 }
 
 
@@ -87,26 +79,17 @@
 
 - (void)configureBannerView
 {
-    self.GADBannerIsVisible = false;
+    self.mpAdViewIsVisible = true;
     self.removeAdsBannerIsVisible = false;
-    [self configureGAD];
+    
+    self.mpAdView = [[MPAdView alloc] initWithAdUnitId:@"6f2ed59709654058a062bfb489a65eca" size:MOPUB_BANNER_SIZE];
+    self.mpAdView.delegate = self;
+    CGRect frame = self.mpAdView.frame;
+    CGSize size = [self.mpAdView adContentViewSize];
+    frame.origin.y = [[UIScreen mainScreen] applicationFrame].size.height - size.height;
+    self.mpAdView.frame = frame;
+    
     [self configureRemoveAdsBanner];
-}
-
-- (void)configureGAD
-{
-    if (!self.GADBannerView)
-    {
-        NSLog(@"GAD:  Configuring google ad banner");
-        self.GADBannerView = [[GADBannerView alloc] init];
-        [self.GADBannerView setAdUnitID: AdMobUnitID];
-        [self.GADBannerView setRootViewController: self];
-        [self.GADBannerView setDelegate: self];
-        [self.GADBannerView setAdSize: kGADAdSizeSmartBannerPortrait];
-        [self.GADBannerView setFrame: CGRectMake(0, self.view.frame.size.height, self.GADBannerView.frame.size.width, self.GADBannerView.frame.size.height)]; // Start off screen
-        self.GADBannerIsVisible = false;
-        [self.view addSubview: self.GADBannerView];
-    }
 }
 
 - (void)configureRemoveAdsBanner
@@ -174,104 +157,11 @@
     [scene addInterface];
 }
 
+#pragma - Load Ads
 
-#pragma mark - Ad Request
-
-- (void)loadAds
+- (void)loadMPAd
 {
-    if ([[NSUserDefaults standardUserDefaults] boolForKey: RemoveAdsIdentifier])
-    {
-        // Remove Ads
-        [self.GADBannerView removeFromSuperview];
-        self.GADBannerView = nil;
-        [self.removeAdsBanner removeFromSuperview];
-        self.removeAdsBanner = nil;
-    }
-    else
-    {
-        if (self.viewIsVisible)
-        {
-            NSLog(@"GAD:  Requesting google ad");
-            GADRequest *request = [GADRequest request];
-            request.testDevices = @[ @"6c58f45e4871b58e5f70e8be96d2b96e", @"Simulator" ];
-            [self.GADBannerView loadRequest: request];
-        }
-    }
-}
-
-
-#pragma mark - GAD Delegate Methods
-
-- (void)adViewDidReceiveAd:(GADBannerView *)view
-{
-    NSLog(@"GAD:  Did recieve ad");
-    
-    // Move house ad off screen
-    [UIView animateWithDuration: 0.5 animations:^{
-        [self.removeAdsBanner setFrame: CGRectMake(0, self.view.frame.size.height, self.removeAdsBanner.frame.size.width, self.removeAdsBanner.frame.size.height)];
-    }completion:^(BOOL finished){
-        self.removeAdsBannerIsVisible = false;
-        
-        // Show AdMob Ad
-        if (!self.GADBannerIsVisible)
-        {
-            if (self.GADBannerView.superview == nil)
-            {
-                [self.view addSubview: self.GADBannerView];
-            }
-            
-            [UIView animateWithDuration: 0.5 animations:^{
-                [self.GADBannerView setFrame: CGRectMake(0, self.view.frame.size.height - self.GADBannerView.frame.size.height, self.GADBannerView.frame.size.width, self.GADBannerView.frame.size.height)];
-            }];
-            
-            self.GADBannerIsVisible = true;
-        }
-    }];
-}
-
-- (void) adView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error
-{
-    NSLog(@"GAD:  Did fail to recieve ad");
-    NSLog(@"Request Error: %@", error.description);
-    
-    [UIView animateWithDuration: 0.5 animations:^{
-        [self.GADBannerView setFrame: CGRectMake(0, self.view.frame.size.height, self.GADBannerView.frame.size.width, self.GADBannerView.frame.size.height)];
-    }completion:^(BOOL finished){
-        self.GADBannerIsVisible = false;
-    
-        if (!self.removeAdsBannerIsVisible) {
-            // Load house ad
-            [UIView animateWithDuration: 0.5 animations:^{
-                [self.removeAdsBanner setFrame: CGRectMake(0, self.view.frame.size.height - self.removeAdsBanner.frame.size.height, self.removeAdsBanner.frame.size.width, self.removeAdsBanner.frame.size.height)];
-            }completion:^(BOOL finished){
-                self.removeAdsBannerIsVisible = true;
-            }];
-        }
-    }];
-}
-
-- (void)adViewWillPresentScreen:(GADBannerView *)adView
-{
-    NSLog(@"GAD:  Will present screen");
-    DBGameScene *gameScene = (DBGameScene *)self.skView.scene;
-    [gameScene.gameData saveGameData];
-}
-
-- (void)adViewWillDismissScreen:(GADBannerView *)adView
-{
-    NSLog(@"GAD:  Will dismiss screen");
-    DBGameScene *gameScene = (DBGameScene *)self.skView.scene;
-    [gameScene setupContinueGame];
-}
-
-- (void)adViewDidDismissScreen:(GADBannerView *)adView
-{
-    NSLog(@"GAD:  Did dismiss screen");
-}
-
-- (void)adViewWillLeaveApplication:(GADBannerView *)adView
-{
-    NSLog(@"GAD:  Will leave application");
+    [self.mpAdView loadAd];
 }
 
 
@@ -281,10 +171,47 @@
 {
     NSLog(@"Remove ads purchased");
     
-    [self.GADBannerView removeFromSuperview];
-    self.GADBannerView = nil;
+    [self.mpAdView removeFromSuperview];
+    self.mpAdView = nil;
+    
     [self.removeAdsBanner removeFromSuperview];
     self.removeAdsBanner = nil;
+}
+
+#pragma mark - MoPub Ad Callback Methods
+
+- (void)adViewDidLoadAd:(MPAdView *)view
+{
+    NSLog(@"MPAD: Ad view did load ad");
+    // TODO: Animate on
+    [self.view addSubview:self.mpAdView];
+}
+
+- (void)adViewDidFailToLoadAd:(MPAdView *)view
+{
+    NSLog(@"MPAD: Ad view did fail to load ad");
+    // TODO: Animate off
+    [self.mpAdView removeFromSuperview];
+}
+
+- (void)willPresentModalViewForAd:(MPAdView *)view
+{
+    NSLog(@"MPAD: Ad view will present modal view for ad");
+    DBGameScene *gameScene = (DBGameScene *)self.skView.scene;
+    [gameScene.gameData saveGameData];
+    [gameScene pauseGame];
+}
+
+- (void)didDismissModalViewForAd:(MPAdView *)view
+{
+    NSLog(@"MPAD: Ad view did dismiss modal view for ad");
+    DBGameScene *gameScene = (DBGameScene *)self.skView.scene;
+    [gameScene setupContinueGame];
+}
+
+- (UIViewController *)viewControllerForPresentingModalView
+{
+    return self;
 }
 
 

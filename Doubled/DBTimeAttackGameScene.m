@@ -168,6 +168,16 @@
     }
 }
 
+- (void)pauseGame
+{
+    self.gameIsPaused = true;
+}
+
+- (void)unpauseGame
+{
+    self.gameIsPaused = false;
+}
+
 
 #pragma mark - Start Game Alert
 
