@@ -23,6 +23,7 @@
 
 // Casual Mode Labels
 @property (weak, nonatomic) IBOutlet UILabel *labelCasualGamesPlayed;
+@property (weak, nonatomic) IBOutlet UILabel *labelCasualAverageScore;
 @property (weak, nonatomic) IBOutlet UILabel *labelCasualLargestTileRecord;
 @property (weak, nonatomic) IBOutlet UILabel *labelCasualHighScore;
 @property (weak, nonatomic) IBOutlet UILabel *labelCasualCumulativeScore;
@@ -45,6 +46,7 @@
 
 // Time Attack Labels
 @property (weak, nonatomic) IBOutlet UILabel *labelTimeAttackGamesPlayed;
+@property (weak, nonatomic) IBOutlet UILabel *labelTimeAttackAverageScore;
 @property (weak, nonatomic) IBOutlet UILabel *labelTimeAttackLargestTileRecord;
 @property (weak, nonatomic) IBOutlet UILabel *labelTimeAttackHighScore;
 @property (weak, nonatomic) IBOutlet UILabel *labelTimeAttackCumulativeScore;
@@ -105,6 +107,7 @@
     
     
     self.labelCasualGamesPlayed.adjustsFontSizeToFitWidth = true;
+    self.labelCasualAverageScore.adjustsFontSizeToFitWidth = true;
     self.labelCasualLargestTileRecord.adjustsFontSizeToFitWidth = true;
     self.labelCasualHighScore.adjustsFontSizeToFitWidth = true;
     self.labelCasualCumulativeScore.adjustsFontSizeToFitWidth = true;
@@ -126,6 +129,7 @@
     self.labelCasual65536TileCount.adjustsFontSizeToFitWidth = true;
     
     self.labelTimeAttackGamesPlayed.adjustsFontSizeToFitWidth = true;
+    self.labelTimeAttackAverageScore.adjustsFontSizeToFitWidth = true;
     self.labelTimeAttackLargestTileRecord.adjustsFontSizeToFitWidth = true;
     self.labelTimeAttackHighScore.adjustsFontSizeToFitWidth = true;
     self.labelTimeAttackCumulativeScore.adjustsFontSizeToFitWidth = true;
@@ -156,6 +160,7 @@
     {
         // Casual Game Data
         self.labelCasualGamesPlayed.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].gamesPlayed];
+        self.labelCasualAverageScore.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].cumulativeScore / [DBCasualGameData sharedInstance].gamesPlayed];
         self.labelCasualLargestTileRecord.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].largestTileRecord];
         self.labelCasualHighScore.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].highScore];
         self.labelCasualCumulativeScore.text = [NSString stringWithFormat:@"%li", (long)[DBCasualGameData sharedInstance].cumulativeScore];
@@ -183,6 +188,7 @@
     {
         // Time Attack Game Data
         self.labelTimeAttackGamesPlayed.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].gamesPlayed];
+        self.labelTimeAttackAverageScore.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].cumulativeScore / [DBTimeAttackGameData sharedInstance].gamesPlayed];
         self.labelTimeAttackLargestTileRecord.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].largestTileRecord];
         self.labelTimeAttackHighScore.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].highScore];
         self.labelTimeAttackCumulativeScore.text = [NSString stringWithFormat:@"%li", (long)[DBTimeAttackGameData sharedInstance].cumulativeScore];
