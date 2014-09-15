@@ -178,9 +178,9 @@
 		34743C8819BF9E2300F74525 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34743C8719BF9E2300F74525 /* QuartzCore.framework */; };
 		34743C8A19BF9E2D00F74525 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34743C8919BF9E2D00F74525 /* Social.framework */; };
 		34743C8C19BF9E4B00F74525 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34743C8B19BF9E4B00F74525 /* Twitter.framework */; };
-		348E199219C4EB8A0033BA76 /* MillennialMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34743B4619BF9CCA00F74525 /* MillennialMedia.framework */; };
-		348E199319C4EC840033BA76 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34743B3919BF9CCA00F74525 /* libGoogleAdMobAds.a */; };
 		34B1B8C71999136B005B7C7E /* DBTimeAttackGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B1B8C61999136B005B7C7E /* DBTimeAttackGameData.m */; };
+		34DCA06A19C68C1F00E1F69E /* MillennialMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34743B4619BF9CCA00F74525 /* MillennialMedia.framework */; };
+		34DCA06B19C68C8D00E1F69E /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34743B3919BF9CCA00F74525 /* libGoogleAdMobAds.a */; };
 		34E581FD199C5A0100332B96 /* DBTutorialGeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E581FC199C5A0100332B96 /* DBTutorialGeneralView.xib */; };
 		34E581FF199C5AB100332B96 /* DBTutorialGeneralView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E581FE199C5AB100332B96 /* DBTutorialGeneralView~ipad.xib */; };
 /* End PBXBuildFile section */
@@ -529,8 +529,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				348E199319C4EC840033BA76 /* libGoogleAdMobAds.a in Frameworks */,
-				348E199219C4EB8A0033BA76 /* MillennialMedia.framework in Frameworks */,
+				34DCA06B19C68C8D00E1F69E /* libGoogleAdMobAds.a in Frameworks */,
+				34DCA06A19C68C1F00E1F69E /* MillennialMedia.framework in Frameworks */,
 				34743C8C19BF9E4B00F74525 /* Twitter.framework in Frameworks */,
 				345574E71996A55000C58C70 /* SystemConfiguration.framework in Frameworks */,
 				345574D21996A50A00C58C70 /* StoreKit.framework in Frameworks */,
@@ -1285,8 +1285,8 @@
 			buildConfigurationList = 345574621996A3F500C58C70 /* Build configuration list for PBXNativeTarget "Doubled" */;
 			buildPhases = (
 				345574321996A3F500C58C70 /* Sources */,
-				345574331996A3F500C58C70 /* Frameworks */,
 				345574341996A3F500C58C70 /* Resources */,
+				345574331996A3F500C58C70 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1659,6 +1659,8 @@
 					Libraries/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 					"$(PROJECT_DIR)/External",
 					Libraries/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/External",
+					Libraries/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1667,6 +1669,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/External",
+					Libraries/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
 					"$(PROJECT_DIR)/External",
 					Libraries/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
 					"$(PROJECT_DIR)/External",
@@ -1693,6 +1697,8 @@
 					Libraries/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 					"$(PROJECT_DIR)/External",
 					Libraries/MoPubSDK/AdNetworkSupport/Millennial/SDK,
+					"$(PROJECT_DIR)/External",
+					Libraries/MoPubSDK/AdNetworkSupport/Millennial/SDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Doubled/Doubled-Prefix.pch";
@@ -1700,6 +1706,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/External",
+					Libraries/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
 					"$(PROJECT_DIR)/External",
 					Libraries/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK,
 					"$(PROJECT_DIR)/External",

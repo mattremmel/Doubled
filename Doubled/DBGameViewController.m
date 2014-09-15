@@ -82,7 +82,15 @@
     self.mpAdViewIsVisible = true;
     self.removeAdsBannerIsVisible = false;
     
-    self.mpAdView = [[MPAdView alloc] initWithAdUnitId:@"6f2ed59709654058a062bfb489a65eca" size:MOPUB_BANNER_SIZE];
+    if (deviceType == iPadType)
+    {
+        self.mpAdView = [[MPAdView alloc] initWithAdUnitId:@"0d340afee3c24c23a7195878584d2482" size:MOPUB_LEADERBOARD_SIZE];
+    }
+    else
+    {
+        self.mpAdView = [[MPAdView alloc] initWithAdUnitId:@"6f2ed59709654058a062bfb489a65eca" size:MOPUB_BANNER_SIZE];
+    }
+    
     self.mpAdView.delegate = self;
     CGRect frame = self.mpAdView.frame;
     CGSize size = [self.mpAdView adContentViewSize];
@@ -183,15 +191,27 @@
 - (void)adViewDidLoadAd:(MPAdView *)view
 {
     NSLog(@"MPAD: Ad view did load ad");
-    // TODO: Animate on
+    
+    if (self.removeAdsBannerIsVisible)
+        [self animateRemoveAdsBannerOff];
+    
     [self.view addSubview:self.mpAdView];
+    
+    if (!self.mpAdViewIsVisible)
+        [self animateAdsBannerOn];
 }
 
 - (void)adViewDidFailToLoadAd:(MPAdView *)view
 {
     NSLog(@"MPAD: Ad view did fail to load ad");
-    // TODO: Animate off
+    
+    if (self.mpAdViewIsVisible)
+        [self animateAdsBannerOff];
+    
     [self.mpAdView removeFromSuperview];
+    
+    if (!self.removeAdsBannerIsVisible)
+        [self animateRemoveAdsBannerOn];
 }
 
 - (void)willPresentModalViewForAd:(MPAdView *)view
@@ -212,6 +232,45 @@
 - (UIViewController *)viewControllerForPresentingModalView
 {
     return self;
+}
+
+
+#pragma mark - Ad Animation
+
+- (void)animateAdsBannerOn
+{
+    [UIView animateWithDuration: 0.5 animations:^{
+        [self.mpAdView setFrame: CGRectMake(0, self.view.frame.size.height - self.mpAdView.frame.size.height, self.mpAdView.frame.size.width, self.mpAdView.frame.size.height)];
+    }completion:^(BOOL finished){
+        self.mpAdViewIsVisible = true;
+    }];
+}
+
+- (void)animateAdsBannerOff
+{
+    [UIView animateWithDuration: 0.5 animations:^{
+        [self.mpAdView setFrame: CGRectMake(0, self.view.frame.size.height, self.mpAdView.frame.size.width, self.mpAdView.frame.size.height)];
+    }completion:^(BOOL finished){
+        self.mpAdViewIsVisible = false;
+    }];
+}
+
+- (void)animateRemoveAdsBannerOn
+{
+    [UIView animateWithDuration: 0.5 animations:^{
+        [self.removeAdsBanner setFrame: CGRectMake(0, self.view.frame.size.height - self.removeAdsBanner.frame.size.height, self.removeAdsBanner.frame.size.width, self.removeAdsBanner.frame.size.height)];
+    }completion:^(BOOL finished){
+        self.removeAdsBannerIsVisible = true;
+    }];
+}
+
+- (void)animateRemoveAdsBannerOff
+{
+    [UIView animateWithDuration: 0.5 animations:^{
+        [self.removeAdsBanner setFrame: CGRectMake(0, self.view.frame.size.height, self.removeAdsBanner.frame.size.width, self.removeAdsBanner.frame.size.height)];
+    }completion:^(BOOL finished){
+        self.removeAdsBannerIsVisible = false;
+    }];
 }
 
 
