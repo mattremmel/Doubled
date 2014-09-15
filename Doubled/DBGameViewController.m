@@ -79,12 +79,10 @@
 
 - (void)configureBannerView
 {
-    if (deviceType == iPadType)
-    {
+    if (deviceType == iPadType) {
         self.mpAdView = [[MPAdView alloc] initWithAdUnitId:@"0d340afee3c24c23a7195878584d2482" size:MOPUB_LEADERBOARD_SIZE];
     }
-    else
-    {
+    else {
         self.mpAdView = [[MPAdView alloc] initWithAdUnitId:@"6f2ed59709654058a062bfb489a65eca" size:MOPUB_BANNER_SIZE];
     }
     
@@ -202,13 +200,15 @@
 {
     NSLog(@"MPAD: Ad view did fail to load ad");
     
-    if (self.mpAdViewIsVisible)
+    if (self.mpAdViewIsVisible) {
         [self animateAdsBannerOff];
+    }
     
     [self.mpAdView removeFromSuperview];
     
-    if (!self.removeAdsBannerIsVisible)
+    if (!self.removeAdsBannerIsVisible) {
         [self animateRemoveAdsBannerOn];
+    }
 }
 
 - (void)willPresentModalViewForAd:(MPAdView *)view
