@@ -79,9 +79,6 @@
 
 - (void)configureBannerView
 {
-    self.mpAdViewIsVisible = true;
-    self.removeAdsBannerIsVisible = false;
-    
     if (deviceType == iPadType)
     {
         self.mpAdView = [[MPAdView alloc] initWithAdUnitId:@"0d340afee3c24c23a7195878584d2482" size:MOPUB_LEADERBOARD_SIZE];
@@ -239,6 +236,7 @@
 
 - (void)animateAdsBannerOn
 {
+    NSLog(@"Animating ad banner on");
     [UIView animateWithDuration: 0.5 animations:^{
         [self.mpAdView setFrame: CGRectMake(0, self.view.frame.size.height - self.mpAdView.frame.size.height, self.mpAdView.frame.size.width, self.mpAdView.frame.size.height)];
     }completion:^(BOOL finished){
@@ -248,6 +246,7 @@
 
 - (void)animateAdsBannerOff
 {
+    NSLog(@"Animating ad banner off");
     [UIView animateWithDuration: 0.5 animations:^{
         [self.mpAdView setFrame: CGRectMake(0, self.view.frame.size.height, self.mpAdView.frame.size.width, self.mpAdView.frame.size.height)];
     }completion:^(BOOL finished){
@@ -257,6 +256,7 @@
 
 - (void)animateRemoveAdsBannerOn
 {
+    NSLog(@"Animating remove ads banner on");
     [UIView animateWithDuration: 0.5 animations:^{
         [self.removeAdsBanner setFrame: CGRectMake(0, self.view.frame.size.height - self.removeAdsBanner.frame.size.height, self.removeAdsBanner.frame.size.width, self.removeAdsBanner.frame.size.height)];
     }completion:^(BOOL finished){
@@ -266,6 +266,7 @@
 
 - (void)animateRemoveAdsBannerOff
 {
+    NSLog(@"Animating removing ads banner off");
     [UIView animateWithDuration: 0.5 animations:^{
         [self.removeAdsBanner setFrame: CGRectMake(0, self.view.frame.size.height, self.removeAdsBanner.frame.size.width, self.removeAdsBanner.frame.size.height)];
     }completion:^(BOOL finished){
