@@ -16,6 +16,7 @@
 #import "DBGameGlobals.h"
 #import "MPAdView.h"
 
+
 @interface DBGameViewController () <MPAdViewDelegate>
 
 @property DBCasualGameScene *casualGameScene;
@@ -26,7 +27,6 @@
 @property BOOL mpAdViewIsVisible;
 @property DBRemoveAdsBanner *removeAdsBanner;
 @property BOOL removeAdsBannerIsVisible;
-@property NSTimer *adTimer;
 
 @end
 
@@ -159,6 +159,17 @@
     [self.skView presentScene:scene];
     [scene addInterface];
 }
+
+- (BOOL)casualGameInProgress
+{
+    return (self.casualGameScene.gameData.score > 300) ? true : false;
+}
+
+- (BOOL)timeAttackGameInProgress
+{
+    return (self.timeAttackGameScene.gameData.score > 300) ? true : false;
+}
+
 
 #pragma - Load Ads
 

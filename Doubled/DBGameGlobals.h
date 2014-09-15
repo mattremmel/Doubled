@@ -78,9 +78,10 @@ NSInteger rowCount;
 
 // Game Modes
 typedef enum {
-    GameTypeNewGame,
-    GameTypeContinueGame
+    GameModeCasual,
+    GameModeTimeAttack
 } GameModes;
+
 
 // Game Center properties
 BOOL gameCenterAuthenticated;

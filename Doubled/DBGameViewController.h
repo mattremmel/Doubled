@@ -18,6 +18,9 @@
 - (void)startTimeAttackNewGame;
 - (void)startTimeAttackContinueGame;
 
+- (BOOL)casualGameInProgress;
+- (BOOL)timeAttackGameInProgress;
+
 - (void)dismissGameController;
 
 @end

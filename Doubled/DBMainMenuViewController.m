@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonRate;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSendFeedback;
 
+@property GameModes overwriteGameMode;
+
 @end
 
 @implementation DBMainMenuViewController
@@ -74,11 +76,36 @@
 
 #pragma mark - Starting Game
 
+- (void)checkForGameInProgress
+{
+    assert(self.overwriteGameMode == GameModeTimeAttack || self.overwriteGameMode == GameModeCasual);
+    
+    if (self.overwriteGameMode == GameModeCasual)
+    {
+        if ([self.gameViewController casualGameInProgress]) {
+            [self showStartGameOverwriteAlert];
+        }
+        else {
+            [self startCasualNewGame];
+        }
+    }
+    else if (self.overwriteGameMode == GameModeTimeAttack)
+    {
+        if ([self.gameViewController timeAttackGameInProgress]) {
+            [self showStartGameOverwriteAlert];
+        }
+        else {
+            [self startTimeAttackNewGame];
+        }
+    }
+}
+
 - (void)startCasualNewGame
 {
     NSLog(@"CONT: Presenting game view controller and starting casual new game");
     [self presentViewController:self.gameViewController animated:true completion:nil];
     [self.gameViewController startCasualNewGame];
+    self.overwriteGameMode = -1;
 }
 
 - (void)startCasualContinueGame
@@ -86,6 +113,7 @@
     NSLog(@"CONT: Presenting game view controller and starting casual continue game");
     [self presentViewController:self.gameViewController animated:true completion:nil];
     [self.gameViewController startCasualContinueGame];
+    self.overwriteGameMode = -1;
 }
 
 - (void)startTimeAttackNewGame
@@ -93,6 +121,7 @@
     NSLog(@"CONT: Presenting game view controller and starting time attack new game");
     [self presentViewController:self.gameViewController animated:true completion:nil];
     [self.gameViewController startTimeAttackNewGame];
+    self.overwriteGameMode = -1;
 }
 
 - (void)startTimeAttackContinueGame
@@ -100,6 +129,31 @@
     NSLog(@"CONT: Presenting game view controller and starting time attack new game");
     [self presentViewController:self.gameViewController animated:true completion:nil];
     [self.gameViewController startTimeAttackContinueGame];
+    self.overwriteGameMode = -1;
+}
+
+
+#pragma mark - Overwrite Confirmation
+
+- (void)showStartGameOverwriteAlert
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Overwrite Game?" message:@"Are you sure you would like to start a new game? Doing so will overwrite your current game in progress." delegate:self cancelButtonTitle:@"New Game" otherButtonTitles:@"Cancel", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    assert(self.overwriteGameMode == GameModeTimeAttack || self.overwriteGameMode == GameModeCasual);
+    
+    if (buttonIndex == 0)
+    {
+        if (self.overwriteGameMode == GameModeCasual) {
+            [self startCasualNewGame];
+        }
+        else if (self.overwriteGameMode == GameModeTimeAttack) {
+            [self startTimeAttackNewGame];
+        }
+    }
 }
 
 
@@ -107,13 +161,15 @@
 
 - (IBAction)buttonCasual:(id)sender
 {
-    [self.gameOptionController setActionTarget:self actionNewGame:@selector(startCasualNewGame) actionContinueGame:@selector(startCasualContinueGame)];
+    self.overwriteGameMode = GameModeCasual;
+    [self.gameOptionController setActionTarget:self actionNewGame:@selector(checkForGameInProgress) actionContinueGame:@selector(startCasualContinueGame)];
     [self.gameOptionController showInView:self.view animated:true];
 }
 
 - (IBAction)buttonTimeAttack:(id)sender
 {
-    [self.gameOptionController setActionTarget:self actionNewGame:@selector(startTimeAttackNewGame) actionContinueGame:@selector(startTimeAttackContinueGame)];
+    self.overwriteGameMode = GameModeTimeAttack;
+    [self.gameOptionController setActionTarget:self actionNewGame:@selector(checkForGameInProgress) actionContinueGame:@selector(startTimeAttackContinueGame)];
     [self.gameOptionController showInView:self.view animated:true];
 }
 
