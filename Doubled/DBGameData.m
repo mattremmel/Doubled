@@ -232,66 +232,53 @@
         self.highScore = self.score;
     }
     
+    [self updateLargestTile:deltaScore];
+    
     switch (deltaScore) {
         case 4:
             self.tile4Count++;
-            [self updateLargestTile: deltaScore];
             break;
         case 8:
             self.tile8Count++;
-            [self updateLargestTile: deltaScore];
             break;
         case 16:
             self.tile16Count++;
-            [self updateLargestTile: deltaScore];
             break;
         case 32:
             self.tile32Count++;
-            [self updateLargestTile: deltaScore];
             break;
         case 64:
             self.tile64Count++;
-            [self updateLargestTile: deltaScore];
             break;
         case 128:
             self.tile128Count++;
-            [self updateLargestTile: deltaScore];
             break;
         case 256:
             self.tile256Count++;
-            [self updateLargestTile: deltaScore];
             break;
         case 512:
             self.tile512Count++;
-            [self updateLargestTile: deltaScore];
             break;
         case 1024:
             self.tile1024Count++;
-            [self updateLargestTile: deltaScore];
             break;
         case 2048:
             self.tile2048Count++;
-            [self updateLargestTile: deltaScore];
             break;
         case 4096:
             self.tile4096Count++;
-            [self updateLargestTile: deltaScore];
             break;
         case 8192:
             self.tile8192Count++;
-            [self updateLargestTile: deltaScore];
             break;
         case 16384:
             self.tile16384Count++;
-            [self updateLargestTile: deltaScore];
             break;
         case 32769:
             self.tile32768Count++;
-            [self updateLargestTile: deltaScore];
             break;
         case 65536:
             self.tile65536Count++;
-            [self updateLargestTile: deltaScore];
             break;
         default:
             NSLog(@"ERROR: Increased score by value not in switch statement");
@@ -327,7 +314,7 @@
 {
     self.score = 0;
     self.moves = 0;
-    self.currentLargestTile = 2;
+    self.currentLargestTile = 4;
 }
 
 - (void)resetAllGameData

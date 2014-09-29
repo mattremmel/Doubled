@@ -61,7 +61,7 @@
 @property NSInteger tile16384Count;
 @property NSInteger tile32768Count;
 @property NSInteger tile65536Count;
-@property NSInteger gamesPlayed;    // TODO: Increase this property. At start of game? at end? if game quit prematurely.. does it count?
+@property NSInteger gamesPlayed;
 @property NSInteger leaderboardRank;
 
 - (void)encodeWithCoder:(NSCoder *)encoder;
