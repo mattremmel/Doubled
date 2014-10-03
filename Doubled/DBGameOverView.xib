@@ -6,16 +6,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DBGameOverViewController">
             <connections>
-                <outlet property="buttonLeaderboard" destination="SfB-1v-pZM" id="6B6-q2-b3d"/>
-                <outlet property="buttonMainMenu" destination="M27-46-u8Y" id="ypv-ag-bt7"/>
-                <outlet property="buttonNewGame" destination="9w3-JG-gi8" id="hYG-GP-7Lm"/>
-                <outlet property="labelHighScore" destination="IXc-fJ-oI1" id="yiY-cU-BdF"/>
-                <outlet property="labelScore" destination="YqA-OY-hqA" id="edC-CZ-ncV"/>
-                <outlet property="labelTitle" destination="i9J-Mh-eq8" id="Nnf-Ft-DWc"/>
+                <outlet property="mButtonLeaderboard" destination="SfB-1v-pZM" id="d4n-AL-M8C"/>
+                <outlet property="mButtonMainMenu" destination="M27-46-u8Y" id="wkl-oH-U6f"/>
+                <outlet property="mButtonNewGame" destination="9w3-JG-gi8" id="sk6-HG-OVg"/>
+                <outlet property="mLabelHighScore" destination="IXc-fJ-oI1" id="zIx-rj-MFV"/>
+                <outlet property="mLabelScore" destination="YqA-OY-hqA" id="YD8-It-bcc"/>
+                <outlet property="mLabelTitle" destination="i9J-Mh-eq8" id="JAN-Hh-OJ0"/>
+                <outlet property="mViewBackground" destination="Wky-pk-1Si" id="NpP-XT-MBg"/>
+                <outlet property="mViewHighScoreBackground" destination="L08-RE-G9O" id="P6G-8F-RcU"/>
+                <outlet property="mViewScoreBackground" destination="HVf-yy-ZUW" id="6ba-8X-VBu"/>
                 <outlet property="view" destination="iN0-l3-epB" id="FqQ-tI-GfA"/>
-                <outlet property="viewBackground" destination="Wky-pk-1Si" id="9eF-g3-wCz"/>
-                <outlet property="viewHighScoreBackground" destination="L08-RE-G9O" id="VAb-Tn-qCk"/>
-                <outlet property="viewScoreBackground" destination="HVf-yy-ZUW" id="gdI-U5-BmK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

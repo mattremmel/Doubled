@@ -14,11 +14,11 @@
 #import <GameKit/GameKit.h>
 
 @interface DBSettingsViewController ()
-@property (weak, nonatomic) IBOutlet UISwitch *switchContinuousSwipe;
-@property (weak, nonatomic) IBOutlet UISwitch *switchGameCenterEnabled;
-@property (weak, nonatomic) IBOutlet UISwitch *switchiCloudEnabled;
-@property (weak, nonatomic) IBOutlet UIButton *buttonResetGameData;
-@property (weak, nonatomic) IBOutlet UISlider *sliderTouchTolerance;
+@property (weak, nonatomic) IBOutlet UISwitch *mSwitchContinuousSwipe;
+@property (weak, nonatomic) IBOutlet UISwitch *mSwitchGameCenterEnabled;
+@property (weak, nonatomic) IBOutlet UISwitch *mSwitchiCloudEnabled;
+@property (weak, nonatomic) IBOutlet UIButton *mButtonResetGameData;
+@property (weak, nonatomic) IBOutlet UISlider *mSliderTouchTolerance;
 
 @end
 
@@ -35,10 +35,10 @@
 
 - (void)styleView
 {
-    self.view.backgroundColor = defaultBackgroundColor;
-    self.buttonResetGameData.layer.cornerRadius = MenuButtonCornerRadius;
-    [self.buttonResetGameData setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
-    self.buttonResetGameData.backgroundColor = defaultButtonColor;
+    self.view.backgroundColor = StandardBackgroundColor;
+    self.mButtonResetGameData.layer.cornerRadius = MenuButtonCornerRadius;
+    [self.mButtonResetGameData setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
+    self.mButtonResetGameData.backgroundColor = StandardButtonColor;
 }
 
 
@@ -46,30 +46,30 @@
 
 - (void)setCurrentSettingsState
 {
-    self.switchContinuousSwipe.on = ContinuousSwipeEnabled;
-    self.switchGameCenterEnabled.on = GameCenterEnabled;
-    self.switchiCloudEnabled.on = iCloudEnabled;
-    self.sliderTouchTolerance.value = TouchTolerance;
+    self.mSwitchContinuousSwipe.on = Global_ContinuousSwipeEnabled;
+    self.mSwitchGameCenterEnabled.on = Global_GameCenterEnabled;
+    self.mSwitchiCloudEnabled.on = Global_iCloudEnabled;
+    self.mSliderTouchTolerance.value = Global_TouchTolerance;
 }
 
 - (IBAction)swipeContSwipeChanged:(id)sender
 {
-    if (self.switchContinuousSwipe.on)
+    if (self.mSwitchContinuousSwipe.on)
     {
-        ContinuousSwipeEnabled = true;
+        Global_ContinuousSwipeEnabled = true;
     }
     else
     {
-        ContinuousSwipeEnabled = false;
+        Global_ContinuousSwipeEnabled = false;
     }
     
     [DBSettingsManager saveSettings];
 }
 - (IBAction)switchGCEnabledChanged:(id)sender
 {
-    if (self.switchGameCenterEnabled.on)
+    if (self.mSwitchGameCenterEnabled.on)
     {
-        GameCenterEnabled = true;
+        Global_GameCenterEnabled = true;
         
         // Authenticating local player
         NSLog(@"GAME: Authenticating local player");
@@ -89,7 +89,7 @@
                 }
             }
             
-            if (GameCenterEnabled)
+            if (Global_GameCenterEnabled)
             {
                 if (error != nil)
                 {
@@ -101,7 +101,7 @@
     }
     else
     {
-        GameCenterEnabled = false;
+        Global_GameCenterEnabled = false;
     }
     
     [DBSettingsManager saveSettings];
@@ -109,13 +109,13 @@
 
 - (IBAction)switchiCloudEnabledChanged:(id)sender
 {
-    if (self.switchiCloudEnabled.on)
+    if (self.mSwitchiCloudEnabled.on)
     {
-        iCloudEnabled = true;
+        Global_iCloudEnabled = true;
     }
     else
     {
-        iCloudEnabled = false;
+        Global_iCloudEnabled = false;
     }
     
     [DBSettingsManager saveSettings];
@@ -124,7 +124,7 @@
 
 - (IBAction)sliderEditingDidEnd:(id)sender
 {
-    TouchTolerance = (NSInteger)self.sliderTouchTolerance.value;
+    Global_TouchTolerance = (NSInteger)self.mSliderTouchTolerance.value;
     [DBSettingsManager saveSettings];
 }
 

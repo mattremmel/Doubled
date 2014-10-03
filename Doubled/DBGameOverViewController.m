@@ -13,25 +13,25 @@
 
 @interface DBGameOverViewController () <GKGameCenterControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *viewBackground;
+@property (weak, nonatomic) IBOutlet UIView *mViewBackground;
 
-@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
-@property (weak, nonatomic) IBOutlet UIView *viewScoreBackground;
-@property (weak, nonatomic) IBOutlet UILabel *labelScore;
-@property (weak, nonatomic) IBOutlet UIView *viewHighScoreBackground;
-@property (weak, nonatomic) IBOutlet UILabel *labelHighScore;
+@property (weak, nonatomic) IBOutlet UILabel *mLabelTitle;
+@property (weak, nonatomic) IBOutlet UIView *mViewScoreBackground;
+@property (weak, nonatomic) IBOutlet UILabel *mLabelScore;
+@property (weak, nonatomic) IBOutlet UIView *mViewHighScoreBackground;
+@property (weak, nonatomic) IBOutlet UILabel *mLabelHighScore;
 
-@property (weak, nonatomic) IBOutlet UIButton *buttonLeaderboard;
-@property (weak, nonatomic) IBOutlet UIButton *buttonNewGame;
-@property (weak, nonatomic) IBOutlet UIButton *buttonMainMenu;
+@property (weak, nonatomic) IBOutlet UIButton *mButtonLeaderboard;
+@property (weak, nonatomic) IBOutlet UIButton *mButtonNewGame;
+@property (weak, nonatomic) IBOutlet UIButton *mButtonMainMenu;
 
-@property (weak, nonatomic) id target;
-@property SEL actionNewGame;
-@property SEL actionMainMenu;
-@property SEL actionLeaderboard;
+@property (weak, nonatomic) id mSELTarget;
+@property SEL mActionNewGame;
+@property SEL mActionMainMenu;
+@property SEL mActionLeaderboard;
 
-@property NSInteger score;
-@property NSInteger highScore;
+@property NSInteger mScore;
+@property NSInteger mHighScore;
 
 @end
 
@@ -48,46 +48,46 @@
     self.view.backgroundColor = [UIColor colorWithWhite:0.95 alpha:0.6];
     self.view.userInteractionEnabled = true;
     
-    self.viewBackground.backgroundColor = defaultBackgroundColor;
-    self.viewBackground.layer.cornerRadius = 15;
-    self.viewBackground.layer.shadowOpacity = 0.8;
-    self.viewBackground.layer.shadowOffset = MenuButtonShadowOffset;
+    self.mViewBackground.backgroundColor = StandardBackgroundColor;
+    self.mViewBackground.layer.cornerRadius = 15;
+    self.mViewBackground.layer.shadowOpacity = 0.8;
+    self.mViewBackground.layer.shadowOffset = MenuButtonShadowOffset;
     
-    self.viewScoreBackground.backgroundColor = defaultHUDColor;
-    self.viewScoreBackground.layer.cornerRadius = MenuButtonCornerRadius;
+    self.mViewScoreBackground.backgroundColor = StandardHUDColor;
+    self.mViewScoreBackground.layer.cornerRadius = MenuButtonCornerRadius;
     
-    self.viewHighScoreBackground.backgroundColor = defaultHUDColor;
-    self.viewHighScoreBackground.layer.cornerRadius = MenuButtonCornerRadius;
+    self.mViewHighScoreBackground.backgroundColor = StandardHUDColor;
+    self.mViewHighScoreBackground.layer.cornerRadius = MenuButtonCornerRadius;
     
-    self.buttonLeaderboard.layer.cornerRadius = MenuButtonCornerRadius;
-    self.buttonLeaderboard.backgroundColor = defaultHUDColor;
-    [self.buttonLeaderboard setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.mButtonLeaderboard.layer.cornerRadius = MenuButtonCornerRadius;
+    self.mButtonLeaderboard.backgroundColor = StandardHUDColor;
+    [self.mButtonLeaderboard setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
-    self.buttonNewGame.backgroundColor = defaultButtonColor;
-    [self.buttonNewGame setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+    self.mButtonNewGame.backgroundColor = StandardButtonColor;
+    [self.mButtonNewGame setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
     
-    self.buttonMainMenu.backgroundColor = defaultButtonColor;
-    [self.buttonMainMenu setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+    self.mButtonMainMenu.backgroundColor = StandardButtonColor;
+    [self.mButtonMainMenu setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
     
-    self.labelScore.textAlignment = NSTextAlignmentCenter;
-    self.labelScore.adjustsFontSizeToFitWidth = true;
+    self.mLabelScore.textAlignment = NSTextAlignmentCenter;
+    self.mLabelScore.adjustsFontSizeToFitWidth = true;
     
-    self.labelHighScore.textAlignment = NSTextAlignmentCenter;
-    self.labelHighScore.adjustsFontSizeToFitWidth = true;
+    self.mLabelHighScore.textAlignment = NSTextAlignmentCenter;
+    self.mLabelHighScore.adjustsFontSizeToFitWidth = true;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.labelScore.text = [NSString stringWithFormat:@"%li", (long)self.score];
-    self.labelHighScore.text = [NSString stringWithFormat:@"%li", (long)self.highScore];
+    self.mLabelScore.text = [NSString stringWithFormat:@"%li", (long)self.mScore];
+    self.mLabelHighScore.text = [NSString stringWithFormat:@"%li", (long)self.mHighScore];
     
-    if (self.score == self.highScore)
+    if (self.mScore == self.mHighScore)
     {
-        self.labelTitle.text = @"New High Score!";
+        self.mLabelTitle.text = @"New High Score!";
     }
     else
     {
-        self.labelTitle.text = @"Game Over";
+        self.mLabelTitle.text = @"Game Over";
     }
 }
 
@@ -96,16 +96,16 @@
 
 - (void)setActionTarget:(id)target actionNewGame:(SEL)newGameAction actionMainMenu:(SEL)mainMenuAction actionLeaderboard:(SEL)leaderboardAction
 {
-    self.target = target;
-    self.actionNewGame = newGameAction;
-    self.actionMainMenu = mainMenuAction;
-    self.actionLeaderboard = leaderboardAction;
+    self.mSELTarget = target;
+    self.mActionNewGame = newGameAction;
+    self.mActionMainMenu = mainMenuAction;
+    self.mActionLeaderboard = leaderboardAction;
 }
 
 - (void)setScore:(NSInteger)score andHighScore:(NSInteger)highScore
 {
-    self.score = score;
-    self.highScore = highScore;
+    self.mScore = score;
+    self.mHighScore = highScore;
 }
 
 
@@ -157,17 +157,17 @@
 - (IBAction)buttonNewGame:(id)sender
 {
     [self removeAnimate];
-    if ([self.target respondsToSelector:self.actionNewGame])
+    if ([self.mSELTarget respondsToSelector:self.mActionNewGame])
     {
-        [self.target performSelector:self.actionNewGame];
+        [self.mSELTarget performSelector:self.mActionNewGame];
     }
 }
 
 - (IBAction)buttonMainMenu:(id)sender
 {
-    if ([self.target respondsToSelector:self.actionMainMenu])
+    if ([self.mSELTarget respondsToSelector:self.mActionMainMenu])
     {
-        [self.target performSelector:self.actionMainMenu];
+        [self.mSELTarget performSelector:self.mActionMainMenu];
     }
 }
 

@@ -15,9 +15,9 @@
 
 @interface DBTile() <NSCoding, NSCopying>
 
-@property NSInteger value;
-@property SKLabelNode *label;
-@property BOOL wasDeleted;
+@property NSInteger mValue;
+@property SKLabelNode *mLabel;
+@property BOOL mWasDeleted;
 
 @end
 
@@ -34,21 +34,21 @@
 
 - (id)initWithValue:(NSInteger)value
 {
-    CGSize size = CGSizeMake(tileWidth - tileSizeShrink, tileHeight - tileSizeShrink);
+    CGSize size = CGSizeMake(Global_TileWidth - Global_TileSizeShrink, Global_TileHeight - Global_TileSizeShrink);
     self = [super initWithColor:[SKColor redColor] size:size];
     
-    self.value = value;
-    self.wasDeleted = false;
+    self.mValue = value;
+    self.mWasDeleted = false;
     
-    self.label = [SKLabelNode labelNodeWithFontNamed: defaultFont];
-    self.label.text = [NSString stringWithFormat:@"%li", (long)self.value];
-    self.label.fontSize = tileFontSize;
-    self.label.fontColor = defaultFontColor;
-    self.label.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
-    self.label.zPosition = 1;
-    [self addChild: self.label];
+    self.mLabel = [SKLabelNode labelNodeWithFontNamed: StandardFont];
+    self.mLabel.text = [NSString stringWithFormat:@"%li", (long)self.mValue];
+    self.mLabel.fontSize = Global_FontSize;
+    self.mLabel.fontColor = StandardFontColor;
+    self.mLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+    self.mLabel.zPosition = 1;
+    [self addChild: self.mLabel];
     
-    [self updateTileWithValue: self.value];
+    [self updateTileWithValue: self.mValue];
     
     return self;
 }
@@ -58,7 +58,7 @@
 
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
-    [encoder encodeInteger: self.value forKey: MRGameDataTileValueKey];
+    [encoder encodeInteger: self.mValue forKey: MRGameDataTileValueKey];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder
@@ -74,7 +74,7 @@
 -(id)copyWithZone:(NSZone *)zone
 {
     DBTile *copy = [[[self class] alloc] init];
-    [copy updateTileWithValue: self.value];
+    [copy updateTileWithValue: self.mValue];
     copy.position = self.position;
     return copy;
 }
@@ -84,19 +84,19 @@
 
 - (NSInteger)getValue
 {
-    return self.value;
+    return self.mValue;
 }
 
 - (BOOL)isDeleted
 {
-    return self.wasDeleted;
+    return self.mWasDeleted;
 }
 
 #pragma mark - Setters
 
 - (void)markAsDeleted
 {
-    self.wasDeleted = true;
+    self.mWasDeleted = true;
 }
 
 
@@ -106,71 +106,71 @@
 {
     assert(newValue != 0);
     
-    self.value = newValue;
-    self.label.text = [NSString stringWithFormat:@"%li", (long)self.value];
+    self.mValue = newValue;
+    self.mLabel.text = [NSString stringWithFormat:@"%li", (long)self.mValue];
     
-    switch (self.value) {
+    switch (self.mValue) {
         case 2:
-            self.color = tile2Color;
-            self.label.fontColor = defaultFontColor;
+            self.color = Tile2Color;
+            self.mLabel.fontColor = StandardFontColor;
             break;
         case 4:
-            self.color = tile4Color;
-            self.label.fontColor = defaultFontColor;
+            self.color = Tile4Color;
+            self.mLabel.fontColor = StandardFontColor;
             break;
         case 8:
-            self.color = tile8Color;
-            self.label.fontColor = [SKColor whiteColor];
+            self.color = Tile8Color;
+            self.mLabel.fontColor = [SKColor whiteColor];
             break;
         case 16:
-            self.color = tile16Color;
-            self.label.fontColor = [SKColor whiteColor];
+            self.color = Tile16Color;
+            self.mLabel.fontColor = [SKColor whiteColor];
             break;
         case 32:
-            self.color = tile32Color;
-            self.label.fontColor = [SKColor whiteColor];
+            self.color = Tile32Color;
+            self.mLabel.fontColor = [SKColor whiteColor];
             break;
         case 64:
-            self.color = tile64Color;
-            self.label.fontColor = defaultFontColor;
+            self.color = Tile64Color;
+            self.mLabel.fontColor = StandardFontColor;
             break;
         case 128:
-            self.color = tile128Color;
-            self.label.fontColor = [SKColor whiteColor];
+            self.color = Tile128Color;
+            self.mLabel.fontColor = [SKColor whiteColor];
             break;
         case 256:
-            self.color = tile256Color;
-            self.label.fontColor = [SKColor whiteColor];
+            self.color = Tile256Color;
+            self.mLabel.fontColor = [SKColor whiteColor];
             break;
         case 512:
-            self.color = tile512Color;
-            self.label.fontColor = [SKColor whiteColor];
+            self.color = Tile512Color;
+            self.mLabel.fontColor = [SKColor whiteColor];
             break;
         case 1024:
-            self.color = tile1024Color;
-            self.label.fontColor = [SKColor whiteColor];
-            self.label.fontSize = tileFontSize - 5;
+            self.color = Tile1024Color;
+            self.mLabel.fontColor = [SKColor whiteColor];
+            self.mLabel.fontSize = Global_FontSize - 5;
             break;
         case 2048:
-            self.color = tile2048Color;
-            self.label.fontColor = [SKColor whiteColor];
-            self.label.fontSize = tileFontSize - 5;
+            self.color = Tile2048Color;
+            self.mLabel.fontColor = [SKColor whiteColor];
+            self.mLabel.fontSize = Global_FontSize - 5;
             break;
         case 4096:
-            self.color = tile4096Color;
-            self.label.fontColor = [SKColor whiteColor];
-            self.label.fontSize = tileFontSize - 5;
+            self.color = Tile4096Color;
+            self.mLabel.fontColor = [SKColor whiteColor];
+            self.mLabel.fontSize = Global_FontSize - 5;
             break;
         case 8192:
-            self.color = tileDefaultColor;
-            self.label.fontColor = [SKColor whiteColor];
-            self.label.fontSize = tileFontSize - 5;
+            self.color = TileDefaultColor;
+            self.mLabel.fontColor = [SKColor whiteColor];
+            self.mLabel.fontSize = Global_FontSize - 5;
             
             // Anything bigger than that needs a smaller font size
         default:
-            self.color = tileDefaultColor;
-            self.label.fontColor = [SKColor whiteColor];
-            self.label.fontSize = tileFontSize - 10;
+            self.color = TileDefaultColor;
+            self.mLabel.fontColor = [SKColor whiteColor];
+            self.mLabel.fontSize = Global_FontSize - 10;
             break;
     }
 }

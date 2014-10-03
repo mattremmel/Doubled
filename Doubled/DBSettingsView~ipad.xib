@@ -6,11 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DBSettingsViewController">
             <connections>
-                <outlet property="buttonResetGameData" destination="H0a-GV-x93" id="D1I-j9-hu3"/>
-                <outlet property="sliderTouchTolerance" destination="CF1-UL-GU1" id="afU-Ga-oKs"/>
-                <outlet property="switchContinuousSwipe" destination="F6u-NZ-22W" id="0sQ-gW-VGg"/>
-                <outlet property="switchGameCenterEnabled" destination="ngE-Kv-tY9" id="L1Y-zT-kN8"/>
-                <outlet property="switchiCloudEnabled" destination="q1E-My-MhO" id="8rZ-n6-RS8"/>
+                <outlet property="mButtonResetGameData" destination="H0a-GV-x93" id="fXD-Jq-leh"/>
+                <outlet property="mSliderTouchTolerance" destination="CF1-UL-GU1" id="1fc-qs-gGx"/>
+                <outlet property="mSwitchContinuousSwipe" destination="F6u-NZ-22W" id="zGR-kK-M7n"/>
+                <outlet property="mSwitchGameCenterEnabled" destination="ngE-Kv-tY9" id="ycb-5D-L9v"/>
+                <outlet property="mSwitchiCloudEnabled" destination="q1E-My-MhO" id="jZ1-Z2-dk6"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kfL-Qu-AKs"/>
             </connections>
         </placeholder>

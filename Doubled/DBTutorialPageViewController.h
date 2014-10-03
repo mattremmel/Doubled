@@ -10,6 +10,6 @@
 
 @interface DBTutorialPageViewController : UIViewController <UIPageViewControllerDataSource>
 
-@property (strong, nonatomic) UIPageViewController *pageController;
+@property (strong, nonatomic) UIPageViewController *mPageController;
 
 @end

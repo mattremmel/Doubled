@@ -18,7 +18,7 @@
 
 @interface DBMenuPageController () <UIPageViewControllerDataSource>
 
-@property DBMainMenuViewController *mainMenuViewController;
+@property DBMainMenuViewController *mMainMenuViewController;
 
 @end
 
@@ -34,9 +34,9 @@
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.dataSource = self;
     [[self.pageViewController view] setFrame:self.view.frame];
-    self.view.backgroundColor = defaultBackgroundColor;
+    self.view.backgroundColor = StandardBackgroundColor;
     
-    self.mainMenuViewController = [[DBMainMenuViewController alloc] initWithNibName:@"DBMainMenuView" bundle:nil];
+    self.mMainMenuViewController = [[DBMainMenuViewController alloc] initWithNibName:@"DBMainMenuView" bundle:nil];
     
     DBChildMenuViewController *initialViewController = [self viewControllerAtIndex: InitialMenuItemIndex];
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
@@ -57,7 +57,7 @@
         }
     }
     
-    pageControl.backgroundColor = defaultBackgroundColor;
+    pageControl.backgroundColor = StandardBackgroundColor;
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     
@@ -78,7 +78,7 @@
 {
     NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     
-    bool hasHadFirstLaunch = [[NSUserDefaults standardUserDefaults] boolForKey:hasHadFirstLaunchKey];
+    bool hasHadFirstLaunch = [[NSUserDefaults standardUserDefaults] boolForKey:HasHadFirstLaunchKey];
     if (!hasHadFirstLaunch)
     {
         // Set the last launch version to this current launch since there wasn't one before and no need to show whats new.
@@ -87,7 +87,7 @@
         // Tutorial
         DBTutorialPageViewController *tutorialController = [[DBTutorialPageViewController alloc] init];
         [self.pageViewController presentViewController:tutorialController animated:true completion:nil];
-        [[NSUserDefaults standardUserDefaults] setBool:true forKey:hasHadFirstLaunchKey];
+        [[NSUserDefaults standardUserDefaults] setBool:true forKey:HasHadFirstLaunchKey];
         
         // Don't want to show the whats new so ending here
         return;
@@ -105,7 +105,7 @@
 
 -(void)authenticateLocalPlayer
 {
-    if (GameCenterEnabled)
+    if (Global_GameCenterEnabled)
     {
         NSLog(@"GAME: Authenticating local player");
         GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
@@ -123,7 +123,7 @@
                 }
             }
             
-            if (GameCenterEnabled)
+            if (Global_GameCenterEnabled)
             {
                 if (error != nil)
                 {
@@ -149,7 +149,7 @@
     
     switch (index) {
         case 0:
-            child = self.mainMenuViewController;
+            child = self.mMainMenuViewController;
             child.index = 0;
             break;
             

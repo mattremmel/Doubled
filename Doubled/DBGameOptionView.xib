@@ -6,9 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DBGameOptionViewController">
             <connections>
-                <outlet property="buttonBackground" destination="5pH-Pp-GtB" id="0pS-ke-kaw"/>
-                <outlet property="buttonContinue" destination="5mm-HZ-lpd" id="WFA-Sx-HAM"/>
-                <outlet property="buttonNewGame" destination="kvH-os-bS1" id="dCM-kk-h8L"/>
+                <outlet property="mButtonBackground" destination="5pH-Pp-GtB" id="4Xf-Ws-FDk"/>
+                <outlet property="mButtonContinue" destination="5mm-HZ-lpd" id="Pgm-zd-wsN"/>
+                <outlet property="mButtonNewGame" destination="kvH-os-bS1" id="uUO-Bu-3HU"/>
                 <outlet property="view" destination="iN0-l3-epB" id="1iC-f6-Yfa"/>
             </connections>
         </placeholder>

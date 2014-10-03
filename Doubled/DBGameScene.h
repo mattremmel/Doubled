@@ -18,19 +18,19 @@ typedef struct {
 
 @interface DBGameScene : SKScene
 
-@property DBGameViewController *gameController;
+@property DBGameViewController *mGameController;
 
-@property DBGameData *gameData;
-@property SKNode *gameLayer;
+@property DBGameData *mGameData;
+@property SKNode *mGameLayer;
 
-@property NSInteger swipeFromColumn;
-@property NSInteger swipeFromRow;
+@property NSInteger mSwipeFromColumn;
+@property NSInteger mSwipeFromRow;
 
-@property UILabel *scoreLabel;
-@property UILabel *highScoreLabel;
-@property UIView *gameModeBackground;
-@property UILabel *gameModeLabel;
-@property UILabel *goalLabel;
+@property UILabel *mScoreLabel;
+@property UILabel *mHighScoreLabel;
+@property UIView *mGameModeBoxBackground;
+@property UILabel *mGameModeLabel;
+@property UILabel *mGoalLabel;
 
 
 - (void)setupNewGame;

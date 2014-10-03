@@ -85,8 +85,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //[self reloadData];
-    self.mLabelCasualGamesPlayed.text = @"FOO";
+    [self reloadData];
 }
 
 

@@ -12,6 +12,6 @@
 @interface DBTimeAttackGameData : DBGameData
 
 + (DBTimeAttackGameData *)sharedInstance;
-@property double timeRemaining;
+@property double mTimeRemaining;
 
 @end

@@ -22,43 +22,43 @@
 {
     if (size.width == 320 && size.height == 480) // iPhone 4, iPhone 3, iPhone 2, iPod Touch
     {
-        deviceType = iPhone4Type;
-        tileWidth = 75;
-        tileHeight = 75;
-        tileFontSize = 30;
-        tileSizeShrink = 5;
-        columnCount = 4;
-        rowCount = 4;
+        Global_DeviceType = iPhone4Type;
+        Global_TileWidth = 75;
+        Global_TileHeight = 75;
+        Global_FontSize = 30;
+        Global_TileSizeShrink = 5;
+        Global_ColumnCount = 4;
+        Global_RowCount = 4;
     }
     else if (size.width == 320 && size.height == 568) // iPhone 5
     {
-        deviceType = iPhone5Type;
-        tileWidth = 75;
-        tileHeight = 75;
-        tileFontSize = 30;
-        tileSizeShrink = 5;
-        columnCount = 4;
-        rowCount = 4;
+        Global_DeviceType = iPhone5Type;
+        Global_TileWidth = 75;
+        Global_TileHeight = 75;
+        Global_FontSize = 30;
+        Global_TileSizeShrink = 5;
+        Global_ColumnCount = 4;
+        Global_RowCount = 4;
     }
     else if (size.width == 768 && size.height == 1024) // iPad
     {
-        deviceType = iPadType;
-        tileWidth = 140;
-        tileHeight = 140;
-        tileFontSize = 48;
-        tileSizeShrink = 6;
-        columnCount = 4;
-        rowCount = 4;
+        Global_DeviceType = iPadType;
+        Global_TileWidth = 140;
+        Global_TileHeight = 140;
+        Global_FontSize = 48;
+        Global_TileSizeShrink = 6;
+        Global_ColumnCount = 4;
+        Global_RowCount = 4;
     }
     else
     {
-        deviceType = unknownType;
-        tileWidth = 75;
-        tileHeight = 75;
-        tileFontSize = 30;
-        tileSizeShrink = 5;
-        columnCount = 4;
-        rowCount = 4;
+        Global_DeviceType = UnknownType;
+        Global_TileWidth = 75;
+        Global_TileHeight = 75;
+        Global_FontSize = 30;
+        Global_TileSizeShrink = 5;
+        Global_ColumnCount = 4;
+        Global_RowCount = 4;
     }
 }
 

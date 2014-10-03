@@ -11,7 +11,7 @@
 
 @interface DoubledIAPHelper()
 
-@property NSArray *products;
+@property NSArray *mProducts;
 
 @end
 
@@ -29,7 +29,7 @@
         [sharedInstance requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
             if (success)
             {
-                sharedInstance.products = products;
+                sharedInstance.mProducts = products;
             }
         }];
     });
@@ -39,9 +39,9 @@
 
 - (void)removeAds
 {
-    if (self.products)
+    if (self.mProducts)
     {
-        for (SKProduct *product in self.products)
+        for (SKProduct *product in self.mProducts)
         {
             if ([product.productIdentifier isEqualToString: RemoveAdsIdentifier])
             {

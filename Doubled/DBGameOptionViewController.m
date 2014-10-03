@@ -12,13 +12,13 @@
 
 @interface DBGameOptionViewController ()
 
-@property (weak, nonatomic) IBOutlet UIView *buttonBackground;
-@property (weak, nonatomic) IBOutlet UIButton *buttonNewGame;
-@property (weak, nonatomic) IBOutlet UIButton *buttonContinue;
+@property (weak, nonatomic) IBOutlet UIView *mButtonBackground;
+@property (weak, nonatomic) IBOutlet UIButton *mButtonNewGame;
+@property (weak, nonatomic) IBOutlet UIButton *mButtonContinue;
 
-@property (weak, nonatomic) id target;
-@property SEL actionNewGame;
-@property SEL actionContinueGame;
+@property (weak, nonatomic) id mSELTarget;
+@property SEL mActionNewGame;
+@property SEL mActionContinueGame;
 
 @end
 
@@ -36,28 +36,28 @@
 {
     self.view.backgroundColor = [UIColor colorWithWhite:0.95 alpha:0.85];
     
-    self.buttonBackground.backgroundColor = defaultBackgroundColor;
-    self.buttonBackground.layer.cornerRadius = 5;
-    self.buttonBackground.layer.shadowOpacity = 0.8;
-    self.buttonBackground.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+    self.mButtonBackground.backgroundColor = StandardBackgroundColor;
+    self.mButtonBackground.layer.cornerRadius = 5;
+    self.mButtonBackground.layer.shadowOpacity = 0.8;
+    self.mButtonBackground.layer.shadowOffset = CGSizeMake(0.0, 0.0);
     
-    self.buttonNewGame.layer.cornerRadius = MenuButtonCornerRadius;
-    self.buttonContinue.layer.cornerRadius = MenuButtonCornerRadius;
+    self.mButtonNewGame.layer.cornerRadius = MenuButtonCornerRadius;
+    self.mButtonContinue.layer.cornerRadius = MenuButtonCornerRadius;
     
-    [self.buttonNewGame setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
-    [self.buttonContinue setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+    [self.mButtonNewGame setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
+    [self.mButtonContinue setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
     
-    self.buttonNewGame.backgroundColor = defaultButtonColor;
-    self.buttonContinue.backgroundColor = defaultButtonColor;
+    self.mButtonNewGame.backgroundColor = StandardButtonColor;
+    self.mButtonContinue.backgroundColor = StandardButtonColor;
 }
 
 #pragma mark - Target Methods
 
 - (void)setActionTarget:(id)target actionNewGame:(SEL)newGameAction actionContinueGame:(SEL)continueAction
 {
-    self.target = target;
-    self.actionNewGame = newGameAction;
-    self.actionContinueGame = continueAction;
+    self.mSELTarget = target;
+    self.mActionNewGame = newGameAction;
+    self.mActionContinueGame = continueAction;
 }
 
 
@@ -95,9 +95,9 @@
     } completion:^(BOOL finished) {
         if (finished) {
             [self.view removeFromSuperview];
-            if (selector != nil && [self.target respondsToSelector:selector])
+            if (selector != nil && [self.mSELTarget respondsToSelector:selector])
             {
-                [self.target performSelector:selector];
+                [self.mSELTarget performSelector:selector];
             }
         }
     }];
@@ -108,12 +108,12 @@
 
 - (IBAction)buttonNewGame:(id)sender
 {
-    [self removeAnimateWithCompletionSelector:self.actionNewGame];
+    [self removeAnimateWithCompletionSelector:self.mActionNewGame];
 }
 
 - (IBAction)buttonContinueGame:(id)sender
 {
-    [self removeAnimateWithCompletionSelector:self.actionContinueGame];
+    [self removeAnimateWithCompletionSelector:self.mActionContinueGame];
 }
 
 

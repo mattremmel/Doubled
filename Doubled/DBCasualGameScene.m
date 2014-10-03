@@ -12,7 +12,7 @@
 
 @interface DBCasualGameScene()
 
-@property BOOL contentCreated;
+@property BOOL mContentCreated;
 
 @end
 
@@ -27,7 +27,7 @@
     if (self)
     {
         [self createContent];
-        self.gameData = [DBCasualGameData sharedInstance];
+        self.mGameData = [DBCasualGameData sharedInstance];
     }
     
     NSLog(@"SCNE: Casual game scene initilized");
@@ -39,11 +39,11 @@
 
 - (void)createContent
 {
-    if (!self.contentCreated)
+    if (!self.mContentCreated)
     {
         // TODO: Additional casual game only setup
         
-        self.contentCreated = true;
+        self.mContentCreated = true;
     }
 }
 

@@ -6,9 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DBStatisticsViewController">
             <connections>
-                <outlet property="buttonCasualLeaderboard" destination="cki-Je-5d5" id="JLg-Cg-AlH"/>
-                <outlet property="buttonTimeAttackLeaderboard" destination="fjs-T8-wjh" id="OvR-Qt-QaF"/>
-                <outlet property="contentView" destination="Gu6-Vx-QSn" id="uJ5-Lj-xt8"/>
                 <outlet property="labelCasual1024TileCount" destination="W9g-XP-777" id="EEh-VT-il2"/>
                 <outlet property="labelCasual128TileCount" destination="uEP-70-988" id="gqB-da-zbw"/>
                 <outlet property="labelCasual16384TileCount" destination="M2e-ea-oUg" id="hLx-Ya-jId"/>
@@ -51,7 +48,10 @@
                 <outlet property="labelTimeAttackHighScore" destination="tFv-Vw-joU" id="PRE-cJ-Dl8"/>
                 <outlet property="labelTimeAttackLargestTileRecord" destination="Zes-L4-oZw" id="xKX-04-Uh1"/>
                 <outlet property="labelTimeAttackTotalMoves" destination="Di7-eZ-49H" id="u4b-9b-g6d"/>
-                <outlet property="scrollViewContainer" destination="n4d-Vw-t2F" id="I1l-D3-GwU"/>
+                <outlet property="mButtonCasualLeaderboard" destination="cki-Je-5d5" id="Zuw-Dw-4yu"/>
+                <outlet property="mButtonTimeAttackLeaderboard" destination="fjs-T8-wjh" id="k4V-FZ-8Os"/>
+                <outlet property="mContentView" destination="Gu6-Vx-QSn" id="Yxi-8M-Zwk"/>
+                <outlet property="mScrollViewContainer" destination="n4d-Vw-t2F" id="jKv-bo-HNk"/>
                 <outlet property="view" destination="iN0-l3-epB" id="L7D-0I-yNH"/>
             </connections>
         </placeholder>

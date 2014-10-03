@@ -19,14 +19,14 @@
 
 @interface DBGameViewController () <MPAdViewDelegate>
 
-@property DBCasualGameScene *casualGameScene;
-@property DBTimeAttackGameScene *timeAttackGameScene;
-@property SKView *skView;
+@property DBCasualGameScene *mCasualGameScene;
+@property DBTimeAttackGameScene *mTimeAttackGameScene;
+@property SKView *mSKView;
 
-@property (nonatomic, retain)MPAdView *mpAdView;
-@property BOOL mpAdViewIsVisible;
-@property DBRemoveAdsBanner *removeAdsBanner;
-@property BOOL removeAdsBannerIsVisible;
+@property (nonatomic, retain)MPAdView *mMPAdView;
+@property BOOL mMPAdViewIsVisible;
+@property DBRemoveAdsBanner *mRemoveAdsBanner;
+@property BOOL mRemoveAdsBannerIsVisible;
 
 @end
 
@@ -64,8 +64,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self.view bringSubviewToFront:self.removeAdsBanner];
-    [self.view bringSubviewToFront:self.mpAdView];
+    [self.view bringSubviewToFront:self.mRemoveAdsBanner];
+    [self.view bringSubviewToFront:self.mMPAdView];
     [self loadMPAd];
 }
 
@@ -79,18 +79,18 @@
 
 - (void)configureBannerView
 {
-    if (deviceType == iPadType) {
-        self.mpAdView = [[MPAdView alloc] initWithAdUnitId:@"0d340afee3c24c23a7195878584d2482" size:MOPUB_LEADERBOARD_SIZE];
+    if (Global_DeviceType == iPadType) {
+        self.mMPAdView = [[MPAdView alloc] initWithAdUnitId:@"0d340afee3c24c23a7195878584d2482" size:MOPUB_LEADERBOARD_SIZE];
     }
     else {
-        self.mpAdView = [[MPAdView alloc] initWithAdUnitId:@"6f2ed59709654058a062bfb489a65eca" size:MOPUB_BANNER_SIZE];
+        self.mMPAdView = [[MPAdView alloc] initWithAdUnitId:@"6f2ed59709654058a062bfb489a65eca" size:MOPUB_BANNER_SIZE];
     }
     
-    self.mpAdView.delegate = self;
-    CGRect frame = self.mpAdView.frame;
-    CGSize size = [self.mpAdView adContentViewSize];
+    self.mMPAdView.delegate = self;
+    CGRect frame = self.mMPAdView.frame;
+    CGSize size = [self.mMPAdView adContentViewSize];
     frame.origin.y = [[UIScreen mainScreen] applicationFrame].size.height - size.height;
-    self.mpAdView.frame = frame;
+    self.mMPAdView.frame = frame;
     
     [self configureRemoveAdsBanner];
 }
@@ -99,23 +99,23 @@
 {
     NSLog(@"BAN:  Configuring remove ads banner");
     
-    self.removeAdsBanner = [[DBRemoveAdsBanner alloc] init];
-    [self.removeAdsBanner setFrame: CGRectMake(0, self.view.frame.size.height, self.removeAdsBanner.frame.size.width, self.removeAdsBanner.frame.size.height)]; // Start off screen
-    [self.removeAdsBanner setBackgroundColor: [UIColor blackColor]];
-    [self.removeAdsBanner setUserInteractionEnabled: true];
-    [self.view addSubview: self.removeAdsBanner];
+    self.mRemoveAdsBanner = [[DBRemoveAdsBanner alloc] init];
+    [self.mRemoveAdsBanner setFrame: CGRectMake(0, self.view.frame.size.height, self.mRemoveAdsBanner.frame.size.width, self.mRemoveAdsBanner.frame.size.height)]; // Start off screen
+    [self.mRemoveAdsBanner setBackgroundColor: [UIColor blackColor]];
+    [self.mRemoveAdsBanner setUserInteractionEnabled: true];
+    [self.view addSubview: self.mRemoveAdsBanner];
 }
 
 - (void)configureCasualGameScene
 {
-    self.casualGameScene = [[DBCasualGameScene alloc] initWithSize:self.view.frame.size];
-    self.casualGameScene.gameController = self;
+    self.mCasualGameScene = [[DBCasualGameScene alloc] initWithSize:self.view.frame.size];
+    self.mCasualGameScene.mGameController = self;
 }
 
 - (void)configureTimeAttackGameScene
 {
-    self.timeAttackGameScene = [[DBTimeAttackGameScene alloc] initWithSize:self.view.frame.size];
-    self.timeAttackGameScene.gameController = self;
+    self.mTimeAttackGameScene = [[DBTimeAttackGameScene alloc] initWithSize:self.view.frame.size];
+    self.mTimeAttackGameScene.mGameController = self;
 }
 
 
@@ -124,29 +124,29 @@
 - (void)startCasualNewGame
 {
     NSLog(@"CONT: Presenting new casual game scene");
-    [self.casualGameScene setupNewGame];
-    [self presentViewWithScene:self.casualGameScene];
+    [self.mCasualGameScene setupNewGame];
+    [self presentViewWithScene:self.mCasualGameScene];
 }
 
 - (void)startCasualContinueGame
 {
     NSLog(@"CONT: Presenting continue casual game scene");
-    [self.casualGameScene setupContinueGame];
-    [self presentViewWithScene:self.casualGameScene];
+    [self.mCasualGameScene setupContinueGame];
+    [self presentViewWithScene:self.mCasualGameScene];
 }
 
 - (void)startTimeAttackNewGame
 {
     NSLog(@"CONT: Presenting new casual game scene");
-    [self.timeAttackGameScene setupNewGame];
-    [self presentViewWithScene:self.timeAttackGameScene];
+    [self.mTimeAttackGameScene setupNewGame];
+    [self presentViewWithScene:self.mTimeAttackGameScene];
 }
 
 - (void)startTimeAttackContinueGame
 {
     NSLog(@"CONT: Presenting new casual game scene");
-    [self.timeAttackGameScene setupContinueGame];
-    [self presentViewWithScene:self.timeAttackGameScene];
+    [self.mTimeAttackGameScene setupContinueGame];
+    [self presentViewWithScene:self.mTimeAttackGameScene];
 }
 
 - (void)presentViewWithScene:(DBGameScene *)scene
@@ -154,20 +154,20 @@
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
-    self.skView = [[SKView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
-    [self.view addSubview:self.skView];
-    [self.skView presentScene:scene];
+    self.mSKView = [[SKView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
+    [self.view addSubview:self.mSKView];
+    [self.mSKView presentScene:scene];
     [scene addInterface];
 }
 
 - (BOOL)casualGameInProgress
 {
-    return (self.casualGameScene.gameData.score > 300) ? true : false;
+    return (self.mCasualGameScene.mGameData.mScore > 300) ? true : false;
 }
 
 - (BOOL)timeAttackGameInProgress
 {
-    return (self.timeAttackGameScene.gameData.score > 300) ? true : false;
+    return (self.mTimeAttackGameScene.mGameData.mScore > 300) ? true : false;
 }
 
 
@@ -175,7 +175,7 @@
 
 - (void)loadMPAd
 {
-    [self.mpAdView loadAd];
+    [self.mMPAdView loadAd];
 }
 
 
@@ -185,11 +185,11 @@
 {
     NSLog(@"Remove ads purchased");
     
-    [self.mpAdView removeFromSuperview];
-    self.mpAdView = nil;
+    [self.mMPAdView removeFromSuperview];
+    self.mMPAdView = nil;
     
-    [self.removeAdsBanner removeFromSuperview];
-    self.removeAdsBanner = nil;
+    [self.mRemoveAdsBanner removeFromSuperview];
+    self.mRemoveAdsBanner = nil;
 }
 
 #pragma mark - MoPub Ad Callback Methods
@@ -198,12 +198,12 @@
 {
     NSLog(@"MPAD: Ad view did load ad");
     
-    if (self.removeAdsBannerIsVisible)
+    if (self.mRemoveAdsBannerIsVisible)
         [self animateRemoveAdsBannerOff];
     
-    [self.view addSubview:self.mpAdView];
+    [self.view addSubview:self.mMPAdView];
     
-    if (!self.mpAdViewIsVisible)
+    if (!self.mMPAdViewIsVisible)
         [self animateAdsBannerOn];
 }
 
@@ -211,13 +211,13 @@
 {
     NSLog(@"MPAD: Ad view did fail to load ad");
     
-    if (self.mpAdViewIsVisible) {
+    if (self.mMPAdViewIsVisible) {
         [self animateAdsBannerOff];
     }
     
-    [self.mpAdView removeFromSuperview];
+    [self.mMPAdView removeFromSuperview];
     
-    if (!self.removeAdsBannerIsVisible) {
+    if (!self.mRemoveAdsBannerIsVisible) {
         [self animateRemoveAdsBannerOn];
     }
 }
@@ -225,15 +225,15 @@
 - (void)willPresentModalViewForAd:(MPAdView *)view
 {
     NSLog(@"MPAD: Ad view will present modal view for ad");
-    DBGameScene *gameScene = (DBGameScene *)self.skView.scene;
-    [gameScene.gameData saveGameData];
+    DBGameScene *gameScene = (DBGameScene *)self.mSKView.scene;
+    [gameScene.mGameData saveGameData];
     [gameScene pauseGame];
 }
 
 - (void)didDismissModalViewForAd:(MPAdView *)view
 {
     NSLog(@"MPAD: Ad view did dismiss modal view for ad");
-    DBGameScene *gameScene = (DBGameScene *)self.skView.scene;
+    DBGameScene *gameScene = (DBGameScene *)self.mSKView.scene;
     [gameScene setupContinueGame];
 }
 
@@ -249,9 +249,9 @@
 {
     NSLog(@"Animating ad banner on");
     [UIView animateWithDuration: 0.5 animations:^{
-        [self.mpAdView setFrame: CGRectMake(0, self.view.frame.size.height - self.mpAdView.frame.size.height, self.mpAdView.frame.size.width, self.mpAdView.frame.size.height)];
+        [self.mMPAdView setFrame: CGRectMake(0, self.view.frame.size.height - self.mMPAdView.frame.size.height, self.mMPAdView.frame.size.width, self.mMPAdView.frame.size.height)];
     }completion:^(BOOL finished){
-        self.mpAdViewIsVisible = true;
+        self.mMPAdViewIsVisible = true;
     }];
 }
 
@@ -259,9 +259,9 @@
 {
     NSLog(@"Animating ad banner off");
     [UIView animateWithDuration: 0.5 animations:^{
-        [self.mpAdView setFrame: CGRectMake(0, self.view.frame.size.height, self.mpAdView.frame.size.width, self.mpAdView.frame.size.height)];
+        [self.mMPAdView setFrame: CGRectMake(0, self.view.frame.size.height, self.mMPAdView.frame.size.width, self.mMPAdView.frame.size.height)];
     }completion:^(BOOL finished){
-        self.mpAdViewIsVisible = false;
+        self.mMPAdViewIsVisible = false;
     }];
 }
 
@@ -269,9 +269,9 @@
 {
     NSLog(@"Animating remove ads banner on");
     [UIView animateWithDuration: 0.5 animations:^{
-        [self.removeAdsBanner setFrame: CGRectMake(0, self.view.frame.size.height - self.removeAdsBanner.frame.size.height, self.removeAdsBanner.frame.size.width, self.removeAdsBanner.frame.size.height)];
+        [self.mRemoveAdsBanner setFrame: CGRectMake(0, self.view.frame.size.height - self.mRemoveAdsBanner.frame.size.height, self.mRemoveAdsBanner.frame.size.width, self.mRemoveAdsBanner.frame.size.height)];
     }completion:^(BOOL finished){
-        self.removeAdsBannerIsVisible = true;
+        self.mRemoveAdsBannerIsVisible = true;
     }];
 }
 
@@ -279,9 +279,9 @@
 {
     NSLog(@"Animating removing ads banner off");
     [UIView animateWithDuration: 0.5 animations:^{
-        [self.removeAdsBanner setFrame: CGRectMake(0, self.view.frame.size.height, self.removeAdsBanner.frame.size.width, self.removeAdsBanner.frame.size.height)];
+        [self.mRemoveAdsBanner setFrame: CGRectMake(0, self.view.frame.size.height, self.mRemoveAdsBanner.frame.size.width, self.mRemoveAdsBanner.frame.size.height)];
     }completion:^(BOOL finished){
-        self.removeAdsBannerIsVisible = false;
+        self.mRemoveAdsBannerIsVisible = false;
     }];
 }
 
@@ -290,8 +290,8 @@
 
 - (void)dismissGameController
 {
-    [self.skView removeFromSuperview];
-    self.skView = nil;
+    [self.mSKView removeFromSuperview];
+    self.mSKView = nil;
     [self dismissViewControllerAnimated:true completion:nil];
 }
 

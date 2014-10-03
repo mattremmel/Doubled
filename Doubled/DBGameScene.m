@@ -14,8 +14,8 @@
 
 @interface DBGameScene()
 
-@property BOOL gameSceneContentCreated;
-@property DBGameOverViewController *gameOverView;
+@property BOOL mGameSceneContentCreated;
+@property DBGameOverViewController *mGameOverView;
 
 @end
 
@@ -29,7 +29,7 @@
     if (self)
     {
         [self createGameSceneContent];
-        self.gameOverView = [[DBGameOverViewController alloc] initWithNibName:@"DBGameOverView" bundle:nil];
+        self.mGameOverView = [[DBGameOverViewController alloc] initWithNibName:@"DBGameOverView" bundle:nil];
     }
     
     NSLog(@"SCNE: DBGameScene initilized");
@@ -41,11 +41,11 @@
 
 - (void)createGameSceneContent
 {
-    if (!self.gameSceneContentCreated)
+    if (!self.mGameSceneContentCreated)
     {
         NSLog(@"SCNE: Creating game scene content");
         [self setupView];
-        self.gameSceneContentCreated = true;
+        self.mGameSceneContentCreated = true;
     }
 }
 
@@ -53,24 +53,24 @@
 {
     NSLog(@"SCNE: Setting up new game");
     
-    for (DBTile *tile in self.gameData.gameboard)
+    for (DBTile *tile in self.mGameData.mGameboard)
     {
         [tile removeFromParent];
     }
     
-    [self.gameData resetGameDataForNewGame];
+    [self.mGameData resetGameDataForNewGame];
     [self newGameBoard];
     [self addGameTiles];
     [self updateHUD];
     [self checkForEndGame];
     [self updateBoard];
-    [self.gameData increaseGamesPlayed];
+    [self.mGameData increaseGamesPlayed];
 }
 
 - (void)setupContinueGame
 {
     NSLog(@"SCNE: Setting up continue game");
-    if ([self.gameData.gameboard count] == 0)
+    if ([self.mGameData.mGameboard count] == 0)
     {
         NSLog(@"ERROR: No previous gameboard found, generating new one");
         [self setupNewGame];
@@ -82,7 +82,7 @@
     }
     else
     {
-        for (DBTile *tile in self.gameData.gameboard)
+        for (DBTile *tile in self.mGameData.mGameboard)
         {
             [tile removeFromParent];
             [tile removeAllActions];
@@ -99,9 +99,9 @@
 {
     NSLog(@"FUNC: Setting up game view");
     self.anchorPoint = CGPointMake(0.5, 0.5);
-    self.backgroundColor = defaultBackgroundColor;
+    self.backgroundColor = StandardBackgroundColor;
     
-    self.gameLayer = [[SKNode alloc] init];
+    self.mGameLayer = [[SKNode alloc] init];
 }
 
 - (void)addInterface
@@ -113,9 +113,9 @@
 - (void)addGameTiles
 {
     NSLog(@"FUNC: Adding game tiles");
-    for (int i = 0; i <[self.gameData.gameboard count]; ++i)
+    for (int i = 0; i <[self.mGameData.mGameboard count]; ++i)
     {
-        [self.gameLayer addChild: [self.gameData.gameboard objectAtIndex:i]];
+        [self.mGameLayer addChild: [self.mGameData.mGameboard objectAtIndex:i]];
     }
     
     [self moveTilesToPositionWithAnimation: false];
@@ -126,7 +126,7 @@
 
 - (void)newGameBoard
 {
-    self.gameData.gameboard = [self getNewGameTiles];
+    self.mGameData.mGameboard = [self getNewGameTiles];
 }
 
 - (NSMutableArray *)getNewGameTiles
@@ -134,9 +134,9 @@
     NSLog(@"FUNC: Generating new game tiles");
     
     NSMutableArray *newTiles = [[NSMutableArray alloc] init];
-    for (int row = 0; row < rowCount; ++row)
+    for (int row = 0; row < Global_RowCount; ++row)
     {
-        for (int column = 0; column < columnCount; ++column)
+        for (int column = 0; column < Global_ColumnCount; ++column)
         {
             DBTile *tile = [self createGameTile];
             tile.position = [self getPointForColumn:column andRow:row];
@@ -153,7 +153,7 @@
     
     NSInteger randNum = (long)(arc4random_uniform(100));
     
-    if (self.gameData.currentLargestTile >= 1024)
+    if (self.mGameData.mCurrentLargestTile >= 1024)
     {
         if (randNum >= 0 && randNum <= 45)
         {
@@ -183,9 +183,9 @@
     DBTile *tileWithMove2;
     
     
-    for (int column = 0; column < columnCount; ++column)
+    for (int column = 0; column < Global_ColumnCount; ++column)
     {
-        for (int row = 0; row < rowCount; ++row)
+        for (int row = 0; row < Global_RowCount; ++row)
         {
             NSInteger currentValue = [self getValueOfTileAtColumn: column andRow: row];
             NSInteger leftValue = [self getValueOfTileAtColumn: column - 1 andRow: row];
@@ -245,17 +245,17 @@
 
 - (CGPoint)getPointForColumn:(NSInteger)column andRow:(NSInteger)row
 {
-    return CGPointMake(column * tileWidth + tileWidth / 2.0, row * tileHeight + tileHeight / 2);
+    return CGPointMake(column * Global_TileWidth + Global_TileWidth / 2.0, row * Global_TileHeight + Global_TileHeight / 2);
 }
 
 - (TileLocation)convertPointToLocation:(CGPoint)point
 {
     TileLocation location;
     
-    if (point.x >= 0 && point.x < 9 * tileWidth && point.y >= 0 && point.y < 9 * tileHeight)
+    if (point.x >= 0 && point.x < 9 * Global_TileWidth && point.y >= 0 && point.y < 9 * Global_TileHeight)
     {
-        location.column = (NSInteger)(point.x / tileWidth);
-        location.row = (NSInteger)(point.y / tileHeight);
+        location.column = (NSInteger)(point.x / Global_TileWidth);
+        location.row = (NSInteger)(point.y / Global_TileHeight);
         CGPoint tileCenter = [self getPointForColumn: location.column andRow: location.row];
         
         NSInteger touchXDistanceFromCenter = abs(point.x - tileCenter.x);
@@ -264,7 +264,7 @@
         assert(touchXDistanceFromCenter >= 0);
         assert(touchYDistanceFromCenter >= 0);
         
-        if (touchXDistanceFromCenter < TouchTolerance && touchYDistanceFromCenter < TouchTolerance)
+        if (touchXDistanceFromCenter < Global_TouchTolerance && touchYDistanceFromCenter < Global_TouchTolerance)
         {
             return location;
         }
@@ -285,57 +285,57 @@
 
 - (DBTile *)getTileAtColumn:(NSInteger)column andRow:(NSInteger)row
 {
-    assert(column >= 0 && column < columnCount);
-    assert(row >= 0 && row < rowCount);
-    return [self.gameData.gameboard objectAtIndex: row * columnCount + column];
+    assert(column >= 0 && column < Global_ColumnCount);
+    assert(row >= 0 && row < Global_RowCount);
+    return [self.mGameData.mGameboard objectAtIndex: row * Global_ColumnCount + column];
 }
 
 - (void)setTile:(DBTile *)tile atColumn:(NSInteger)column andRow:(NSInteger)row
 {
-    assert(column >= 0 && column < [self.gameData.gameboard count] / rowCount);
-    assert(row >= 0 && row < rowCount);
-    [self.gameData.gameboard replaceObjectAtIndex:row * columnCount + column withObject: tile];
+    assert(column >= 0 && column < [self.mGameData.mGameboard count] / Global_RowCount);
+    assert(row >= 0 && row < Global_RowCount);
+    [self.mGameData.mGameboard replaceObjectAtIndex:row * Global_ColumnCount + column withObject: tile];
 }
 
 - (NSInteger)getValueOfTileAtColumn:(NSInteger)column andRow:(NSInteger)row
 {
-    if (column < 0 || column >= columnCount) return 0;
-    if (row < 0 || row >= rowCount) return 0;
+    if (column < 0 || column >= Global_ColumnCount) return 0;
+    if (row < 0 || row >= Global_RowCount) return 0;
     return [[self getTileAtColumn: column andRow: row] getValue];
 }
 
 - (BOOL)tryMergeHorizantal:(NSInteger)horizDelta andVertical:(NSInteger)vertDelta
 {
-    if (self.swipeFromColumn < 0 || self.swipeFromColumn >= columnCount) return false;
-    if (self.swipeFromRow < 0 || self.swipeFromRow >= rowCount) return false;
+    if (self.mSwipeFromColumn < 0 || self.mSwipeFromColumn >= Global_ColumnCount) return false;
+    if (self.mSwipeFromRow < 0 || self.mSwipeFromRow >= Global_RowCount) return false;
     
-    NSInteger toColumn = self.swipeFromColumn + horizDelta;
-    NSInteger toRow = self.swipeFromRow + vertDelta;
+    NSInteger toColumn = self.mSwipeFromColumn + horizDelta;
+    NSInteger toRow = self.mSwipeFromRow + vertDelta;
     
-    if (toColumn < 0 || toColumn >= columnCount) return false;
-    if (toRow < 0 || toRow >= rowCount) return false;
+    if (toColumn < 0 || toColumn >= Global_ColumnCount) return false;
+    if (toRow < 0 || toRow >= Global_RowCount) return false;
     
-    DBTile *fromTile = [self getTileAtColumn: self.swipeFromColumn andRow: self.swipeFromRow];
+    DBTile *fromTile = [self getTileAtColumn: self.mSwipeFromColumn andRow: self.mSwipeFromRow];
     DBTile *toTile = [self getTileAtColumn: toColumn andRow: toRow];
     
     if ([fromTile getValue] == [toTile getValue])
     {
         [toTile updateTileWithValue: [fromTile getValue] + [toTile getValue]];
         [self animateTile:fromTile mergeWith:toTile];
-        [self.gameData increaseScoreBy: [toTile getValue]];
+        [self.mGameData increaseScoreBy: [toTile getValue]];
         [fromTile markAsDeleted];
         [self fillTileHolesWithHorizantal:horizDelta andVertical:vertDelta];
-        [self.gameData addMove];
+        [self.mGameData addMove];
         
-        if (ContinuousSwipeEnabled)
+        if (Global_ContinuousSwipeEnabled)
         {
-            self.swipeFromColumn = toColumn;
-            self.swipeFromRow = toRow;
+            self.mSwipeFromColumn = toColumn;
+            self.mSwipeFromRow = toRow;
         }
         else
         {
-            self.swipeFromColumn = -1;
-            self.swipeFromRow = -1;
+            self.mSwipeFromColumn = -1;
+            self.mSwipeFromRow = -1;
         }
         
         return true;
@@ -363,16 +363,16 @@
 
 - (void)fillTileHolesWithHorizantal:(NSInteger)horizDelta andVertical:(NSInteger)vertDelta
 {
-    for (int row = 0; row < rowCount; ++row)
+    for (int row = 0; row < Global_RowCount; ++row)
     {
-        for (int column = 0; column < columnCount; ++column)
+        for (int column = 0; column < Global_ColumnCount; ++column)
         {
             if ([[self getTileAtColumn: column andRow: row] isDeleted])
             {
                 if (vertDelta == -1)
                 {
                     // Move all existing tiles down
-                    for (int lookup = row + 1; lookup < rowCount; ++lookup)
+                    for (int lookup = row + 1; lookup < Global_RowCount; ++lookup)
                     {
                         DBTile *tileAbove = [self getTileAtColumn:column andRow:lookup];
                         [self setTile:tileAbove atColumn:column andRow:lookup - 1];
@@ -380,8 +380,8 @@
                     
                     // Generate new tile and set to place
                     DBTile *tile = [self createGameTile];
-                    tile.position = CGPointMake(column * tileWidth + tileWidth / 2.0, rowCount * tileHeight + tileHeight / 2.0);
-                    [self setTile:tile atColumn:column andRow:rowCount - 1];
+                    tile.position = CGPointMake(column * Global_TileWidth + Global_TileWidth / 2.0, Global_RowCount * Global_TileHeight + Global_TileHeight / 2.0);
+                    [self setTile:tile atColumn:column andRow:Global_RowCount - 1];
                 }
                 else if (vertDelta == 1)
                 {
@@ -393,12 +393,12 @@
                     
                     // Generate new tile and set to place
                     DBTile *tile = [self createGameTile];
-                    tile.position = CGPointMake(column * tileWidth + tileWidth / 2.0, -tileHeight / 2.0);
+                    tile.position = CGPointMake(column * Global_TileWidth + Global_TileWidth / 2.0, -Global_TileHeight / 2.0);
                     [self setTile:tile atColumn:column andRow:0];
                 }
                 else if (horizDelta == -1)
                 {
-                    for (int lookRight = column + 1; lookRight < columnCount; ++lookRight)
+                    for (int lookRight = column + 1; lookRight < Global_ColumnCount; ++lookRight)
                     {
                         DBTile *tileRight = [self getTileAtColumn:lookRight andRow:row];
                         [self setTile:tileRight atColumn:lookRight - 1 andRow:row];
@@ -406,8 +406,8 @@
                     
                     // Generate new tile and set to place
                     DBTile *tile = [self createGameTile];
-                    tile.position = CGPointMake(columnCount * tileWidth + tileWidth / 2.0, row * tileHeight + tileHeight / 2.0);
-                    [self setTile:tile atColumn:columnCount -1 andRow:row];
+                    tile.position = CGPointMake(Global_ColumnCount * Global_TileWidth + Global_TileWidth / 2.0, row * Global_TileHeight + Global_TileHeight / 2.0);
+                    [self setTile:tile atColumn:Global_ColumnCount -1 andRow:row];
                 }
                 else
                 {
@@ -419,7 +419,7 @@
                     
                     // Generate new tile and set to place
                     DBTile *tile = [self createGameTile];
-                    tile.position = CGPointMake(-tileWidth / 2.0, row * tileHeight + tileHeight / 2.0);
+                    tile.position = CGPointMake(-Global_TileWidth / 2.0, row * Global_TileHeight + Global_TileHeight / 2.0);
                     [self setTile:tile atColumn:0 andRow:row];
                 }
             }
@@ -430,9 +430,9 @@
 
 - (void)moveTilesToPositionWithAnimation:(BOOL)animate
 {
-    for (int row = 0; row < rowCount; ++row)
+    for (int row = 0; row < Global_RowCount; ++row)
     {
-        for (int column = 0; column < columnCount; ++column)
+        for (int column = 0; column < Global_ColumnCount; ++column)
         {
             DBTile *tile = [self getTileAtColumn:column andRow:row];
             CGPoint correctTilePosition = [self getPointForColumn:column andRow:row];
@@ -466,30 +466,30 @@
 - (void)endGame
 {
     NSLog(@"SCNE: End game");
-    [self.gameData saveGameData];
-    [self.gameData reportHighScoreToGameCenter];
-    [self.gameOverView setActionTarget:self actionNewGame:@selector(setupNewGame) actionMainMenu:@selector(buttonMenu) actionLeaderboard:nil];
-    [self.gameOverView setScore:self.gameData.score andHighScore:self.gameData.highScore];
-    [self.gameOverView showInView:self.view animated:true];
+    [self.mGameData saveGameData];
+    [self.mGameData reportHighScoreToGameCenter];
+    [self.mGameOverView setActionTarget:self actionNewGame:@selector(setupNewGame) actionMainMenu:@selector(buttonMenu) actionLeaderboard:nil];
+    [self.mGameOverView setScore:self.mGameData.mScore andHighScore:self.mGameData.mHighScore];
+    [self.mGameOverView showInView:self.view animated:true];
 }
 
 #pragma mark - Update
 
 - (void)updateHUD
 {
-    self.scoreLabel.text = [NSString stringWithFormat: @"%li", (long)self.gameData.score];
-    self.highScoreLabel.text = [NSString stringWithFormat: @"%li", (long)self.gameData.highScore];
-    self.goalLabel.text = [NSString stringWithFormat:@"Your next goal is the %li tile!", (long)self.gameData.largestTileRecord * 2];
+    self.mScoreLabel.text = [NSString stringWithFormat: @"%li", (long)self.mGameData.mScore];
+    self.mHighScoreLabel.text = [NSString stringWithFormat: @"%li", (long)self.mGameData.mHighScore];
+    self.mGoalLabel.text = [NSString stringWithFormat:@"Your next goal is the %li tile!", (long)self.mGameData.mLargestTileRecord * 2];
 }
 
 - (void)updateBoard
 {
-    for (int i = 0; i < [self.gameData.gameboard count]; ++i)
+    for (int i = 0; i < [self.mGameData.mGameboard count]; ++i)
     {
-        DBTile *tile = [self.gameData.gameboard objectAtIndex:i];
-        if (tile.parent != self.gameLayer)
+        DBTile *tile = [self.mGameData.mGameboard objectAtIndex:i];
+        if (tile.parent != self.mGameLayer)
         {
-            [self.gameLayer addChild: tile];
+            [self.mGameLayer addChild: tile];
         }
     }
     
@@ -519,8 +519,8 @@
 
 - (void)buttonMenu
 {
-    [self.gameData saveGameData];
-    [self.gameController dismissGameController];
+    [self.mGameData saveGameData];
+    [self.mGameController dismissGameController];
 }
 
 
@@ -529,27 +529,27 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
-    CGPoint point = [touch locationInNode: self.gameLayer];
+    CGPoint point = [touch locationInNode: self.mGameLayer];
     
     TileLocation location = [self convertPointToLocation: point];
     if (location.column < 0 || location.row < 0) return;
     
-    self.swipeFromColumn = location.column;
-    self.swipeFromRow = location.row;
+    self.mSwipeFromColumn = location.column;
+    self.mSwipeFromRow = location.row;
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (self.swipeFromColumn == -1 || self.swipeFromRow == -1) return;
+    if (self.mSwipeFromColumn == -1 || self.mSwipeFromRow == -1) return;
     
     UITouch *touch = [touches anyObject];
-    CGPoint point = [touch locationInNode: self.gameLayer];
+    CGPoint point = [touch locationInNode: self.mGameLayer];
     
     TileLocation location = [self convertPointToLocation: point];
     if (location.column < 0 || location.row < 0) return;
     
-    NSInteger swipeFromColumn = self.swipeFromColumn;
-    NSInteger swipeFromRow = self.swipeFromRow;
+    NSInteger swipeFromColumn = self.mSwipeFromColumn;
+    NSInteger swipeFromRow = self.mSwipeFromRow;
     
     NSInteger horizDelta = 0;
     NSInteger vertDelta = 0;
@@ -589,14 +589,14 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    self.swipeFromColumn = -1;
-    self.swipeFromRow = -1;
+    self.mSwipeFromColumn = -1;
+    self.mSwipeFromRow = -1;
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    self.swipeFromColumn = -1;
-    self.swipeFromRow = -1;
+    self.mSwipeFromColumn = -1;
+    self.mSwipeFromRow = -1;
 }
 
 @end

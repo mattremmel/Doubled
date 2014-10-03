@@ -6,8 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DBAdvertisingViewController">
             <connections>
-                <outlet property="buttonRemoveAds" destination="Oj9-mh-r1W" id="jqP-fA-bwo"/>
-                <outlet property="buttonRestore" destination="ev3-80-9zm" id="ROP-bA-ZWC"/>
+                <outlet property="mButtonRemoveAds" destination="Oj9-mh-r1W" id="h1l-8k-HWd"/>
+                <outlet property="mButtonRestore" destination="ev3-80-9zm" id="cbk-Sm-vFX"/>
                 <outlet property="view" destination="iN0-l3-epB" id="XSH-AL-eNg"/>
             </connections>
         </placeholder>

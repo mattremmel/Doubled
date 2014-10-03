@@ -6,11 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DBMainMenuViewController">
             <connections>
-                <outlet property="buttonCasual" destination="RUq-zn-UHh" id="R2D-Fl-p2Q"/>
-                <outlet property="buttonRate" destination="ss3-C9-Wde" id="HFU-Wd-VyJ"/>
-                <outlet property="buttonSendFeedback" destination="6xY-U0-zdb" id="lOJ-3n-kZX"/>
-                <outlet property="buttonTimeAttack" destination="kGP-SN-Ler" id="BTG-Cv-e0P"/>
-                <outlet property="buttonTutorial" destination="94f-OZ-4Kx" id="uzO-Ig-MAy"/>
+                <outlet property="mButtonCasual" destination="RUq-zn-UHh" id="U1F-2s-mQI"/>
+                <outlet property="mButtonRate" destination="ss3-C9-Wde" id="UOG-oG-fJH"/>
+                <outlet property="mButtonSendFeedback" destination="6xY-U0-zdb" id="mXT-nP-GBl"/>
+                <outlet property="mButtonTimeAttack" destination="kGP-SN-Ler" id="kIu-cU-Pe7"/>
+                <outlet property="mButtonTutorial" destination="94f-OZ-4Kx" id="o3C-vJ-ePg"/>
                 <outlet property="view" destination="iN0-l3-epB" id="2ff-gg-bYe"/>
             </connections>
         </placeholder>

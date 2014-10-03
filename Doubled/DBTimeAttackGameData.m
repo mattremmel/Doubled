@@ -54,13 +54,13 @@
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
     [super encodeWithCoder:encoder];
-    [encoder encodeDouble: self.timeRemaining forKey:DBGameDataTimeRemainingKey];
+    [encoder encodeDouble: self.mTimeRemaining forKey:DBGameDataTimeRemainingKey];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
     self = [super initWithCoder:decoder];
-    self.timeRemaining = [decoder decodeDoubleForKey:DBGameDataTimeRemainingKey];
+    self.mTimeRemaining = [decoder decodeDoubleForKey:DBGameDataTimeRemainingKey];
     return self;
 }
 
@@ -70,7 +70,7 @@
     if (decodedData != nil)
     {
         DBTimeAttackGameData *data = (DBTimeAttackGameData *)[NSKeyedUnarchiver unarchiveObjectWithData:decodedData];
-        self.timeRemaining = data. timeRemaining;
+        self.mTimeRemaining = data. mTimeRemaining;
     }
     
     return decodedData;

@@ -16,16 +16,16 @@
 
 @interface DBMainMenuViewController () <MFMailComposeViewControllerDelegate>
 
-@property DBGameOptionViewController *gameOptionController;
-@property DBGameViewController *gameViewController;
+@property DBGameOptionViewController *mGameOptionController;
+@property DBGameViewController *mGameViewController;
 
-@property (weak, nonatomic) IBOutlet UIButton *buttonCasual;
-@property (weak, nonatomic) IBOutlet UIButton *buttonTimeAttack;
-@property (weak, nonatomic) IBOutlet UIButton *buttonTutorial;
-@property (weak, nonatomic) IBOutlet UIButton *buttonRate;
-@property (weak, nonatomic) IBOutlet UIButton *buttonSendFeedback;
+@property (weak, nonatomic) IBOutlet UIButton *mButtonCasual;
+@property (weak, nonatomic) IBOutlet UIButton *mButtonTimeAttack;
+@property (weak, nonatomic) IBOutlet UIButton *mButtonTutorial;
+@property (weak, nonatomic) IBOutlet UIButton *mButtonRate;
+@property (weak, nonatomic) IBOutlet UIButton *mButtonSendFeedback;
 
-@property GameModes overwriteGameMode;
+@property GameModes mWillOverwriteGameMode;
 
 @end
 
@@ -38,14 +38,14 @@
 {
     NSLog(@"CONT: Main menu controller did load");
     [super viewDidLoad];
-    self.gameOptionController = [[DBGameOptionViewController alloc] initWithNibName:@"DBGameOptionView" bundle:nil];
-    self.gameViewController = [[DBGameViewController alloc] init];
+    self.mGameOptionController = [[DBGameOptionViewController alloc] initWithNibName:@"DBGameOptionView" bundle:nil];
+    self.mGameViewController = [[DBGameViewController alloc] init];
     [self styleView];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    [self.gameOptionController removeFromView];
+    [self.mGameOptionController removeFromView];
 }
 
 
@@ -53,24 +53,24 @@
 
 - (void)styleView
 {
-    self.view.backgroundColor = defaultBackgroundColor;
-    self.buttonCasual.layer.cornerRadius = MenuButtonCornerRadius;
-    self.buttonTimeAttack.layer.cornerRadius = MenuButtonCornerRadius;
-    self.buttonTutorial.layer.cornerRadius = MenuButtonCornerRadius;
-    self.buttonRate.layer.cornerRadius = MenuButtonCornerRadius;
-    self.buttonSendFeedback.layer.cornerRadius = MenuButtonCornerRadius;
+    self.view.backgroundColor = StandardBackgroundColor;
+    self.mButtonCasual.layer.cornerRadius = MenuButtonCornerRadius;
+    self.mButtonTimeAttack.layer.cornerRadius = MenuButtonCornerRadius;
+    self.mButtonTutorial.layer.cornerRadius = MenuButtonCornerRadius;
+    self.mButtonRate.layer.cornerRadius = MenuButtonCornerRadius;
+    self.mButtonSendFeedback.layer.cornerRadius = MenuButtonCornerRadius;
     
-    self.buttonCasual.backgroundColor = defaultButtonColor;
-    self.buttonTimeAttack.backgroundColor = defaultButtonColor;
-    self.buttonTutorial.backgroundColor = defaultButtonColor;
-    self.buttonRate.backgroundColor = defaultButtonColor;
-    self.buttonSendFeedback.backgroundColor = defaultButtonColor;
+    self.mButtonCasual.backgroundColor = StandardButtonColor;
+    self.mButtonTimeAttack.backgroundColor = StandardButtonColor;
+    self.mButtonTutorial.backgroundColor = StandardButtonColor;
+    self.mButtonRate.backgroundColor = StandardButtonColor;
+    self.mButtonSendFeedback.backgroundColor = StandardButtonColor;
     
-    [self.buttonCasual setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
-    [self.buttonTimeAttack setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
-    [self.buttonTutorial setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
-    [self.buttonRate setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
-    [self.buttonSendFeedback setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+    [self.mButtonCasual setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
+    [self.mButtonTimeAttack setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
+    [self.mButtonTutorial setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
+    [self.mButtonRate setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
+    [self.mButtonSendFeedback setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
 }
 
 
@@ -78,20 +78,20 @@
 
 - (void)checkForGameInProgress
 {
-    assert(self.overwriteGameMode == GameModeTimeAttack || self.overwriteGameMode == GameModeCasual);
+    assert(self.mWillOverwriteGameMode == GameModeTimeAttack || self.mWillOverwriteGameMode == GameModeCasual);
     
-    if (self.overwriteGameMode == GameModeCasual)
+    if (self.mWillOverwriteGameMode == GameModeCasual)
     {
-        if ([self.gameViewController casualGameInProgress]) {
+        if ([self.mGameViewController casualGameInProgress]) {
             [self showStartGameOverwriteAlert];
         }
         else {
             [self startCasualNewGame];
         }
     }
-    else if (self.overwriteGameMode == GameModeTimeAttack)
+    else if (self.mWillOverwriteGameMode == GameModeTimeAttack)
     {
-        if ([self.gameViewController timeAttackGameInProgress]) {
+        if ([self.mGameViewController timeAttackGameInProgress]) {
             [self showStartGameOverwriteAlert];
         }
         else {
@@ -103,33 +103,33 @@
 - (void)startCasualNewGame
 {
     NSLog(@"CONT: Presenting game view controller and starting casual new game");
-    [self presentViewController:self.gameViewController animated:true completion:nil];
-    [self.gameViewController startCasualNewGame];
-    self.overwriteGameMode = -1;
+    [self presentViewController:self.mGameViewController animated:true completion:nil];
+    [self.mGameViewController startCasualNewGame];
+    self.mWillOverwriteGameMode = -1;
 }
 
 - (void)startCasualContinueGame
 {
     NSLog(@"CONT: Presenting game view controller and starting casual continue game");
-    [self presentViewController:self.gameViewController animated:true completion:nil];
-    [self.gameViewController startCasualContinueGame];
-    self.overwriteGameMode = -1;
+    [self presentViewController:self.mGameViewController animated:true completion:nil];
+    [self.mGameViewController startCasualContinueGame];
+    self.mWillOverwriteGameMode = -1;
 }
 
 - (void)startTimeAttackNewGame
 {
     NSLog(@"CONT: Presenting game view controller and starting time attack new game");
-    [self presentViewController:self.gameViewController animated:true completion:nil];
-    [self.gameViewController startTimeAttackNewGame];
-    self.overwriteGameMode = -1;
+    [self presentViewController:self.mGameViewController animated:true completion:nil];
+    [self.mGameViewController startTimeAttackNewGame];
+    self.mWillOverwriteGameMode = -1;
 }
 
 - (void)startTimeAttackContinueGame
 {
     NSLog(@"CONT: Presenting game view controller and starting time attack new game");
-    [self presentViewController:self.gameViewController animated:true completion:nil];
-    [self.gameViewController startTimeAttackContinueGame];
-    self.overwriteGameMode = -1;
+    [self presentViewController:self.mGameViewController animated:true completion:nil];
+    [self.mGameViewController startTimeAttackContinueGame];
+    self.mWillOverwriteGameMode = -1;
 }
 
 
@@ -143,14 +143,14 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    assert(self.overwriteGameMode == GameModeTimeAttack || self.overwriteGameMode == GameModeCasual);
+    assert(self.mWillOverwriteGameMode == GameModeTimeAttack || self.mWillOverwriteGameMode == GameModeCasual);
     
     if (buttonIndex == 0)
     {
-        if (self.overwriteGameMode == GameModeCasual) {
+        if (self.mWillOverwriteGameMode == GameModeCasual) {
             [self startCasualNewGame];
         }
-        else if (self.overwriteGameMode == GameModeTimeAttack) {
+        else if (self.mWillOverwriteGameMode == GameModeTimeAttack) {
             [self startTimeAttackNewGame];
         }
     }
@@ -161,16 +161,16 @@
 
 - (IBAction)buttonCasual:(id)sender
 {
-    self.overwriteGameMode = GameModeCasual;
-    [self.gameOptionController setActionTarget:self actionNewGame:@selector(checkForGameInProgress) actionContinueGame:@selector(startCasualContinueGame)];
-    [self.gameOptionController showInView:self.view animated:true];
+    self.mWillOverwriteGameMode = GameModeCasual;
+    [self.mGameOptionController setActionTarget:self actionNewGame:@selector(checkForGameInProgress) actionContinueGame:@selector(startCasualContinueGame)];
+    [self.mGameOptionController showInView:self.view animated:true];
 }
 
 - (IBAction)buttonTimeAttack:(id)sender
 {
-    self.overwriteGameMode = GameModeTimeAttack;
-    [self.gameOptionController setActionTarget:self actionNewGame:@selector(checkForGameInProgress) actionContinueGame:@selector(startTimeAttackContinueGame)];
-    [self.gameOptionController showInView:self.view animated:true];
+    self.mWillOverwriteGameMode = GameModeTimeAttack;
+    [self.mGameOptionController setActionTarget:self actionNewGame:@selector(checkForGameInProgress) actionContinueGame:@selector(startTimeAttackContinueGame)];
+    [self.mGameOptionController showInView:self.view animated:true];
 }
 
 - (IBAction)buttonTutorial:(id)sender
@@ -187,7 +187,7 @@
 - (IBAction)buttonSendFeedback:(id)sender
 {
     [self presentMailViewController];
-    self.view.backgroundColor = defaultBackgroundColor;
+    self.view.backgroundColor = StandardBackgroundColor;
 }
 
 

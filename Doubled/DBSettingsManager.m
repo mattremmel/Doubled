@@ -18,19 +18,19 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:settingsFilePath])
     {
         NSDictionary *userSettings = [[NSDictionary alloc] initWithContentsOfFile:settingsFilePath];
-        ContinuousSwipeEnabled = [[userSettings valueForKey:ContinuousSwipeEnabledKey] boolValue];
-        GameCenterEnabled = [[userSettings valueForKey:GameCenterEnabledKey] boolValue];
-        iCloudEnabled = [[userSettings valueForKey:iCloudEnabledKey] boolValue];
-        TouchTolerance = [[userSettings valueForKey:TouchToleranceKey] integerValue];
-        if (TouchTolerance == 0)
+        Global_ContinuousSwipeEnabled = [[userSettings valueForKey:ContinuousSwipeEnabledKey] boolValue];
+        Global_GameCenterEnabled = [[userSettings valueForKey:GameCenterEnabledKey] boolValue];
+        Global_iCloudEnabled = [[userSettings valueForKey:iCloudEnabledKey] boolValue];
+        Global_TouchTolerance = [[userSettings valueForKey:TouchToleranceKey] integerValue];
+        if (Global_TouchTolerance == 0)
         {
-            if (deviceType == iPadType)
+            if (Global_DeviceType == iPadType)
             {
-                TouchTolerance = 60;
+                Global_TouchTolerance = 60;
             }
             else
             {
-                TouchTolerance = 40;
+                Global_TouchTolerance = 40;
             }
         }
     }
@@ -45,9 +45,9 @@
     NSLog(@"SETT: Saving Settings");
     NSString *settingsFilePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0] stringByAppendingPathComponent:@"settings"];
     NSMutableDictionary *userSettings = [[NSMutableDictionary alloc] init];
-    [userSettings setObject:[NSNumber numberWithBool:ContinuousSwipeEnabled] forKey:ContinuousSwipeEnabledKey];
-    [userSettings setObject:[NSNumber numberWithBool:GameCenterEnabled] forKey:GameCenterEnabledKey];
-    [userSettings setObject:[NSNumber numberWithBool:iCloudEnabled] forKey:iCloudEnabledKey];
+    [userSettings setObject:[NSNumber numberWithBool:Global_ContinuousSwipeEnabled] forKey:ContinuousSwipeEnabledKey];
+    [userSettings setObject:[NSNumber numberWithBool:Global_GameCenterEnabled] forKey:GameCenterEnabledKey];
+    [userSettings setObject:[NSNumber numberWithBool:Global_iCloudEnabled] forKey:iCloudEnabledKey];
     [userSettings writeToFile:settingsFilePath atomically:true];
 }
 
@@ -60,7 +60,7 @@
     [defaultSettings setValue:@YES forKey:GameCenterEnabledKey];
     [defaultSettings setValue:@YES forKey:iCloudEnabledKey];
     
-    if (deviceType == iPadType)
+    if (Global_DeviceType == iPadType)
     {
         [defaultSettings setValue:@60 forKey:TouchToleranceKey];
     }

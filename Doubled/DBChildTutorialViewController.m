@@ -33,11 +33,11 @@
     if (self.buttonFinishTutorial)
     {
         self.buttonFinishTutorial.layer.cornerRadius = MenuButtonCornerRadius;
-        self.buttonFinishTutorial.backgroundColor = defaultButtonColor;
-        [self.buttonFinishTutorial setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+        self.buttonFinishTutorial.backgroundColor = StandardButtonColor;
+        [self.buttonFinishTutorial setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
     }
     
-    self.view.backgroundColor = defaultBackgroundColor;
+    self.view.backgroundColor = StandardBackgroundColor;
 }
 
 

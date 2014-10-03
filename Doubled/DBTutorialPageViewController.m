@@ -20,22 +20,22 @@
     
     [super viewDidLoad];
     
-    self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    self.mPageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
-    self.pageController.dataSource = self;
-    [[self.pageController view] setFrame:[[self view] bounds]];
-    self.view.backgroundColor = defaultBackgroundColor;
+    self.mPageController.dataSource = self;
+    [[self.mPageController view] setFrame:[[self view] bounds]];
+    self.view.backgroundColor = StandardBackgroundColor;
     
     DBChildTutorialViewController *initialViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = [NSArray arrayWithObject:initialViewController];
-    [self.pageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [self.mPageController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
-    [self addChildViewController:self.pageController];
-    [[self view] addSubview:[self.pageController view]];
-    [self.pageController didMoveToParentViewController:self];
+    [self addChildViewController:self.mPageController];
+    [[self view] addSubview:[self.mPageController view]];
+    [self.mPageController didMoveToParentViewController:self];
     
     // Find the page control subview
-    NSArray *subviews = self.pageController.view.subviews;
+    NSArray *subviews = self.mPageController.view.subviews;
     UIPageControl *pageControl;
     for (int i = 0; i < [subviews count]; ++i)
     {
@@ -45,7 +45,7 @@
         }
     }
     
-    pageControl.backgroundColor = defaultBackgroundColor;
+    pageControl.backgroundColor = StandardBackgroundColor;
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     

@@ -12,8 +12,8 @@
 
 @interface DBAdvertisingViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *buttonRemoveAds;
-@property (weak, nonatomic) IBOutlet UIButton *buttonRestore;
+@property (weak, nonatomic) IBOutlet UIButton *mButtonRemoveAds;
+@property (weak, nonatomic) IBOutlet UIButton *mButtonRestore;
 
 @end
 
@@ -28,15 +28,15 @@
 
 - (void)styleView
 {
-    self.view.backgroundColor = defaultBackgroundColor;
-    self.buttonRemoveAds.layer.cornerRadius = MenuButtonCornerRadius;
-    self.buttonRestore.layer.cornerRadius = MenuButtonCornerRadius;
+    self.view.backgroundColor = StandardBackgroundColor;
+    self.mButtonRemoveAds.layer.cornerRadius = MenuButtonCornerRadius;
+    self.mButtonRestore.layer.cornerRadius = MenuButtonCornerRadius;
     
-    [self.buttonRemoveAds setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
-    [self.buttonRestore setTitleColor:defaultButtonTextColor forState:UIControlStateNormal];
+    [self.mButtonRemoveAds setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
+    [self.mButtonRestore setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
     
-    self.buttonRemoveAds.backgroundColor = defaultButtonColor;
-    self.buttonRestore.backgroundColor = defaultButtonColor;
+    self.mButtonRemoveAds.backgroundColor = StandardButtonColor;
+    self.mButtonRestore.backgroundColor = StandardButtonColor;
 }
 
 

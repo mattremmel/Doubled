@@ -37,32 +37,31 @@
 
 @interface DBGameData : NSObject
 
-@property NSMutableArray *gameboard;
+@property NSMutableArray *mGameboard;
 
-@property NSInteger score;
-@property NSInteger highScore;
-@property NSInteger cumulativeScore;
-@property NSInteger moves;
-@property NSInteger totalMoves;
-@property NSInteger currentLargestTile;
-@property NSInteger largestTileRecord;
-@property NSInteger tile4Count;
-@property NSInteger tile8Count;
-@property NSInteger tile16Count;
-@property NSInteger tile32Count;
-@property NSInteger tile64Count;
-@property NSInteger tile128Count;
-@property NSInteger tile256Count;
-@property NSInteger tile512Count;
-@property NSInteger tile1024Count;
-@property NSInteger tile2048Count;
-@property NSInteger tile4096Count;
-@property NSInteger tile8192Count;
-@property NSInteger tile16384Count;
-@property NSInteger tile32768Count;
-@property NSInteger tile65536Count;
-@property NSInteger gamesPlayed;
-@property NSInteger leaderboardRank;
+@property NSInteger mScore;
+@property NSInteger mHighScore;
+@property NSInteger mCumulativeScore;
+@property NSInteger mMoves;
+@property NSInteger mTotalMoves;
+@property NSInteger mCurrentLargestTile;
+@property NSInteger mLargestTileRecord;
+@property NSInteger mTile4Count;
+@property NSInteger mTile8Count;
+@property NSInteger mTile16Count;
+@property NSInteger mTile32Count;
+@property NSInteger mTile64Count;
+@property NSInteger mTile128Count;
+@property NSInteger mTile256Count;
+@property NSInteger mTile512Count;
+@property NSInteger mTile1024Count;
+@property NSInteger mTile2048Count;
+@property NSInteger mTile4096Count;
+@property NSInteger mTile8192Count;
+@property NSInteger mTile16384Count;
+@property NSInteger mTile32768Count;
+@property NSInteger mTile65536Count;
+@property NSInteger mGamesPlayed;
 
 - (void)encodeWithCoder:(NSCoder *)encoder;
 - (id)initWithCoder:(NSCoder *)decoder;
