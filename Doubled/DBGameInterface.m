@@ -48,7 +48,7 @@
     // Title
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 10, 300, 50)];
     titleLabel.text = @"DOUBLED";
-    titleLabel.font = [UIFont fontWithName:StandardFont size:45];
+    titleLabel.font = [UIFont fontWithName:StandardFont size:38];
     [titleLabel setTextColor:StandardFontColor];
     [scene.view addSubview:titleLabel];
     
@@ -63,7 +63,7 @@
     if ([scene class] == [DBCasualGameScene class])
     {
         UILabel *gameModeLabel = [[UILabel alloc] init];
-        gameModeLabel.font = [UIFont fontWithName:StandardFont size:13];
+        gameModeLabel.font = [UIFont fontWithName:StandardFont size:12];
         [gameModeLabel setTextColor:StandardFontColor];
         gameModeLabel.textAlignment = NSTextAlignmentCenter;
         gameModeLabel.numberOfLines = 2;
@@ -75,7 +75,7 @@
     else if ([scene class] == [DBTimeAttackGameScene class])
     {
         UILabel *timeRemainingLabel = [[UILabel alloc] init];
-        timeRemainingLabel.font = [UIFont fontWithName:StandardFont size:12];
+        timeRemainingLabel.font = [UIFont fontWithName:StandardFont size:11];
         [timeRemainingLabel setTextColor:StandardFontColor];
         timeRemainingLabel.textAlignment = NSTextAlignmentCenter;
         timeRemainingLabel.frame = CGRectMake(0, 4, 120, 15);
@@ -83,7 +83,7 @@
         [gameModeBox addSubview:timeRemainingLabel];
         
         UILabel *timeRemainingValue = [[UILabel alloc] init];
-        timeRemainingValue.font = [UIFont fontWithName:StandardFont size:15];
+        timeRemainingValue.font = [UIFont fontWithName:StandardFont size:13];
         [timeRemainingValue setTextColor:StandardFontColor];
         timeRemainingValue.textAlignment = NSTextAlignmentCenter;
         timeRemainingValue.frame = CGRectMake(0, 20, 120, 15);
@@ -101,7 +101,7 @@
     
     UILabel *scoreLabel = [[UILabel alloc] init];
     scoreLabel.text = @"SCORE";
-    scoreLabel.font = [UIFont fontWithName:StandardFont size:12];
+    scoreLabel.font = [UIFont fontWithName:StandardFont size:11];
     [scoreLabel setTextColor:StandardFontColor];
     scoreLabel.textAlignment = NSTextAlignmentCenter;
     scoreLabel.frame = CGRectMake(0, 4, 90, 15);
@@ -109,7 +109,7 @@
     
     UILabel *score = [[UILabel alloc] init];
     score.text = [NSString stringWithFormat:@"%li", (long)scene.mGameData.mScore];
-    score.font = [UIFont fontWithName:StandardFont size:15];
+    score.font = [UIFont fontWithName:StandardFont size:13];
     [score setTextColor:StandardFontColor];
     score.textAlignment = NSTextAlignmentCenter;
     score.frame = CGRectMake(0, 20, 90, 15);
@@ -126,7 +126,7 @@
     
     UILabel *highScoreLabel = [[UILabel alloc] init];
     highScoreLabel.text = @"BEST";
-    highScoreLabel.font = [UIFont fontWithName:StandardFont size:12];
+    highScoreLabel.font = [UIFont fontWithName:StandardFont size:11];
     [highScoreLabel setTextColor:StandardFontColor];
     highScoreLabel.textAlignment = NSTextAlignmentCenter;
     highScoreLabel.frame = CGRectMake(0, 4, 90, 15);
@@ -134,7 +134,7 @@
     
     UILabel *highScore = [[UILabel alloc] init];
     highScore.text = [NSString stringWithFormat:@"%li", (long)scene.mGameData.mHighScore];
-    highScore.font = [UIFont fontWithName:StandardFont size:15];
+    highScore.font = [UIFont fontWithName:StandardFont size:13];
     [highScore setTextColor:StandardFontColor];
     highScore.textAlignment = NSTextAlignmentCenter;
     highScore.frame = CGRectMake(0, 20, 90, 15);
@@ -147,7 +147,7 @@
     UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
     menuButton.frame = CGRectMake(247, 72, 65, 28);
     [menuButton setTitle:@"MENU" forState:UIControlStateNormal];
-    menuButton.titleLabel.font = [UIFont fontWithName:StandardFont size:15];
+    menuButton.titleLabel.font = [UIFont fontWithName:StandardFont size:13];
     [menuButton setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
     [menuButton setBackgroundColor:StandardButtonColor];
     menuButton.layer.cornerRadius = MenuButtonCornerRadius;
@@ -158,7 +158,7 @@
     // Next Goal Label
     UILabel *goalLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 435, 320, 30)];
     goalLabel.text = [NSString stringWithFormat:@"Your next goal is the %li tile!", (long)scene.mGameData.mLargestTileRecord * 2];
-    goalLabel.font = [UIFont fontWithName:StandardFont size:20];
+    goalLabel.font = [UIFont fontWithName:StandardFont size:16];
     goalLabel.textAlignment = NSTextAlignmentCenter;
     [goalLabel setTextColor:StandardFontColor];
     [scene.view addSubview:goalLabel];
@@ -215,7 +215,7 @@
     // Title
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 15, 300, 50)];
     titleLabel.text = @"DOUBLED";
-    titleLabel.font = [UIFont fontWithName:StandardFont size:45];
+    titleLabel.font = [UIFont fontWithName:StandardFont size:38];
     [titleLabel setTextColor:StandardFontColor];
     [scene.view addSubview:titleLabel];
     
@@ -233,7 +233,7 @@
     if ([scene class] == [DBCasualGameScene class])
     {
         UILabel *gameModeLabel = [[UILabel alloc] init];
-        gameModeLabel.font = [UIFont fontWithName:StandardFont size:13];
+        gameModeLabel.font = [UIFont fontWithName:StandardFont size:12];
         [gameModeLabel setTextColor:StandardFontColor];
         gameModeLabel.textAlignment = NSTextAlignmentCenter;
         gameModeLabel.numberOfLines = 2;
@@ -245,7 +245,7 @@
     else if ([scene class] == [DBTimeAttackGameScene class])
     {
         UILabel *timeRemainingLabel = [[UILabel alloc] init];
-        timeRemainingLabel.font = [UIFont fontWithName:StandardFont size:12];
+        timeRemainingLabel.font = [UIFont fontWithName:StandardFont size:11];
         [timeRemainingLabel setTextColor:StandardFontColor];
         timeRemainingLabel.textAlignment = NSTextAlignmentCenter;
         timeRemainingLabel.frame = CGRectMake(0, 4, 120, 15);
@@ -253,7 +253,7 @@
         [gameModeBox addSubview:timeRemainingLabel];
         
         UILabel *timeRemainingValue = [[UILabel alloc] init];
-        timeRemainingValue.font = [UIFont fontWithName:StandardFont size:15];
+        timeRemainingValue.font = [UIFont fontWithName:StandardFont size:13];
         [timeRemainingValue setTextColor:StandardFontColor];
         timeRemainingValue.textAlignment = NSTextAlignmentCenter;
         timeRemainingValue.frame = CGRectMake(0, 20, 120, 15);
@@ -273,7 +273,7 @@
     
     UILabel *scoreLabel = [[UILabel alloc] init];
     scoreLabel.text = @"SCORE";
-    scoreLabel.font = [UIFont fontWithName:StandardFont size:12];
+    scoreLabel.font = [UIFont fontWithName:StandardFont size:11];
     [scoreLabel setTextColor:StandardFontColor];
     scoreLabel.textAlignment = NSTextAlignmentCenter;
     scoreLabel.frame = CGRectMake(0, 4, 90, 15);
@@ -281,7 +281,7 @@
     
     UILabel *score = [[UILabel alloc] init];
     score.text = [NSString stringWithFormat:@"%li", (long)scene.mGameData.mScore];
-    score.font = [UIFont fontWithName:StandardFont size:15];
+    score.font = [UIFont fontWithName:StandardFont size:13];
     [score setTextColor:StandardFontColor];
     score.textAlignment = NSTextAlignmentCenter;
     score.frame = CGRectMake(0, 20, 90, 15);
@@ -298,7 +298,7 @@
     
     UILabel *highScoreLabel = [[UILabel alloc] init];
     highScoreLabel.text = @"BEST";
-    highScoreLabel.font = [UIFont fontWithName:StandardFont size:12];
+    highScoreLabel.font = [UIFont fontWithName:StandardFont size:11];
     [highScoreLabel setTextColor:StandardFontColor];
     highScoreLabel.textAlignment = NSTextAlignmentCenter;
     highScoreLabel.frame = CGRectMake(0, 4, 90, 15);
@@ -306,7 +306,7 @@
     
     UILabel *highScore = [[UILabel alloc] init];
     highScore.text = [NSString stringWithFormat:@"%li", (long)scene.mGameData.mHighScore];
-    highScore.font = [UIFont fontWithName:StandardFont size:15];
+    highScore.font = [UIFont fontWithName:StandardFont size:13];
     [highScore setTextColor:StandardFontColor];
     highScore.textAlignment = NSTextAlignmentCenter;
     highScore.frame = CGRectMake(0, 20, 90, 15);
@@ -319,7 +319,7 @@
     UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
     menuButton.frame = CGRectMake(247, 82, 65, 28);
     [menuButton setTitle:@"MENU" forState:UIControlStateNormal];
-    menuButton.titleLabel.font = [UIFont fontWithName:StandardFont size:15];
+    menuButton.titleLabel.font = [UIFont fontWithName:StandardFont size:13];
     [menuButton setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
     [menuButton setBackgroundColor:StandardButtonColor];
     menuButton.layer.cornerRadius = MenuButtonCornerRadius;
@@ -330,7 +330,7 @@
     // Next Goal Label
     UILabel *goalLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 450, 320, 30)];
     goalLabel.text = [NSString stringWithFormat:@"Your next goal is the %li tile!", (long)scene.mGameData.mLargestTileRecord * 2];
-    goalLabel.font = [UIFont fontWithName:StandardFont size:20];
+    goalLabel.font = [UIFont fontWithName:StandardFont size:16];
     goalLabel.textAlignment = NSTextAlignmentCenter;
     [goalLabel setTextColor:StandardFontColor];
     [scene.view addSubview:goalLabel];
@@ -385,9 +385,9 @@
     /* HUD */
     
     // Title
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(305, 55, 380, 80)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(300, 55, 380, 100)];
     titleLabel.text = @"DOUBLED";
-    titleLabel.font = [UIFont fontWithName:StandardFont size:80];
+    titleLabel.font = [UIFont fontWithName:StandardFont size:75];
     [titleLabel setTextColor:StandardFontColor];
     [scene.view addSubview:titleLabel];
     
@@ -405,7 +405,7 @@
     if ([scene class] == [DBCasualGameScene class])
     {
         UILabel *gameModeLabel = [[UILabel alloc] init];
-        gameModeLabel.font = [UIFont fontWithName:StandardFont size:17];
+        gameModeLabel.font = [UIFont fontWithName:StandardFont size:15];
         [gameModeLabel setTextColor:StandardFontColor];
         gameModeLabel.textAlignment = NSTextAlignmentCenter;
         gameModeLabel.numberOfLines = 2;
@@ -417,7 +417,7 @@
     else if ([scene class] == [DBTimeAttackGameScene class])
     {
         UILabel *timeRemainingLabel = [[UILabel alloc] init];
-        timeRemainingLabel.font = [UIFont fontWithName:StandardFont size:17];
+        timeRemainingLabel.font = [UIFont fontWithName:StandardFont size:15];
         [timeRemainingLabel setTextColor:StandardFontColor];
         timeRemainingLabel.textAlignment = NSTextAlignmentCenter;
         timeRemainingLabel.frame = CGRectMake(0, 2, 180, 25);
@@ -425,7 +425,7 @@
         [gameModeBox addSubview:timeRemainingLabel];
         
         UILabel *timeRemainingValue = [[UILabel alloc] init];
-        timeRemainingValue.font = [UIFont fontWithName:StandardFont size:20];
+        timeRemainingValue.font = [UIFont fontWithName:StandardFont size:18];
         [timeRemainingValue setTextColor:StandardFontColor];
         timeRemainingValue.textAlignment = NSTextAlignmentCenter;
         timeRemainingValue.frame = CGRectMake(0, 22, 180, 25);
@@ -444,7 +444,7 @@
     
     UILabel *scoreLabel = [[UILabel alloc] init];
     scoreLabel.text = @"SCORE";
-    scoreLabel.font = [UIFont fontWithName:StandardFont size:17];
+    scoreLabel.font = [UIFont fontWithName:StandardFont size:15];
     [scoreLabel setTextColor:StandardFontColor];
     scoreLabel.textAlignment = NSTextAlignmentCenter;
     scoreLabel.frame = CGRectMake(0, 2, 140, 25);
@@ -452,7 +452,7 @@
     
     UILabel *score = [[UILabel alloc] init];
     score.text = [NSString stringWithFormat:@"%li", (long)scene.mGameData.mScore];
-    score.font = [UIFont fontWithName:StandardFont size:20];
+    score.font = [UIFont fontWithName:StandardFont size:18];
     [score setTextColor:StandardFontColor];
     score.textAlignment = NSTextAlignmentCenter;
     score.frame = CGRectMake(0, 22, 140, 25);
@@ -469,7 +469,7 @@
     
     UILabel *highScoreLabel = [[UILabel alloc] init];
     highScoreLabel.text = @"BEST";
-    highScoreLabel.font = [UIFont fontWithName:StandardFont size:17];
+    highScoreLabel.font = [UIFont fontWithName:StandardFont size:15];
     [highScoreLabel setTextColor:StandardFontColor];
     highScoreLabel.textAlignment = NSTextAlignmentCenter;
     highScoreLabel.frame = CGRectMake(0, 2, 140, 25);
@@ -477,7 +477,7 @@
     
     UILabel *highScore = [[UILabel alloc] init];
     highScore.text = [NSString stringWithFormat:@"%li", (long)scene.mGameData.mHighScore];
-    highScore.font = [UIFont fontWithName:StandardFont size:20];
+    highScore.font = [UIFont fontWithName:StandardFont size:18];
     [highScore setTextColor:StandardFontColor];
     highScore.textAlignment = NSTextAlignmentCenter;
     highScore.frame = CGRectMake(0, 22, 140, 25);
@@ -490,7 +490,7 @@
     UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
     menuButton.frame = CGRectMake(550, 160, 110, 45);
     [menuButton setTitle:@"MENU" forState:UIControlStateNormal];
-    menuButton.titleLabel.font = [UIFont fontWithName:StandardFont size:22];
+    menuButton.titleLabel.font = [UIFont fontWithName:StandardFont size:20];
     [menuButton setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
     [menuButton setBackgroundColor:StandardButtonColor];
     menuButton.layer.cornerRadius = MenuButtonCornerRadius;
@@ -501,7 +501,7 @@
     // Next Goal Label
     UILabel *goalLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 825, 768, 60)];
     goalLabel.text = [NSString stringWithFormat:@"Your next goal is the %li tile!", (long)scene.mGameData.mLargestTileRecord * 2];
-    goalLabel.font = [UIFont fontWithName:StandardFont size:33];
+    goalLabel.font = [UIFont fontWithName:StandardFont size:30];
     goalLabel.textAlignment = NSTextAlignmentCenter;
     [goalLabel setTextColor:StandardFontColor];
     [scene.view addSubview:goalLabel];
