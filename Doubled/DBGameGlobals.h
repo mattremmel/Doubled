@@ -32,8 +32,10 @@
 #define StandardNodeBackgroundColor [UIColor colorWithRed: 0.87 green: 0.87 blue: 0.87 alpha: 1.0]
 #define StandardBackgroundColor [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.0]
 #define StandardButtonColor [UIColor colorWithRed:0.35 green:0.56 blue:0.77 alpha:1.0]
+#define StandardButtonPressedColor [UIColor colorWithRed:0.25 green:0.46 blue:0.67 alpha:1.0]
 #define StandardButtonTextColor [UIColor whiteColor]
 #define StandardHUDColor [UIColor colorWithRed: 0.8 green: 0.88 blue: 0.92 alpha: 1.0]
+#define StandardHUDPressedColor [UIColor colorWithRed: 0.75 green: 0.83 blue: 0.87 alpha: 1.0]
 
 
 // Tile Colors

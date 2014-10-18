@@ -49,7 +49,34 @@
     
     self.mButtonNewGame.backgroundColor = StandardButtonColor;
     self.mButtonContinue.backgroundColor = StandardButtonColor;
+    
+    [self.mButtonNewGame addTarget:self action:@selector(buttonNewGameNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonNewGame addTarget:self action:@selector(buttonNewGameNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonNewGame addTarget:self action:@selector(buttonNewGameHighlightColor) forControlEvents:UIControlEventTouchDown];
+    [self.mButtonContinue addTarget:self action:@selector(buttonContinueNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonContinue addTarget:self action:@selector(buttonContinueNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonContinue addTarget:self action:@selector(buttonContinueHighlightColor) forControlEvents:UIControlEventTouchDown];
 }
+
+
+#pragma mark - Button Highlights
+
+- (void)buttonNewGameNormalColor {
+    self.mButtonNewGame.backgroundColor = StandardButtonColor;
+}
+
+- (void)buttonNewGameHighlightColor {
+    self.mButtonNewGame.backgroundColor = StandardButtonPressedColor;
+}
+
+- (void)buttonContinueNormalColor {
+    self.mButtonContinue.backgroundColor = StandardButtonColor;
+}
+
+- (void)buttonContinueHighlightColor {
+    self.mButtonContinue.backgroundColor = StandardButtonPressedColor;
+}
+
 
 #pragma mark - Target Methods
 

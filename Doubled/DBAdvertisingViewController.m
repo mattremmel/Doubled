@@ -37,6 +37,32 @@
     
     self.mButtonRemoveAds.backgroundColor = StandardButtonColor;
     self.mButtonRestore.backgroundColor = StandardButtonColor;
+    
+    [self.mButtonRemoveAds addTarget:self action:@selector(buttonRemoveAdsNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonRemoveAds addTarget:self action:@selector(buttonRemoveAdsNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonRemoveAds addTarget:self action:@selector(buttonRemoveAdsHighlightColor) forControlEvents:UIControlEventTouchDown];
+    [self.mButtonRestore addTarget:self action:@selector(buttonRestoreNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonRestore addTarget:self action:@selector(buttonRestoreNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonRestore addTarget:self action:@selector(buttonRestoreHighlightColor) forControlEvents:UIControlEventTouchDown];
+}
+
+
+#pragma mark - Button Highlights
+
+- (void)buttonRemoveAdsNormalColor {
+    self.mButtonRemoveAds.backgroundColor = StandardButtonColor;
+}
+
+- (void)buttonRemoveAdsHighlightColor {
+    self.mButtonRemoveAds.backgroundColor = StandardButtonPressedColor;
+}
+
+- (void)buttonRestoreNormalColor {
+    self.mButtonRestore.backgroundColor = StandardButtonColor;
+}
+
+- (void)buttonRestoreHighlightColor {
+    self.mButtonRestore.backgroundColor = StandardButtonPressedColor;
 }
 
 

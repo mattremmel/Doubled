@@ -39,6 +39,21 @@
     self.mButtonResetGameData.layer.cornerRadius = MenuButtonCornerRadius;
     [self.mButtonResetGameData setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
     self.mButtonResetGameData.backgroundColor = StandardButtonColor;
+    
+    [self.mButtonResetGameData addTarget:self action:@selector(buttonResetGameDataNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonResetGameData addTarget:self action:@selector(buttonResetGameDataNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonResetGameData addTarget:self action:@selector(buttonResetGameDataHighlightColor) forControlEvents:UIControlEventTouchDown];
+}
+
+
+#pragma mark - Button Highlights
+
+- (void)buttonResetGameDataNormalColor {
+    self.mButtonResetGameData.backgroundColor = StandardButtonColor;
+}
+
+- (void)buttonResetGameDataHighlightColor {
+    self.mButtonResetGameData.backgroundColor = StandardButtonPressedColor;
 }
 
 

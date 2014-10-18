@@ -71,6 +71,65 @@
     [self.mButtonTutorial setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
     [self.mButtonRate setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
     [self.mButtonSendFeedback setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
+    
+    [self.mButtonCasual addTarget:self action:@selector(buttonCasualNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonCasual addTarget:self action:@selector(buttonCasualNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonCasual addTarget:self action:@selector(buttonCasualHighlightColor) forControlEvents:UIControlEventTouchDown];
+    [self.mButtonTimeAttack addTarget:self action:@selector(buttonTimeAttackNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonTimeAttack addTarget:self action:@selector(buttonTimeAttackNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonTimeAttack addTarget:self action:@selector(buttonTimeAttackHighlightColor) forControlEvents:UIControlEventTouchDown];
+    [self.mButtonTutorial addTarget:self action:@selector(buttonTutorialNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonTutorial addTarget:self action:@selector(buttonTutorialNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonTutorial addTarget:self action:@selector(buttonTutorialHighlightColor) forControlEvents:UIControlEventTouchDown];
+    [self.mButtonRate addTarget:self action:@selector(buttonRateNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonRate addTarget:self action:@selector(buttonRateNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonRate addTarget:self action:@selector(buttonRateHighlightColor) forControlEvents:UIControlEventTouchDown];
+    [self.mButtonSendFeedback addTarget:self action:@selector(buttonSendFeedbackNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonSendFeedback addTarget:self action:@selector(buttonSendFeedbackNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonSendFeedback addTarget:self action:@selector(buttonSendFeedbackHighlightColor) forControlEvents:UIControlEventTouchDown];
+}
+
+
+#pragma mark - Button Highlights
+
+- (void)buttonCasualNormalColor {
+    self.mButtonCasual.backgroundColor = StandardButtonColor;
+}
+
+- (void)buttonCasualHighlightColor {
+    self.mButtonCasual.backgroundColor = StandardButtonPressedColor;
+}
+
+- (void)buttonTimeAttackNormalColor {
+    self.mButtonTimeAttack.backgroundColor = StandardButtonColor;
+}
+
+- (void)buttonTimeAttackHighlightColor {
+    self.mButtonTimeAttack.backgroundColor = StandardButtonPressedColor;
+}
+
+- (void)buttonTutorialNormalColor {
+    self.mButtonTutorial.backgroundColor = StandardButtonColor;
+}
+
+- (void)buttonTutorialHighlightColor {
+    self.mButtonTutorial.backgroundColor = StandardButtonPressedColor;
+}
+
+- (void)buttonRateNormalColor {
+    self.mButtonRate.backgroundColor = StandardButtonColor;
+}
+
+- (void)buttonRateHighlightColor {
+    self.mButtonRate.backgroundColor = StandardButtonPressedColor;
+}
+
+- (void)buttonSendFeedbackNormalColor {
+    self.mButtonSendFeedback.backgroundColor = StandardButtonColor;
+}
+
+- (void)buttonSendFeedbackHighlightColor {
+    self.mButtonSendFeedback.backgroundColor = StandardButtonPressedColor;
 }
 
 

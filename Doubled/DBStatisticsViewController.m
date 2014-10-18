@@ -105,6 +105,13 @@
     self.mButtonTimeAttackLeaderboard.backgroundColor = StandardButtonColor;
     [self.mButtonTimeAttackLeaderboard setTitleColor:StandardButtonTextColor forState:UIControlStateNormal];
     
+    [self.mButtonCasualLeaderboard addTarget:self action:@selector(buttonCasualLeaderboardNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonCasualLeaderboard addTarget:self action:@selector(buttonCasualLeaderboardNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonCasualLeaderboard addTarget:self action:@selector(buttonCasualLeaderboardHighlightColor) forControlEvents:UIControlEventTouchDown];
+    [self.mButtonTimeAttackLeaderboard addTarget:self action:@selector(buttonTimeAttackLeaderboardNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonTimeAttackLeaderboard addTarget:self action:@selector(buttonTimeAttackLeaderboardNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonTimeAttackLeaderboard addTarget:self action:@selector(buttonTimeAttackLeaderboardHighlightColor) forControlEvents:UIControlEventTouchDown];
+    
     
     self.mLabelCasualGamesPlayed.adjustsFontSizeToFitWidth = true;
     self.mLabelCasualAverageScore.adjustsFontSizeToFitWidth = true;
@@ -149,6 +156,25 @@
     self.mLabelTimeAttack16384TileCount.adjustsFontSizeToFitWidth = true;
     self.mLabelTimeAttack32768TileCount.adjustsFontSizeToFitWidth = true;
     self.mLabelTimeAttack65536TileCount.adjustsFontSizeToFitWidth = true;
+}
+
+
+#pragma mark - Button Highlights
+
+- (void)buttonCasualLeaderboardNormalColor {
+    self.mButtonCasualLeaderboard.backgroundColor = StandardButtonColor;
+}
+
+- (void)buttonCasualLeaderboardHighlightColor {
+    self.mButtonCasualLeaderboard.backgroundColor = StandardButtonPressedColor;
+}
+
+- (void)buttonTimeAttackLeaderboardNormalColor {
+    self.mButtonTimeAttackLeaderboard.backgroundColor = StandardButtonColor;
+}
+
+- (void)buttonTimeAttackLeaderboardHighlightColor {
+    self.mButtonTimeAttackLeaderboard.backgroundColor = StandardButtonPressedColor;
 }
 
 

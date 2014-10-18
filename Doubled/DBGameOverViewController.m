@@ -74,7 +74,47 @@
     
     self.mLabelHighScore.textAlignment = NSTextAlignmentCenter;
     self.mLabelHighScore.adjustsFontSizeToFitWidth = true;
+    
+    [self.mButtonNewGame addTarget:self action:@selector(buttonNewGameNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonNewGame addTarget:self action:@selector(buttonNewGameNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonNewGame addTarget:self action:@selector(buttonNewGameHighlightColor) forControlEvents:UIControlEventTouchDown];
+    [self.mButtonMainMenu addTarget:self action:@selector(buttonMainMenuNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonMainMenu addTarget:self action:@selector(buttonMainMenuNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonMainMenu addTarget:self action:@selector(buttonMainMenuHighlightColor) forControlEvents:UIControlEventTouchDown];
+    [self.mButtonLeaderboard addTarget:self action:@selector(buttonLeaderboardNormalColor) forControlEvents:UIControlEventTouchUpInside];
+    [self.mButtonLeaderboard addTarget:self action:@selector(buttonLeaderboardNormalColor) forControlEvents:UIControlEventTouchUpOutside];
+    [self.mButtonLeaderboard addTarget:self action:@selector(buttonLeaderboardHighlightColor) forControlEvents:UIControlEventTouchDown];
 }
+
+
+#pragma mark - Button Highlights
+
+- (void)buttonNewGameNormalColor {
+    self.mButtonNewGame.backgroundColor = StandardButtonColor;
+}
+
+- (void)buttonNewGameHighlightColor {
+    self.mButtonNewGame.backgroundColor = StandardButtonPressedColor;
+}
+
+- (void)buttonMainMenuNormalColor {
+    self.mButtonMainMenu.backgroundColor = StandardButtonColor;
+}
+
+- (void)buttonMainMenuHighlightColor {
+    self.mButtonMainMenu.backgroundColor = StandardButtonPressedColor;
+}
+
+- (void)buttonLeaderboardNormalColor {
+    self.mButtonLeaderboard.backgroundColor = StandardHUDColor;
+}
+
+- (void)buttonLeaderboardHighlightColor {
+    self.mButtonLeaderboard.backgroundColor = StandardHUDPressedColor;
+}
+
+
+#pragma mark - View Delegate
 
 - (void)viewWillAppear:(BOOL)animated
 {
