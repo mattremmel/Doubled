@@ -10,6 +10,10 @@
       "filename" : "Banner@2X.png"
     },
     {
+      "idiom" : "iphone",
+      "scale" : "3x"
+    },
+    {
       "idiom" : "ipad",
       "scale" : "1x",
       "filename" : "Banner~iPad.png"
