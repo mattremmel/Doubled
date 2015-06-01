@@ -216,11 +216,6 @@
     return false;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskPortrait;
-}
-
 
 #pragma mark - Touch Delegates
 
