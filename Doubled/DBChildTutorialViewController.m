@@ -60,5 +60,10 @@
     }
 }
 
+- (BOOL)shouldAutorotate
+{
+    return false;
+}
+
 
 @end

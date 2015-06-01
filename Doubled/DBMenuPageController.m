@@ -116,9 +116,12 @@
             }
             else{
                 if ([GKLocalPlayer localPlayer].authenticated) {
+                    NSLog(@"GAME: Local player authenticated");
                     gameCenterAuthenticated = true;
                 }
                 else{
+                    NSLog(@"GAME: Local player NOT authenticated");
+                    NSLog(error.description);
                     gameCenterAuthenticated = false;
                 }
             }
@@ -127,8 +130,10 @@
             {
                 if (error != nil)
                 {
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Game Center Error" message:@"An error occured signing into Game Center. If you would like to use Game Center, please sign in using the Game Center app, or disable Game Center in the settings of this app." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-                    [alert show];
+                    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Game Center Error" message:@"An error occured signing into Game Center. If you would like to use Game Center, please sign in using the Game Center app, or disable Game Center in the settings of this app." preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+                    [alert addAction:defaultAction];
+                    [self presentViewController:alert animated:YES completion:nil];
                 }
             }
         };
@@ -213,7 +218,7 @@
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-    return UIInterfaceOrientationMaskPortraitUpsideDown;
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 
