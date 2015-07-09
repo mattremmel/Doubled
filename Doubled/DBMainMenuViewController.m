@@ -240,7 +240,7 @@
 
 - (IBAction)buttonRate:(id)sender
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=888958280&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:AppstoreRateURL]];
 }
 
 - (IBAction)buttonSendFeedback:(id)sender

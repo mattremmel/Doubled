@@ -12,7 +12,7 @@
 #import "DBMainMenuViewController.h"
 #import "DBStatisticsViewController.h"
 #import "DBSettingsViewController.h"
-#import "DBAdvertisingViewController.h"
+#import "DBDonationViewController.h"
 #import "DBTutorialPageViewController.h"
 #import "DBSettingsManager.h"
 
@@ -169,7 +169,7 @@
             break;
             
         case 3:
-            child = [[DBAdvertisingViewController alloc] initWithNibName:@"DBAdvertisingView" bundle:nil];
+            child = [[DBDonationViewController alloc] initWithNibName:@"DBDonationView" bundle:nil];
             child.index = 3;
             break;
             

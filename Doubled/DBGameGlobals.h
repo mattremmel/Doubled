@@ -6,6 +6,11 @@
 //  Copyright (c) 2014 Matthew Remmel. All rights reserved.
 //
 
+// Donation
+#define DonationURL @"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=N9RPB54D8236Y&lc=US&item_name=Doubled&item_number=doubled&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"
+
+// Appstore Rating
+#define AppstoreRateURL @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=888958280&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"
 
 // Security
 #define CasualGameDataChecksumKey @"CasualGameDataChecksumKey"
@@ -56,9 +61,6 @@
 // Button Identifiers
 #define NewGameButtonName @"newGameButton"
 #define ContinueButtonName @"continueButton"
-
-// Product Identifiers
-#define RemoveAdsIdentifier @"MRDoubled_RemoveAds"
 
 // Device Properties
 typedef enum {

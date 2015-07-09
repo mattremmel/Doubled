@@ -21,7 +21,6 @@
     [DBLaunchConfiguration configureLaunchSettingsWithScreenSize:self.window.bounds.size];
     
     [DBCasualGameData sharedInstance];
-    [DoubledIAPHelper sharedInstance];
     
     self.rootViewController = [[DBMenuPageController alloc] init];
     self.window.rootViewController = self.rootViewController;
