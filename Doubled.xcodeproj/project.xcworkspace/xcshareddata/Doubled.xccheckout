@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E6D58203-AB9B-4BF5-9E28-6F9B7AF3CC25</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Doubled</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3BC9093082E1DC233A7E41327420607C1D651235</key>
+		<string>https://bitbucket.org/mattremmel/doubled_ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Doubled.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3BC9093082E1DC233A7E41327420607C1D651235</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/mattremmel/doubled_ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3BC9093082E1DC233A7E41327420607C1D651235</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3BC9093082E1DC233A7E41327420607C1D651235</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Doubled</string>
+		</dict>
+	</array>
+</dict>
+</plist>
