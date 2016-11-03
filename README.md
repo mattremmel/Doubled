@@ -9,5 +9,4 @@ Doubled is an iOS game inspired by the game 2048. It's based on a similar concep
 - Game Center Integration
 - Secured Data Storage to Prevent Tampering
 
-#### Disclaimer:
 There are likely code smells and other areas for improvement in this project, since it was my first attempt at building a full featured app, and my first exposure to Apple's SpriteKit. One day I may overhaul and refactor the project, but i've archived it for now.
